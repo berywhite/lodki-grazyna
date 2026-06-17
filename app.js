@@ -1391,6 +1391,20 @@ document.querySelector("#hero-booking-search-btn")?.addEventListener("click", ()
   document.querySelector("#reservation")?.scrollIntoView({ behavior: "smooth" });
 });
 
+// Dynamic header scroll effect (transparent at top, glassmorphic/white when scrolled)
+const header = document.querySelector(".site-header");
+if (header) {
+  const checkScroll = () => {
+    if (window.scrollY > 40) {
+      header.classList.add("is-scrolled");
+    } else {
+      header.classList.remove("is-scrolled");
+    }
+  };
+  window.addEventListener("scroll", checkScroll);
+  checkScroll(); // Check on load as well
+}
+
 // App Initialization
 document.querySelector("#year").textContent = new Date().getFullYear();
 translatePage();
