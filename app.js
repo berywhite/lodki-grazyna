@@ -96,7 +96,8 @@ const news = [
     text: {
       pl: "Z przyjemnością prezentujemy naszą nową identyfikację wizualną! Nowe logo łączy motyw leśny z bliskością wody i symbolem żeglarskim, odzwierciedlając luksusowy charakter naszej floty przyczep i łodzi.",
       en: "We are thrilled to present our new brand identity! The new logo blends forest motifs, proximity to water, and sailing symbols, reflecting the premium nature of our caravans and boats."
-    }
+    },
+    image: "assets/news_logo.png"
   },
   {
     date: { pl: "12 Czerwca 2026", en: "June 12, 2026" },
@@ -104,7 +105,8 @@ const news = [
     text: {
       pl: "Już teraz możesz wejść do wnętrza naszych przyczep Classic oraz Family bez wychodzenia z domu! Uruchom spacer 360° bezpośrednio w zakładce Spacery Wirtualne i zobacz każdy detal luksusowego wykończenia.",
       en: "You can now step inside our Classic and Family caravans without leaving your home! Launch the 360° virtual tour directly under Virtual Tours section and see every detail of our luxury finish."
-    }
+    },
+    image: "assets/news_tours.png"
   },
   {
     date: { pl: "01 Czerwca 2026", en: "June 1, 2026" },
@@ -112,7 +114,8 @@ const news = [
     text: {
       pl: "Wszystkie przyczepy i łodzie są w pełni przygotowane, wyczyszczone i gotowe do odbioru. Kalendarze rezerwacji na czerwiec, lipiec i sierpień są już aktywne. Zapraszamy do rezerwacji wolnych terminów!",
       en: "All caravans and boats are fully prepared, detailed, and ready for pickup. Booking calendars for June, July, and August are now active. Book your vacation dates today!"
-    }
+    },
+    image: "assets/news_season.png"
   }
 ];
 
@@ -271,7 +274,14 @@ const translations = {
     adminDateEnd: "Data końcowa (Do)",
     selectProductFirst: "Wybierz najpierw pozycję z listy.",
     minNightsAlert: "Minimalny okres wynajmu przyczep wynosi 3 doby.",
-    bookedDaysSelectedAlert: "Wybrany zakres dat zawiera dni, które są już zajęte. Wybierz inny termin."
+    bookedDaysSelectedAlert: "Wybrany zakres dat zawiera dni, które są już zajęte. Wybierz inny termin.",
+    adminCurrentBlocks: "Aktualnie zablokowane terminy:",
+    adminNoBlocks: "Brak zablokowanych terminów stacjonarnie.",
+    adminTableProduct: "Sprzęt / Przyczepa",
+    adminTableDates: "Zakres zablokowanych dat",
+    adminTableActions: "Akcja",
+    adminDeleteBlock: "Odblokuj te dni",
+    adminBlockDeleted: "Termin został odblokowany."
   },
   en: {
     skipLink: "Skip to content",
@@ -389,7 +399,14 @@ const translations = {
     adminDateEnd: "End Date (To)",
     selectProductFirst: "Please select an item first.",
     minNightsAlert: "Minimum rental period for caravans is 3 nights.",
-    bookedDaysSelectedAlert: "The selected date range contains dates that are already booked. Please choose other dates."
+    bookedDaysSelectedAlert: "The selected date range contains dates that are already booked. Please choose other dates.",
+    adminCurrentBlocks: "Currently blocked dates:",
+    adminNoBlocks: "No custom blocked dates found.",
+    adminTableProduct: "Caravan / Boat",
+    adminTableDates: "Blocked Date Range",
+    adminTableActions: "Action",
+    adminDeleteBlock: "Unlock dates",
+    adminBlockDeleted: "Dates unlocked successfully."
   }
 };
 
@@ -644,11 +661,18 @@ function renderNews() {
     .map(
       (item) => `
         <article class="news-card">
-          <div class="news-meta-row">
-            <span class="news-date">${item.date[currentLang]}</span>
+          ${item.image ? `
+            <div class="news-image-container">
+              <img src="${item.image}" alt="${item.title[currentLang]}" loading="lazy">
+            </div>
+          ` : ""}
+          <div class="news-content">
+            <div class="news-meta-row">
+              <span class="news-date">${item.date[currentLang]}</span>
+            </div>
+            <h3>${item.title[currentLang]}</h3>
+            <p>${item.text[currentLang]}</p>
           </div>
-          <h3>${item.title[currentLang]}</h3>
-          <p>${item.text[currentLang]}</p>
         </article>
       `
     )
@@ -676,14 +700,27 @@ function renderFaq() {
 }
 
 function populateSelects() {
-  const selectedReservation = document.querySelector("#reservation-product")?.value || products[0].id;
-  const selectedAdmin = document.querySelector("#admin-product")?.value || products[0].id;
+  const reservationSelect = document.querySelector("#reservation-product");
+  const adminSelect = document.querySelector("#admin-product");
+  const heroSelect = document.querySelector("#hero-select-product");
+
+  const selectedReservation = reservationSelect?.value || products[0].id;
+  const selectedAdmin = adminSelect?.value || products[0].id;
+  const selectedHero = heroSelect?.value || products[0].id;
   const options = products.map((product) => `<option value="${product.id}">${product.title[currentLang]}</option>`).join("");
 
-  document.querySelector("#reservation-product").innerHTML = options;
-  document.querySelector("#admin-product").innerHTML = options;
-  document.querySelector("#reservation-product").value = selectedReservation;
-  document.querySelector("#admin-product").value = selectedAdmin;
+  if (reservationSelect) {
+    reservationSelect.innerHTML = options;
+    reservationSelect.value = selectedReservation;
+  }
+  if (adminSelect) {
+    adminSelect.innerHTML = options;
+    adminSelect.value = selectedAdmin;
+  }
+  if (heroSelect) {
+    heroSelect.innerHTML = options;
+    heroSelect.value = selectedHero;
+  }
 }
 
 function renderSelectedProduct() {
@@ -909,6 +946,113 @@ function loadTour(camperType) {
   }, 300);
 }
 
+function getBlockedRanges(productId) {
+  const productAvailability = availability[productId] || {};
+  const bookedDates = Object.keys(productAvailability)
+    .filter((dateKey) => productAvailability[dateKey] === "booked")
+    .sort();
+  
+  if (bookedDates.length === 0) return [];
+
+  const ranges = [];
+  let rangeStart = bookedDates[0];
+  let rangeEnd = bookedDates[0];
+
+  for (let i = 1; i < bookedDates.length; i++) {
+    const prevDate = parseDate(bookedDates[i - 1]);
+    const currDate = parseDate(bookedDates[i]);
+    
+    const diffTime = Math.abs(currDate - prevDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    if (diffDays === 1) {
+      rangeEnd = bookedDates[i];
+    } else {
+      ranges.push({ start: rangeStart, end: rangeEnd });
+      rangeStart = bookedDates[i];
+      rangeEnd = bookedDates[i];
+    }
+  }
+  ranges.push({ start: rangeStart, end: rangeEnd });
+  return ranges;
+}
+
+function deleteRange(productId, startStr, endStr) {
+  const start = parseDate(startStr);
+  const end = parseDate(endStr);
+  
+  if (isNaN(start) || isNaN(end) || start > end) return;
+  
+  const current = new Date(start);
+  while (current <= end) {
+    const dateKey = formatDate(current);
+    if (availability[productId]) {
+      delete availability[productId][dateKey];
+    }
+    current.setDate(current.getDate() + 1);
+  }
+  
+  saveAvailability();
+  
+  startDate = null;
+  endDate = null;
+  if (document.querySelector("#start-date")) document.querySelector("#start-date").value = "";
+  if (document.querySelector("#end-date")) document.querySelector("#end-date").value = "";
+  
+  renderCalendar();
+  updatePriceDisplay();
+  renderAdminBlocksList();
+}
+
+function renderAdminBlocksList() {
+  const tbody = document.querySelector("#admin-blocks-list");
+  if (!tbody) return;
+
+  let blocksHtml = "";
+  let hasAnyBlocks = false;
+
+  products.forEach((product) => {
+    const ranges = getBlockedRanges(product.id);
+    if (ranges.length > 0) {
+      hasAnyBlocks = true;
+      ranges.forEach((range) => {
+        blocksHtml += `
+          <tr>
+            <td><strong>${product.title[currentLang]}</strong></td>
+            <td><span class="block-dates-badge">${range.start} &rarr; ${range.end}</span></td>
+            <td>
+              <button class="button danger btn-small delete-block-btn" type="button" 
+                data-product-id="${product.id}" 
+                data-start="${range.start}" 
+                data-end="${range.end}">
+                ${translations[currentLang].adminDeleteBlock}
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+  });
+
+  if (hasAnyBlocks) {
+    tbody.innerHTML = blocksHtml;
+    tbody.querySelectorAll(".delete-block-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const prodId = btn.dataset.productId;
+        const start = btn.dataset.start;
+        const end = btn.dataset.end;
+        deleteRange(prodId, start, end);
+      });
+    });
+  } else {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="3" class="text-center text-muted" style="padding: 2rem 0;">${translations[currentLang].adminNoBlocks}</td>
+      </tr>
+    `;
+  }
+}
+
 function renderAdminPanel() {
   const adminPanel = document.querySelector("#admin-section-wrapper");
   if (!adminPanel) return;
@@ -981,6 +1125,23 @@ function renderAdminPanel() {
           </div>
           <p class="status-message" id="admin-status" role="status"></p>
         </form>
+
+        <div class="admin-blocks-section">
+          <h4>${translations[currentLang].adminCurrentBlocks}</h4>
+          <div class="admin-blocks-table-wrapper">
+            <table class="admin-blocks-table">
+              <thead>
+                <tr>
+                  <th>${translations[currentLang].adminTableProduct}</th>
+                  <th>${translations[currentLang].adminTableDates}</th>
+                  <th>${translations[currentLang].adminTableActions}</th>
+                </tr>
+              </thead>
+              <tbody id="admin-blocks-list">
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     `;
 
@@ -989,6 +1150,9 @@ function renderAdminPanel() {
     if (adminProductSelect) {
       adminProductSelect.innerHTML = products.map((product) => `<option value="${product.id}">${product.title[currentLang]}</option>`).join("");
     }
+
+    // Render blocked list immediately
+    renderAdminBlocksList();
 
     // Attach Admin Form submit handler
     document.querySelector("#admin-form")?.addEventListener("submit", (event) => {
@@ -1038,6 +1202,7 @@ function renderAdminPanel() {
 
       renderCalendar();
       updatePriceDisplay();
+      renderAdminBlocksList();
     });
 
     // Attach Reset Demo handler
@@ -1061,6 +1226,7 @@ function renderAdminPanel() {
 
       renderCalendar();
       updatePriceDisplay();
+      renderAdminBlocksList();
     });
 
     // Logout handler
@@ -1195,6 +1361,35 @@ if (menuToggle && mainNav) {
     });
   });
 }
+
+// Link Hero Quick Booking bar to the main reservation form
+document.querySelector("#hero-booking-search-btn")?.addEventListener("click", () => {
+  const selectedProduct = document.querySelector("#hero-select-product")?.value;
+  const startD = document.querySelector("#hero-start-date")?.value;
+  const endD = document.querySelector("#hero-end-date")?.value;
+  
+  const mainSelect = document.querySelector("#reservation-product");
+  if (mainSelect && selectedProduct) {
+    mainSelect.value = selectedProduct;
+    mainSelect.dispatchEvent(new Event("change"));
+  }
+  
+  if (startD) {
+    startDate = parseDate(startD);
+    const mainStart = document.querySelector("#start-date");
+    if (mainStart) mainStart.value = startD;
+  }
+  if (endD) {
+    endDate = parseDate(endD);
+    const mainEnd = document.querySelector("#end-date");
+    if (mainEnd) mainEnd.value = endD;
+  }
+  
+  renderCalendar();
+  updatePriceDisplay();
+  
+  document.querySelector("#reservation")?.scrollIntoView({ behavior: "smooth" });
+});
 
 // App Initialization
 document.querySelector("#year").textContent = new Date().getFullYear();

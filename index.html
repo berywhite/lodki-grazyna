@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Glowing background blobs -->
+    <div class="bg-blob blob-1" aria-hidden="true"></div>
+    <div class="bg-blob blob-2" aria-hidden="true"></div>
+    <div class="bg-blob blob-3" aria-hidden="true"></div>
+
     <!-- Accessibility Skip Link -->
     <a class="skip-link" href="#main" data-i18n="skipLink">Przejdź do treści</a>
 
@@ -81,6 +86,23 @@
           <div class="hero-actions">
             <a class="button primary" href="#reservation" data-i18n="heroPrimary">Zarezerwuj teraz</a>
             <a class="button ghost" href="#offer" data-i18n="heroSecondary">Zobacz ofertę</a>
+          </div>
+
+          <!-- Floating Quick Booking Bar -->
+          <div class="hero-booking-bar animate-up">
+            <div class="booking-field">
+              <label for="hero-select-product" data-i18n="fieldProduct">Wybierz przyczepę lub łódź</label>
+              <select id="hero-select-product"></select>
+            </div>
+            <div class="booking-field">
+              <label for="hero-start-date" data-i18n="fieldStartDate">Data początkowa (Od)</label>
+              <input type="date" id="hero-start-date">
+            </div>
+            <div class="booking-field">
+              <label for="hero-end-date" data-i18n="fieldEndDate">Data zakończenia (Do)</label>
+              <input type="date" id="hero-end-date">
+            </div>
+            <button type="button" class="button primary" id="hero-booking-search-btn" data-i18n="heroPrimary">Zarezerwuj teraz</button>
           </div>
           
           <dl class="hero-stats" aria-label="Statystyki przystani">
