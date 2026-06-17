@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Przystań Grażyna - Luksusowy wynajem przyczep kempingowych i szybkich łodzi motorowych na Mazurach. Sprawdź dostępność i zarezerwuj swój wypoczynek."
+    />
+    <title>Przystań Grażyna - Wynajem Przyczep & Łodzi</title>
+    
+    <!-- Google Fonts: Elegant Playfair Display and modern Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Pannellum 360 Panorama Viewer CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Accessibility Skip Link -->
+    <a class="skip-link" href="#main" data-i18n="skipLink">Przejdź do treści</a>
+
+    <!-- Sticky Glassmorphic Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Przystań Grażyna">
+          <span class="brand-mark" aria-hidden="true">
+            <!-- Premium SVG Boat & Camper minimal mark -->
+            <svg viewBox="0 0 44 44" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
+              <rect width="44" height="44" rx="8" fill="#0C3A2E"/>
+              <path d="M12 24c4 1 8-1 12 0s6 2 8 0" stroke="#FAF8F5" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M16 12l6 7h-5v5h-2v-5h-3z" fill="#D97706"/>
+              <circle cx="28" cy="15" r="2" fill="#FAF8F5"/>
+            </svg>
+          </span>
+          <span class="brand-text">Przystań Grażyna</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Główna nawigacja">
+          <a href="#offer" data-i18n="navOffer">Oferta</a>
+          <a href="#virtual-tours" data-i18n="navTours">Spacery 360°</a>
+          <a href="#reservation" data-i18n="navReservations">Rezerwacje</a>
+          <a href="#news" data-i18n="navNews">Aktualności</a>
+          <a href="#faq" data-i18n="navFaq">FAQ</a>
+          <a href="#contact" data-i18n="navContact">Kontakt</a>
+          <a href="#admin" data-i18n="navAdmin">Admin</a>
+        </nav>
+
+        <div class="header-tools">
+          <div class="accessibility-tools" aria-label="Ustawienia dostępności">
+            <button class="tool-button" type="button" id="font-toggle" data-i18n="fontToggle" aria-label="Powiększ czcionkę">A+</button>
+            <button class="tool-button" type="button" id="contrast-toggle" data-i18n="contrastToggle" aria-label="Wysoki kontrast">Kontrast</button>
+          </div>
+          <div class="language-switcher" aria-label="Wybór języka">
+            <button class="lang-button is-active" type="button" data-lang="pl">PL</button>
+            <button class="lang-button" type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Premium Hero Section -->
+      <section class="hero" id="home">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <p class="eyebrow" data-i18n="heroEyebrow">Grażyna • Wynajem Przyczep & Łodzi</p>
+          <h1 data-i18n="heroTitle">Luksusowy wypoczynek nad wodą, na Twoich zasadach.</h1>
+          <p class="lead" data-i18n="heroLead">
+            Wybierz luksusową przyczepę kempingową lub szybką łódź motorową na Mazurach. Zaznacz zakres dat na interaktywnym kalendarzu i prześlij zapytanie. Rezerwację potwierdzamy ręcznie, bez zbędnych pośredników i prowizji.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#reservation" data-i18n="heroPrimary">Zarezerwuj teraz</a>
+            <a class="button ghost" href="#offer" data-i18n="heroSecondary">Zobacz ofertę</a>
+          </div>
+          
+          <dl class="hero-stats" aria-label="Statystyki przystani">
+            <div>
+              <dt>3</dt>
+              <dd data-i18n="statTrailers">luksusowe przyczepy</dd>
+            </div>
+            <div>
+              <dt>2</dt>
+              <dd data-i18n="statBoats">łodzie motorowe</dd>
+            </div>
+            <div>
+              <dt>360°</dt>
+              <dd data-i18n="statTours">spacery 360°</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Three-step Process Section -->
+      <section class="section compact-section" aria-label="Jak działa rezerwacja">
+        <div class="container steps-grid">
+          <article class="step-card">
+            <span class="step-index">01</span>
+            <h2 data-i18n="stepOneTitle">1. Wybierz sprzęt</h2>
+            <p data-i18n="stepOneText">Wybierz komfortową przyczepę dla rodziny lub zwrotną łódź motorową.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-index">02</span>
+            <h2 data-i18n="stepTwoTitle">2. Zaznacz zakres dat</h2>
+            <p data-i18n="stepTwoText">Kliknij na kalendarzu dzień początkowy (od) oraz końcowy (do).</p>
+          </article>
+          <article class="step-card">
+            <span class="step-index">03</span>
+            <h2 data-i18n="stepThreeTitle">3. Odbierz i wypoczywaj</h2>
+            <p data-i18n="stepThreeText">Wpłać 30% zadatku przelewem, a my przygotujemy wszystko na Twój przyjazd.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Offer Grid Section -->
+      <section class="section" id="offer" aria-labelledby="offer-title">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow" data-i18n="offerEyebrow">Nasza Flota</p>
+              <h2 id="offer-title" data-i18n="offerTitle">Wybierz swój idealny sprzęt na wakacje</h2>
+            </div>
+            <p data-i18n="offerLead">
+              Prezentujemy 3 nowoczesne przyczepy kempingowe stacjonujące nad jeziorem oraz 2 szybkie łodzie motorowe gotowe do wodowania. Kliknij przycisk, aby wybrać sprzęt do kalendarza rezerwacji.
+            </p>
+          </div>
+          <div class="product-grid" id="product-list" aria-live="polite">
+            <!-- Dynamic products will be rendered here by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Virtual 360 Tours Section -->
+      <section class="section dark-section" id="virtual-tours" aria-labelledby="tours-title">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow" data-i18n="toursEyebrow">Wirtualne Zwiedzanie</p>
+              <h2 id="tours-title" data-i18n="toursTitle">Wejdź do środka bez wychodzenia z domu</h2>
+            </div>
+            <p data-i18n="toursLead">
+              Uruchom interaktywny spacer 360° i rozejrzyj się po naszych przyczepach Classic i Family. Zobacz wysoki standard wyposażenia przed podjęciem decyzji.
+            </p>
+          </div>
+          <div class="tour-grid">
+            <article class="tour-card">
+              <div class="tour-preview" id="tour-classic-viewer">
+                <div class="tour-placeholder-bg tour-one">
+                  <button class="tour-play button primary" type="button" onclick="loadTour('classic')" data-i18n="tourPlayBtn">Uruchom spacer 360°</button>
+                </div>
+              </div>
+              <div class="tour-card-body">
+                <h3 data-i18n="tourClassic">Przyczepy Classic (360°)</h3>
+                <p data-i18n="tourClassicText">Wirtualny spacer po wnętrzu przyczepy Classic 1 & 2. Zobacz układ sypialni, aneksu i łazienki.</p>
+              </div>
+            </article>
+            <article class="tour-card">
+              <div class="tour-preview" id="tour-family-viewer">
+                <div class="tour-placeholder-bg tour-two">
+                  <button class="tour-play button primary" type="button" onclick="loadTour('family')" data-i18n="tourPlayBtn">Uruchom spacer 360°</button>
+                </div>
+              </div>
+              <div class="tour-card-body">
+                <h3 data-i18n="tourFamily">Przyczepa Family (360°)</h3>
+                <p data-i18n="tourFamilyText">Rozejrzyj się po naszej największej i najbardziej luksusowej przyczepie dla 6 osób.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Section (Calendar & Form) -->
+      <section class="section" id="reservation" aria-labelledby="reservation-title">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow" data-i18n="reservationEyebrow">Kalendarz i Formularz</p>
+              <h2 id="reservation-title" data-i18n="reservationTitle">Sprawdź dostępność i zarezerwuj</h2>
+            </div>
+            <p data-i18n="reservationLead">
+              Wybierz pozycję z listy, zaznacz zakres dat bezpośrednio na kalendarzu (dni wolne są białe, zajęte na czerwono), a formularz automatycznie wyliczy koszt wynajmu i kwotę zadatku.
+            </p>
+          </div>
+
+          <div class="booking-shell">
+            <aside class="booking-panel" aria-label="Wybór rezerwacji">
+              <label>
+                <span data-i18n="fieldProduct">Wybierz przyczepę lub łódź</span>
+                <select name="productId" id="reservation-product" required></select>
+              </label>
+              <div class="selected-product" id="selected-product-card">
+                <!-- Selected product preview rendered by app.js -->
+              </div>
+              <div class="bank-details">
+                <strong data-i18n="bankHeading">Dane do wpłaty zadatku (Wariant A)</strong>
+                <p data-i18n="bankText">
+                  Przystań Grażyna, Bank Spółdzielczy<br>
+                  Numer konta: <strong>84 1020 4902 0000 9202 1234 5678</strong><br>
+                  Tytuł przelewu: Zadatek za rezerwację [Twoje Imię i Nazwisko]<br>
+                  Kwota zadatku: 30% wartości rezerwacji.
+                </p>
+              </div>
+            </aside>
+
+            <div class="calendar-panel">
+              <div class="calendar-toolbar">
+                <button class="icon-button" type="button" id="prev-month" aria-label="Poprzedni miesiąc">‹</button>
+                <h3 id="calendar-title" aria-live="polite"></h3>
+                <button class="icon-button" type="button" id="next-month" aria-label="Następny miesiąc">›</button>
+              </div>
+              <div class="calendar-weekdays" aria-hidden="true">
+                <span>Pon</span><span>Wt</span><span>Śr</span><span>Czw</span><span>Pt</span><span>Sob</span><span>Nd</span>
+              </div>
+              <div class="calendar-grid" id="calendar-grid">
+                <!-- Calendar grid rendered by app.js -->
+              </div>
+              <div class="calendar-legend">
+                <span><i class="legend-dot available"></i><span data-i18n="legendAvailable">Wolne</span></span>
+                <span><i class="legend-dot booked"></i><span data-i18n="legendBooked">Zajęte</span></span>
+                <span><i class="legend-dot selected"></i><span data-i18n="legendSelected">Twój wybór</span></span>
+              </div>
+            </div>
+
+            <form class="reservation-form" id="reservation-form">
+              <div class="form-grid">
+                <label>
+                  <span data-i18n="fieldStartDate">Data rozpoczęcia (Od)</span>
+                  <input type="date" name="startDate" id="start-date" required />
+                </label>
+                <label>
+                  <span data-i18n="fieldEndDate">Data zakończenia (Do)</span>
+                  <input type="date" name="endDate" id="end-date" required />
+                </label>
+                <label>
+                  <span data-i18n="fieldName">Imię i nazwisko</span>
+                  <input type="text" name="name" autocomplete="name" required />
+                </label>
+                <label>
+                  <span data-i18n="fieldEmail">Adres e-mail</span>
+                  <input type="email" name="email" autocomplete="email" required />
+                </label>
+                <label>
+                  <span data-i18n="fieldPhone">Numer telefonu</span>
+                  <input type="tel" name="phone" autocomplete="tel" />
+                </label>
+                <label>
+                  <span data-i18n="fieldGuests">Liczba gości</span>
+                  <input type="number" name="guests" min="1" max="8" value="2" />
+                </label>
+              </div>
+              
+              <label class="textarea-label">
+                <span data-i18n="fieldMessage">Wiadomość / Pytania dodatkowe</span>
+                <textarea name="message" rows="4"></textarea>
+              </label>
+              
+              <!-- Live cost breakdown box -->
+              <div id="price-calc-container">
+                <!-- Cost calculation cards rendered by app.js -->
+              </div>
+              
+              <label class="consent-row">
+                <input type="checkbox" name="privacy" required />
+                <span data-i18n="privacyConsent">Akceptuję regulamin wynajmu oraz wyrażam zgodę na przetwarzanie moich danych w celu realizacji zapytania rezerwacyjnego.</span>
+              </label>
+              
+              <p class="form-note" data-i18n="formNote">
+                *To jest zapytanie rezerwacyjne. Po weryfikacji dostępności wyślemy e-mail z potwierdzeniem oraz danymi do wpłaty zadatku.
+              </p>
+              
+              <button class="button primary submit-btn" type="submit" data-i18n="sendRequest">Wyślij zapytanie rezerwacyjne</button>
+              <p class="status-message" id="form-status" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Info Section -->
+      <section class="section muted" id="prices" aria-labelledby="prices-title">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow" data-i18n="pricesEyebrow">Przejrzysty Cennik</p>
+              <h2 id="prices-title" data-i18n="pricesTitle">Ceny za dobę w zależności od sezonu</h2>
+            </div>
+            <p data-i18n="pricesText">
+              Sezon wysoki (High Season) obowiązuje w miesiącach czerwiec, lipiec i sierpień. Sezon niski (Low Season) obowiązuje w pozostałych miesiącach.
+            </p>
+          </div>
+          <div class="price-grid">
+            <article class="price-card">
+              <span data-i18n="priceCamperType">Przyczepy kempingowe</span>
+              <strong>od 250 zł / doba</strong>
+              <p data-i18n="priceCamperText">Classic: 250 zł (niski) / 350 zł (wysoki) za dobę.<br>Family: 320 zł (niski) / 450 zł (wysoki) za dobę.<br>Minimalny wynajem: 3 doby. Kaucja zwrotna.</p>
+            </article>
+            <article class="price-card featured">
+              <span data-i18n="priceDepositType">Zadatek rezerwacyjny</span>
+              <strong data-i18n="priceDepositValue">30% ceny pobytu</strong>
+              <p data-i18n="priceDepositText">Płatny przelewem tradycyjnym lub BLIKem na telefon w ciągu 24h od ręcznego potwierdzenia terminu.</p>
+            </article>
+            <article class="price-card">
+              <span data-i18n="priceBoatType">Łodzie motorowe</span>
+              <strong>od 450 zł / dzień</strong>
+              <p data-i18n="priceBoatText">Classic (50 HP): 450 zł (niski) / 600 zł (wysoki) za dzień.<br>Premium (150 HP): 600 zł (niski) / 800 zł (wysoki) za dzień.<br>Wynajem całodniowy. Kaucja zwrotna.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog / News Section -->
+      <section class="section" id="news" aria-labelledby="news-title">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow" data-i18n="newsEyebrow">Wiadomości</p>
+              <h2 id="news-title" data-i18n="newsTitle">Aktualności z przystani</h2>
+            </div>
+            <p data-i18n="newsLead">Zobacz co słychać na naszej przystani, przeczytaj o nowych udogodnieniach oraz dowiedz się więcej o naszej ofercie.</p>
+          </div>
+          <div class="news-grid" id="news-list">
+            <!-- News list rendered by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Accordion FAQ Section -->
+      <section class="section muted" id="faq" aria-labelledby="faq-title">
+        <div class="container faq-layout">
+          <div>
+            <p class="eyebrow" data-i18n="faqEyebrow">Pomoc</p>
+            <h2 id="faq-title" data-i18n="faqTitle">Często zadawane pytania (FAQ)</h2>
+          </div>
+          <div class="faq-list" id="faq-list">
+            <!-- FAQ accordion rendered by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Legal / Documents Section -->
+      <section class="section" id="rules" aria-labelledby="rules-title">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow" data-i18n="rulesEyebrow">Dokumenty prawne</p>
+              <h2 id="rules-title" data-i18n="rulesTitle">Regulaminy i bezpieczeństwo danych</h2>
+            </div>
+            <p data-i18n="rulesLead">Poniżej znajdziesz komplet dokumentów regulujących zasady wynajmu naszego sprzętu oraz politykę bezpieczeństwa danych osobowych (RODO).</p>
+          </div>
+          <div class="legal-grid">
+            <article class="info-panel">
+              <h3 data-i18n="rulesHeading">Regulamin Wynajmu</h3>
+              <p data-i18n="rulesText">Zasady rezerwacji, warunki odbioru i zwrotu, obowiązki najemcy, kwestie kaucji i ubezpieczenia sprzętu.</p>
+              <a href="#" class="btn-text-link" onclick="alert('Regulamin PDF pobieranie (mock)...'); return false;">Pobierz Regulamin (PDF) &rarr;</a>
+            </article>
+            <article class="info-panel">
+              <h3 data-i18n="privacyHeading">Polityka Prywatności</h3>
+              <p data-i18n="privacyText">Informacje o administratorze danych osobowych, celach przetwarzania, plikach cookies oraz prawach użytkownika.</p>
+              <a href="#" class="btn-text-link" onclick="alert('Polityka Prywatności PDF pobieranie (mock)...'); return false;">Pobierz Politykę (PDF) &rarr;</a>
+            </article>
+            <article class="info-panel">
+              <h3 data-i18n="rodoHeading">Klauzula RODO</h3>
+              <p data-i18n="rodoText">Spełnienie obowiązku informacyjnego zgodnie z RODO przy wysyłaniu formularza kontaktowego i rezerwacyjnego.</p>
+              <a href="#" class="btn-text-link" onclick="alert('Klauzula RODO PDF pobieranie (mock)...'); return false;">Pobierz RODO (PDF) &rarr;</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-layout">
+          <div class="contact-details-box">
+            <p class="eyebrow" data-i18n="contactEyebrow">Napisz do nas</p>
+            <h2 id="contact-title" data-i18n="contactTitle">Skontaktuj się z Grażyną</h2>
+            <p data-i18n="contactText">
+              Masz pytania dotyczące sprzętu? Chcesz zarezerwować nietypowy termin? Zadzwoń do nas, napisz e-mail lub skontaktuj się przez nasz profil na Facebooku.
+            </p>
+            
+            <div class="contact-methods">
+              <div class="method-item">
+                <span class="icon">📞</span>
+                <div>
+                  <h4>Telefon</h4>
+                  <a href="tel:+48501234567" data-i18n="contactCta">+48 501 234 567</a>
+                </div>
+              </div>
+              <div class="method-item">
+                <span class="icon">✉️</span>
+                <div>
+                  <h4>E-mail</h4>
+                  <a href="mailto:kontakt@przystan-grazyna.pl">kontakt@przystan-grazyna.pl</a>
+                </div>
+              </div>
+              <div class="method-item">
+                <span class="icon">📍</span>
+                <div>
+                  <h4>Przystań</h4>
+                  <span data-i18n="mapPlaceholder">Jezioro Kisajno, Giżycko, Mazury</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contact-actions">
+              <a class="button secondary" href="https://facebook.com" target="_blank" rel="noreferrer" data-i18n="facebookLink">Odwiedź nas na Facebooku</a>
+            </div>
+          </div>
+          
+          <!-- Embedded styled interactive OpenStreetMap placeholder -->
+          <div class="map-card-wrapper">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37827.42436413233!2d21.724806877284698!3d54.04359483321588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e108170c0c7dcf%3A0xeef2bd8a72bbf61e!2sKisajno!5e0!3m2!1spl!2spl!4v1718627885000!5m2!1spl!2spl" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade" 
+              title="Mapa dojazdu Przystań Grażyna"
+              aria-label="Mapa z lokalizacją przystani">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dynamic Owner Admin Dashboard Section -->
+      <section class="section admin-section" id="admin" aria-labelledby="admin-title">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow" data-i18n="adminEyebrow">Panel Właściciela</p>
+              <h2 id="admin-title-head" data-i18n="adminTitle">Zarządzanie dostępnością terminów</h2>
+            </div>
+          </div>
+          <div id="admin-section-wrapper">
+            <!-- Rendered dynamically by app.js (Lock screen vs Dashboard) -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Przystań Grażyna</p>
+        <p data-i18n="footerText">Przystań Grażyna – Luksusowy wynajem przyczep kempingowych i łodzi motorowych na Mazurach.</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
