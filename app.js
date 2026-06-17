@@ -535,13 +535,54 @@ function translatePage() {
   renderAdminPanel();
 }
 
+function getSpecIcon(spec) {
+  const s = spec.toLowerCase();
+  if (s.includes("miejsc") || s.includes("sleep") || s.includes("kabina") || s.includes("cabin")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 2H3v6h2v-2h14v2h2v-6c0-2.2-1.8-4-4-4H9c-1.1 0-2 .9-2 2z"/></svg>`;
+  }
+  if (s.includes("klimat") || s.includes("air")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12h-3l2.5-2.5-1.4-1.4-3.6 3.6c-.3.3-.5.7-.5 1.3V16c0 .6.2 1 .5 1.3l3.6 3.6 1.4-1.4L16 17h3v-2h-3v-2h3zm-14 0h3L5.5 9.5l1.4-1.4 3.6 3.6c.3.3.5.7.5 1.3V16c0 .6-.2 1-.5 1.3L6.9 20.9l-1.4-1.4 2.5-2.5H5v-2h3v-2H5z"/></svg>`;
+  }
+  if (s.includes("ogrzew") || s.includes("heat")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2S8.5 6.5 8.5 9.5c0 1.9 1.6 3.5 3.5 3.5s3.5-1.6 3.5-3.5C15.5 6.5 12 2 12 2zm1 14.5c0-.8-.3-1.6-.8-2.2l-1.2-1.2v3.4c-1.1 0-2-.9-2-2v-.9c-.6.6-1 1.4-1 2.4 0 2.2 1.8 4 4 4s4-1.8 4-4z"/></svg>`;
+  }
+  if (s.includes("kuchn") || s.includes("stove") || s.includes("piekarnik") || s.includes("oven")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.2 1.8 4 4 4v9h2v-9c2.2 0 4-1.8 4-4V2h-2v7zm10-7h-4c-1.1 0-2 .9-2 2v9c0 1.7 1.3 3 3 3h1v5h2v-5h1c1.7 0 3-1.3 3-3V4c0-2.2-1.8-4-4-4z"/></svg>`;
+  }
+  if (s.includes("dług") || s.includes("length")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 10V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-3-2h-2v2h-1V8h-2v2h-1V8H9v2H8V8H6v2H5V6h14v2z"/></svg>`;
+  }
+  if (s.includes("dmc") || s.includes("gvwr")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>`;
+  }
+  if (s.includes("patent") || s.includes("licens")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 18c-3.9 0-7-3.1-7-7H2c0 5 4 9 9 9s9-4 9-9h-3c0 3.9-3.1 7-7 7zm5-7c0-2.8-2.2-5-5-5s-5 2.2-5 5h3c0-1.1.9-2 2-2s2 .9 2 2h3z"/></svg>`;
+  }
+  if (s.includes("silnik") || s.includes("engin") || s.includes("hp")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 11c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0 4c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm0-13c-1.1 0-2 .9-2 2v4.2c.6-.1 1.2-.2 1.8-.2.2 0 .4 0 .6.1V4c0-.6.4-1 1-1s1 .4 1 1v4.3c.2-.1.4-.1.6-.1.6 0 1.2.1 1.8.2V4c0-1.1-.9-2-2-2zM4 12c0-1.1.9-2 2-2h4.2c-.1.6-.2 1.2-.2 1.8 0 .2 0 .4.1.6H6c-.6 0-1-.4-1-1zm14 0c0 .6-.4 1-1 1h-4.3c.1-.2.1-.4.1-.6 0-.6-.1-1.2-.2-1.8H18c1.1 0 2 .9 2 2zm-6 6c.6 0 1.2-.1 1.8-.2v4.4c0 1.1-.9 2-2 2s-2-.9-2-2v-4.4c.6.1 1.2.2 1.8.2z"/></svg>`;
+  }
+  if (s.includes("osób") || s.includes("guest") || s.includes("osobowa") || s.includes("miejsc")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>`;
+  }
+  if (s.includes("echosond") || s.includes("sonar") || s.includes("gps")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>`;
+  }
+  if (s.includes("daszek") || s.includes("bimini") || s.includes("markiz")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c1.1 0 2 .9 2 2v1h1c1.7 0 3 1.3 3 3v2h4v2h-4v7c0 1.7-1.3 3-3 3h-1v2c0 1.1-.9 2-2 2s-2-.9-2-2v-2h-1c-1.7 0-3-1.3-3-3v-7H2v-2h4V8c0-1.7 1.3-3 3-3h1V4c0-1.1.9-2 2-2z"/></svg>`;
+  }
+  if (s.includes("audio") || s.includes("głośnik") || s.includes("muzyka") || s.includes("system")) {
+    return `<svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>`;
+  }
+  return `<svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>`;
+}
+
 function renderProducts() {
   const list = document.querySelector("#product-list");
   list.innerHTML = products
     .map((product) => {
       const isCamper = product.type === "camper";
       const specsHtml = product.specs[currentLang]
-        .map((spec) => `<li>${spec}</li>`)
+        .map((spec) => `<li>${getSpecIcon(spec)} <span>${spec}</span></li>`)
         .join("");
         
       return `
@@ -1132,6 +1173,28 @@ document.querySelector("#reservation-form").addEventListener("submit", (event) =
   updatePriceDisplay();
   renderCalendar();
 });
+
+// Hamburger menu toggle logic
+const menuToggle = document.querySelector("#menu-toggle");
+const mainNav = document.querySelector("#main-nav");
+
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener("click", () => {
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", !expanded);
+    mainNav.classList.toggle("is-open");
+    menuToggle.classList.toggle("is-active");
+  });
+
+  // Close menu when clicking a link
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menuToggle.setAttribute("aria-expanded", "false");
+      mainNav.classList.remove("is-open");
+      menuToggle.classList.remove("is-active");
+    });
+  });
+}
 
 // App Initialization
 document.querySelector("#year").textContent = new Date().getFullYear();

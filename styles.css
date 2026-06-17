@@ -143,6 +143,7 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  flex-wrap: nowrap;
 }
 
 .brand {
@@ -154,6 +155,7 @@ textarea {
   font-size: 1.35rem;
   text-decoration: none;
   color: var(--primary);
+  flex-shrink: 0;
 }
 
 .brand-mark {
@@ -165,11 +167,12 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.4rem;
 }
 
 .main-nav a {
+  position: relative;
   padding: 0.6rem 0.9rem;
   color: var(--muted);
   text-decoration: none;
@@ -179,9 +182,173 @@ textarea {
   transition: all 0.3s ease;
 }
 
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0.2rem;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
 .main-nav a:hover {
-  background: rgba(12, 58, 46, 0.06);
   color: var(--primary);
+}
+
+.main-nav a:hover::after {
+  width: calc(100% - 1.8rem);
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  min-width: 44px;
+  height: 44px;
+  padding: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(12, 58, 46, 0.06);
+  border-color: var(--primary);
+}
+
+.hamburger-box {
+  width: 24px;
+  height: 18px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -1px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 24px;
+  height: 2px;
+  background-color: var(--primary);
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+  border-radius: 4px;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  bottom: -8px;
+}
+
+/* Burger Animation on Active */
+.mobile-menu-toggle.is-active .hamburger-inner {
+  transform: rotate(45deg);
+}
+
+.mobile-menu-toggle.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+}
+
+.mobile-menu-toggle.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+}
+
+/* Premium Parameter Badges */
+.product-meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1.5px solid var(--border);
+  background: var(--surface-muted);
+  border-radius: 6px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+  transition: all 0.3s ease;
+}
+
+.product-meta li:hover {
+  background: var(--surface);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.spec-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* Premium Button Animation */
+.button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Card elevations and lifts */
+.product-card,
+.price-card,
+.news-card,
+.info-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover,
+.price-card:hover,
+.news-card:hover,
+.info-panel:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 56px rgba(12, 58, 46, 0.12);
+  border-color: var(--primary);
 }
 
 .header-tools {
@@ -1421,7 +1588,7 @@ textarea {
 /* Footer styling */
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 2rem 0;
+  padding: 2.5rem 0;
   background: var(--surface);
 }
 
@@ -1430,7 +1597,7 @@ textarea {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 600;
@@ -1440,16 +1607,84 @@ textarea {
   margin: 0;
 }
 
+.footer-desc {
+  font-size: 0.82rem;
+  margin-top: 0.35rem !important;
+  opacity: 0.8;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-admin-link {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--muted);
+  text-decoration: none;
+  opacity: 0.65;
+  transition: all 0.3s ease;
+  padding: 0.35rem 0.65rem;
+  border: 1px dashed transparent;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-admin-link:hover {
+  opacity: 1;
+  color: var(--primary);
+  border-color: var(--border);
+  background: var(--surface-muted);
+}
+
 /* Media Queries (Responsive Design) */
-@media (max-width: 1100px) {
-  .header-inner {
-    padding: 0.8rem 0;
+@media (max-width: 1024px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background: var(--surface);
+    box-shadow: -10px 0 40px rgba(12, 58, 46, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 6.5rem 2.5rem 2.5rem;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 45;
+    gap: 1.25rem;
+  }
+
+  .main-nav.is-open {
+    transform: translateX(0);
+  }
+
+  .main-nav a {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
   }
   
-  .main-nav {
-    width: 100%;
-    order: 3;
-    justify-content: flex-start;
+  .main-nav a::after {
+    display: none; /* Disable hover underline line on mobile */
+  }
+
+  .main-nav a:hover {
+    color: var(--primary);
+    padding-left: 0.5rem;
+    background: transparent;
   }
 
   .booking-shell {
@@ -1458,7 +1693,7 @@ textarea {
   
   .split-heading {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
   }
   
   .faq-layout {
@@ -1499,13 +1734,12 @@ textarea {
   }
   
   .header-tools {
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 0.5rem;
+    width: auto;
+    margin-left: auto;
   }
   
   .site-header {
-    position: static;
+    position: sticky;
   }
 }
 
@@ -1521,5 +1755,13 @@ textarea {
 
   .calendar-legend {
     gap: 0.75rem;
+  }
+  
+  .header-inner {
+    padding: 0.5rem 0;
+  }
+  
+  .accessibility-tools {
+    display: none; /* Hide access tools on very small screens to fit layout */
   }
 }

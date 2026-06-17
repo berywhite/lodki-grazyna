@@ -40,14 +40,13 @@
           <span class="brand-text">Przystań Grażyna</span>
         </a>
 
-        <nav class="main-nav" aria-label="Główna nawigacja">
+        <nav class="main-nav" aria-label="Główna nawigacja" id="main-nav">
           <a href="#offer" data-i18n="navOffer">Oferta</a>
           <a href="#virtual-tours" data-i18n="navTours">Spacery 360°</a>
           <a href="#reservation" data-i18n="navReservations">Rezerwacje</a>
           <a href="#news" data-i18n="navNews">Aktualności</a>
           <a href="#faq" data-i18n="navFaq">FAQ</a>
           <a href="#contact" data-i18n="navContact">Kontakt</a>
-          <a href="#admin" data-i18n="navAdmin">Admin</a>
         </nav>
 
         <div class="header-tools">
@@ -59,6 +58,12 @@
             <button class="lang-button is-active" type="button" data-lang="pl">PL</button>
             <button class="lang-button" type="button" data-lang="en">EN</button>
           </div>
+          <!-- Hamburger menu trigger -->
+          <button class="mobile-menu-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
       </div>
     </header>
@@ -445,8 +450,13 @@
     <!-- Site Footer -->
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>&copy; <span id="year"></span> Przystań Grażyna</p>
-        <p data-i18n="footerText">Przystań Grażyna – Luksusowy wynajem przyczep kempingowych i łodzi motorowych na Mazurach.</p>
+        <div>
+          <p>&copy; <span id="year"></span> Przystań Grażyna</p>
+          <p class="footer-desc" data-i18n="footerText">Przystań Grażyna – Luksusowy wynajem przyczep kempingowych i łodzi motorowych na Mazurach.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#admin" class="footer-admin-link" data-i18n="navAdmin">Admin</a>
+        </div>
       </div>
     </footer>
 
