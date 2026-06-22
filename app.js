@@ -8,7 +8,7 @@ const products = [
       pl: "Bliźniacza przyczepa Classic idealna dla par lub rodzin 2+2. Posiada w pełni wyposażony aneks kuchenny, klimatyzację, ogrzewanie gazowe, osobną sypialnię oraz łazienkę z prysznicem.",
       en: "Classic twin caravan perfect for couples or 2+2 families. Features a fully equipped kitchenette, air conditioning, gas heating, separate bedroom, and a bathroom with shower."
     },
-    image: "assets/classic_camper.png",
+    image: "assets/caravan_1.jpg",
     tourImage: "assets/panorama_classic.png",
     priceLow: 250,
     priceHigh: 350,
@@ -26,7 +26,7 @@ const products = [
       pl: "Druga z naszych bliźniaczych przyczep Classic. Oferuje ten sam wysoki standard wykończenia i przytulny układ wnętrza. Posiada oddzielny kalendarz rezerwacji dla Twojej wygody.",
       en: "The second of our twin Classic caravans. Offers the same high standard of finishing and cozy layout. Features a separate booking calendar for your convenience."
     },
-    image: "assets/classic_camper.png",
+    image: "assets/caravan_1.jpg",
     tourImage: "assets/panorama_classic.png",
     priceLow: 250,
     priceHigh: 350,
@@ -44,7 +44,7 @@ const products = [
       pl: "Przestronna przyczepa klasy premium przeznaczona dla większych rodzin. Wyposażona w zaawansowane ogrzewanie zimowe Alde, klimatyzację, piekarnik, przestronną lodówkę, zasilanie solarne oraz dużą markizę.",
       en: "Spacious premium-class caravan designed for larger families. Features advanced Alde winter heating, air conditioning, oven, large refrigerator, solar power, and a spacious awning."
     },
-    image: "assets/family_camper.png",
+    image: "assets/caravan_2.jpg",
     tourImage: "assets/panorama_family.png",
     priceLow: 320,
     priceHigh: 450,
@@ -92,12 +92,12 @@ const products = [
 const news = [
   {
     date: { pl: "17 Czerwca 2026", en: "June 17, 2026" },
-    title: { pl: "Nowe logo i wizerunek Przystani Grażyna", en: "New logo and identity of Przystań Grażyna" },
+    title: { pl: "Nowe logo i wizerunek Eco Camp", en: "New logo and identity of Eco Camp" },
     text: {
-      pl: "Z przyjemnością prezentujemy naszą nową identyfikację wizualną! Nowe logo łączy motyw leśny z bliskością wody i symbolem żeglarskim, odzwierciedlając luksusowy charakter naszej floty przyczep i łodzi.",
-      en: "We are thrilled to present our new brand identity! The new logo blends forest motifs, proximity to water, and sailing symbols, reflecting the premium nature of our caravans and boats."
+      pl: "Z przyjemnością prezentujemy naszą nową identyfikację wizualną! Nowe logo łączy motyw leśny z bliskością wody i symbolem kempingu, odzwierciedlając ekologiczny i nowoczesny charakter naszej floty przyczep i łodzi.",
+      en: "We are thrilled to present our new brand identity! The new logo blends forest motifs, proximity to water, and camping symbols, reflecting the eco-friendly and premium nature of our caravans and boats."
     },
-    image: "assets/news_logo.png"
+    image: "assets/logo.png"
   },
   {
     date: { pl: "12 Czerwca 2026", en: "June 12, 2026" },
@@ -168,7 +168,7 @@ const translations = {
     navAdmin: "Admin",
     fontToggle: "A+",
     contrastToggle: "Kontrast",
-    heroEyebrow: "Grażyna • Wynajem Przyczep & Łodzi",
+    heroEyebrow: "Eco Camp • Wynajem Przyczep & Łodzi",
     heroTitle: "Luksusowy wypoczynek nad wodą, na Twoich zasadach.",
     heroLead: "Wybierz luksusową przyczepę kempingową lub szybką łódź motorową na Mazurach. Zaznacz zakres dat na interaktywnym kalendarzu i prześlij zapytanie. Rezerwację potwierdzamy ręcznie, bez zbędnych pośredników i prowizji.",
     heroPrimary: "Zarezerwuj teraz",
@@ -211,7 +211,7 @@ const translations = {
     sendRequest: "Wyślij zapytanie rezerwacyjne",
     formSent: "Dziękujemy! Zapytanie rezerwacyjne zostało wysłane. Sprawdź swoją skrzynkę e-mail w celu dalszych instrukcji.",
     bankHeading: "Dane do wpłaty zadatku (Wariant A)",
-    bankText: "Przystań Grażyna, Bank Spółdzielczy<br>Numer konta: <strong>84 1020 4902 0000 9202 1234 5678</strong><br>Tytuł przelewu: Zadatek za rezerwację [Twoje Imię i Nazwisko]<br>Kwota zadatku: 30% wartości rezerwacji.",
+    bankText: "Eco Camp, Bank Spółdzielczy<br>Numer konta: <strong>84 1020 4902 0000 9202 1234 5678</strong><br>Tytuł przelewu: Zadatek za rezerwację [Twoje Imię i Nazwisko]<br>Kwota zadatku: 30% wartości rezerwacji.",
     legendAvailable: "Dostępne",
     legendBooked: "Zajęte",
     legendSelected: "Twój wybór",
@@ -241,7 +241,7 @@ const translations = {
     rodoHeading: "Klauzula RODO",
     rodoText: "Spełnienie obowiązku informacyjnego zgodnie z RODO przy wysyłaniu formularza kontaktowego i rezerwacyjnego.",
     contactEyebrow: "Napisz do nas",
-    contactTitle: "Skontaktuj się z Grażyną",
+    contactTitle: "Skontaktuj się z Eco Camp",
     contactText: "Masz pytania dotyczące sprzętu? Chcesz zarezerwować nietypowy termin? Zadzwoń do nas, napisz e-mail lub skontaktuj się przez nasz profil na Facebooku.",
     contactCta: "Zadzwoń: +48 501 234 567",
     facebookLink: "Odwiedź nas na Facebooku",
@@ -257,7 +257,7 @@ const translations = {
     resetDemo: "Zresetuj dane (Przywróć demo)",
     adminSaved: "Dostępność została zaktualizowana pomyślnie.",
     demoReset: "Dane testowe zostały przywrócone.",
-    footerText: "Przystań Grażyna – Luksusowy wynajem przyczep kempingowych i łodzi motorowych na Mazurach.",
+    footerText: "Eco Camp – Luksusowy wynajem przyczep kempingowych i łodzi motorowych na Mazurach.",
     pricePlaceholder: "Zaznacz zakres dat na kalendarzu powyżej, aby zobaczyć wycenę.",
     adminPinLabel: "Wpisz kod PIN właściciela (domyślny: 1234)",
     adminUnlockBtn: "Odblokuj Panel",
@@ -293,7 +293,7 @@ const translations = {
     navAdmin: "Admin",
     fontToggle: "A+",
     contrastToggle: "Contrast",
-    heroEyebrow: "Grażyna • Caravan & Boat Rental",
+    heroEyebrow: "Eco Camp • Caravan & Boat Rental",
     heroTitle: "Luxury lakeside vacation, on your terms.",
     heroLead: "Choose a premium caravan or a fast motorboat in Masuria, Poland. Mark your dates on the interactive calendar and send a request. Bookings are confirmed manually, with zero agency fees or commissions.",
     heroPrimary: "Book Now",
@@ -336,7 +336,7 @@ const translations = {
     sendRequest: "Send Booking Request",
     formSent: "Thank you! Your booking request has been sent. Please check your email for further instructions.",
     bankHeading: "Deposit Payment Details (Variant A)",
-    bankText: "Przystań Grażyna, Co-operative Bank<br>Account number: <strong>84 1020 4902 0000 9202 1234 5678</strong><br>Transfer Title: Deposit for reservation [Your Name]<br>Deposit amount: 30% of total booking value.",
+    bankText: "Eco Camp, Co-operative Bank<br>Account number: <strong>84 1020 4902 0000 9202 1234 5678</strong><br>Transfer Title: Deposit for reservation [Your Name]<br>Deposit amount: 30% of total booking value.",
     legendAvailable: "Available",
     legendBooked: "Booked",
     legendSelected: "Your Choice",
@@ -366,7 +366,7 @@ const translations = {
     rodoHeading: "GDPR Clause",
     rodoText: "Fulfillment of informational duties under GDPR required for contact forms and inquiries.",
     contactEyebrow: "Write to us",
-    contactTitle: "Get in touch with Grażyna",
+    contactTitle: "Get in touch with Eco Camp",
     contactText: "Have questions about the equipment? Need to book custom dates? Call us, send an email, or message us on Facebook.",
     contactCta: "Call us: +48 501 234 567",
     facebookLink: "Follow us on Facebook",
@@ -382,7 +382,7 @@ const translations = {
     resetDemo: "Reset Data (Restore Demo)",
     adminSaved: "Availability has been updated successfully.",
     demoReset: "Demo data has been restored.",
-    footerText: "Przystań Grażyna – Premium caravan & motorboat rental in Masuria, Poland.",
+    footerText: "Eco Camp – Premium caravan & motorboat rental in Masuria, Poland.",
     pricePlaceholder: "Mark a date range on the calendar above to view pricing.",
     adminPinLabel: "Enter Owner PIN (default: 1234)",
     adminUnlockBtn: "Unlock Dashboard",
@@ -420,7 +420,7 @@ let endDate = null;
 let active360Viewers = {};
 
 let availability = loadAvailability();
-let isAdminUnlocked = sessionStorage.getItem("grazynaAdminUnlocked") === "true";
+let isAdminUnlocked = sessionStorage.getItem("ecocampAdminUnlocked") === "true";
 
 function formatDate(date) {
   const year = date.getFullYear();
@@ -1081,7 +1081,7 @@ function renderAdminPanel() {
       
       if (pin === "1234") {
         isAdminUnlocked = true;
-        sessionStorage.setItem("grazynaAdminUnlocked", "true");
+        sessionStorage.setItem("ecocampAdminUnlocked", "true");
         renderAdminPanel();
       } else {
         errorEl.textContent = translations[currentLang].adminIncorrectPin;
@@ -1232,7 +1232,7 @@ function renderAdminPanel() {
     // Logout handler
     document.querySelector("#admin-logout-btn")?.addEventListener("click", () => {
       isAdminUnlocked = false;
-      sessionStorage.removeItem("grazynaAdminUnlocked");
+      sessionStorage.removeItem("ecocampAdminUnlocked");
       renderAdminPanel();
     });
   }

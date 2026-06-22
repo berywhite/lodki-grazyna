@@ -809,11 +809,11 @@ h3 {
 }
 
 .tour-one {
-  background-image: linear-gradient(rgba(10, 28, 24, 0.4), rgba(10, 28, 24, 0.4)), url('assets/classic_camper.png');
+  background-image: linear-gradient(rgba(10, 28, 24, 0.4), rgba(10, 28, 24, 0.4)), url('assets/caravan_1.jpg');
 }
 
 .tour-two {
-  background-image: linear-gradient(rgba(10, 28, 24, 0.4), rgba(10, 28, 24, 0.4)), url('assets/family_camper.png');
+  background-image: linear-gradient(rgba(10, 28, 24, 0.4), rgba(10, 28, 24, 0.4)), url('assets/caravan_2.jpg');
 }
 
 .tour-play {
