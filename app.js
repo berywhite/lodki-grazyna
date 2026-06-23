@@ -173,6 +173,7 @@ const translations = {
     heroLead: "Wybierz luksusową przyczepę kempingową lub szybką łódź motorową na Mazurach. Zaznacz zakres dat na interaktywnym kalendarzu i prześlij zapytanie. Rezerwację potwierdzamy ręcznie, bez zbędnych pośredników i prowizji.",
     heroPrimary: "Zarezerwuj teraz",
     heroSecondary: "Zobacz ofertę",
+    heroSearchBtn: "Sprawdź dostępność",
     statTrailers: "luksusowe przyczepy",
     statBoats: "łodzie motorowe",
     statTours: "spacery 360°",
@@ -298,6 +299,7 @@ const translations = {
     heroLead: "Choose a premium caravan or a fast motorboat in Masuria, Poland. Mark your dates on the interactive calendar and send a request. Bookings are confirmed manually, with zero agency fees or commissions.",
     heroPrimary: "Book Now",
     heroSecondary: "View Fleet",
+    heroSearchBtn: "Check Availability",
     statTrailers: "luxury caravans",
     statBoats: "motorboats",
     statTours: "360° virtual tours",
@@ -548,8 +550,19 @@ function translatePage() {
   populateSelects();
   renderSelectedProduct();
   updatePriceDisplay();
-  renderCalendar();
   renderAdminPanel();
+  renderCalendar();
+  
+  // Translate calendar weekdays dynamically
+  const weekdaysPl = ["Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Nd"];
+  const weekdaysEn = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const weekdays = currentLang === "pl" ? weekdaysPl : weekdaysEn;
+  document.querySelectorAll(".calendar-weekdays span").forEach((span, index) => {
+    if (weekdays[index]) span.textContent = weekdays[index];
+  });
+
+  // Re-initialize Scroll Reveal to observe newly rendered dynamic cards
+  initScrollReveal();
 }
 
 function getSpecIcon(spec) {
@@ -596,14 +609,16 @@ function getSpecIcon(spec) {
 function renderProducts() {
   const list = document.querySelector("#product-list");
   list.innerHTML = products
-    .map((product) => {
+    .map((product, index) => {
       const isCamper = product.type === "camper";
       const specsHtml = product.specs[currentLang]
         .map((spec) => `<li>${getSpecIcon(spec)} <span>${spec}</span></li>`)
         .join("");
         
+      const delayClass = index % 3 === 0 ? "" : (index % 3 === 1 ? "delay-100" : "delay-200");
+        
       return `
-        <article class="product-card" id="card-${product.id}">
+        <article class="product-card reveal ${delayClass}" id="card-${product.id}">
           <div class="product-image-container">
             <img class="product-image" src="${product.image}" alt="${translations[currentLang].productImage}: ${product.title[currentLang]}" loading="lazy">
             <span class="product-badge ${isCamper ? 'badge-camper' : 'badge-boat'}">
@@ -659,8 +674,10 @@ function renderProducts() {
 function renderNews() {
   document.querySelector("#news-list").innerHTML = news
     .map(
-      (item) => `
-        <article class="news-card">
+      (item, index) => {
+        const delayClass = index % 3 === 0 ? "" : (index % 3 === 1 ? "delay-100" : "delay-200");
+        return `
+          <article class="news-card reveal ${delayClass}">
           ${item.image ? `
             <div class="news-image-container">
               <img src="${item.image}" alt="${item.title[currentLang]}" loading="lazy">
@@ -674,7 +691,8 @@ function renderNews() {
             <p>${item.text[currentLang]}</p>
           </div>
         </article>
-      `
+      `;
+      }
     )
     .join("");
 }
@@ -1325,6 +1343,9 @@ document.querySelector("#reservation-form").addEventListener("submit", (event) =
   statusEl.textContent = translations[currentLang].formSent;
   statusEl.className = "status-message success";
   
+  // Celebrate booking success!
+  triggerConfetti();
+  
   event.currentTarget.reset();
   
   startDate = null;
@@ -1408,3 +1429,109 @@ if (header) {
 // App Initialization
 document.querySelector("#year").textContent = new Date().getFullYear();
 translatePage();
+
+// ==========================================================================
+// Visual and UX Upgrades Functions
+// ==========================================================================
+
+function animateStats() {
+  const statsElements = document.querySelectorAll(".hero-stats dt");
+  statsElements.forEach((dt) => {
+    // Avoid double-running animations
+    if (dt.classList.contains("animating")) return;
+    dt.classList.add("animating");
+
+    const originalText = dt.textContent.trim();
+    const targetValue = parseInt(originalText.replace(/[^0-9]/g, ""), 10);
+    if (isNaN(targetValue)) {
+      dt.classList.remove("animating");
+      return;
+    }
+    
+    const suffix = originalText.replace(/[0-9]/g, ""); // e.g. "°" or empty
+    const duration = 2000; // 2 seconds
+    const startTime = performance.now();
+    
+    function updateNumber(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Ease out quad
+      const easeProgress = progress * (2 - progress);
+      const currentValue = Math.floor(easeProgress * targetValue);
+      
+      dt.textContent = currentValue + suffix;
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateNumber);
+      } else {
+        dt.textContent = originalText;
+        dt.classList.remove("animating");
+      }
+    }
+    
+    requestAnimationFrame(updateNumber);
+  });
+}
+
+function initScrollReveal() {
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px 0px -10% 0px", // Trigger when elements are 10% in view
+    threshold: 0.05
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        
+        // Trigger stats counter if this is the stats container
+        if (entry.target.classList.contains("hero-stats")) {
+          animateStats();
+        }
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".reveal").forEach((el) => {
+    observer.observe(el);
+  });
+}
+
+function triggerConfetti() {
+  const colors = ["#0c3a2e", "#d97706", "#f59e0b", "#e6f0ed", "#ffffff"];
+  const particleCount = 80;
+  const container = document.body;
+  
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement("div");
+    particle.className = "confetti-particle";
+    
+    const size = Math.random() * 8 + 6; // 6px to 14px
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.left = `${Math.random() * 100}vw`;
+    particle.style.top = `${-Math.random() * 20 - 10}px`;
+    
+    const duration = Math.random() * 1.5 + 1.5; // 1.5s to 3s
+    const delay = Math.random() * 0.5; // 0s to 0.5s
+    particle.style.animationDuration = `${duration}s`;
+    particle.style.animationDelay = `${delay}s`;
+    
+    const rotation = Math.random() * 360;
+    const drift = Math.random() * 120 - 60; // -60px to 60px
+    
+    particle.style.transform = `rotate(${rotation}deg)`;
+    particle.style.setProperty("--drift", `${drift}px`);
+    
+    container.appendChild(particle);
+    
+    setTimeout(() => {
+      particle.remove();
+    }, (duration + delay) * 1000);
+  }
+}

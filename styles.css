@@ -365,19 +365,19 @@ textarea {
 .language-switcher {
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 2px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.6);
-  padding: 0.25rem;
+  border-radius: 6px;
+  background: var(--surface-muted);
+  padding: 2px;
 }
 
 .tool-button,
 .lang-button {
   min-width: 38px;
-  height: 38px;
-  padding: 0 0.5rem;
-  border: 0;
+  height: 34px;
+  padding: 0 0.75rem;
+  border: none;
   border-radius: 4px;
   background: transparent;
   color: var(--muted);
@@ -388,11 +388,16 @@ textarea {
 }
 
 .lang-button.is-active,
-.tool-button.is-active,
-.lang-button:hover,
-.tool-button:hover {
+.tool-button.is-active {
   background: var(--primary);
   color: white;
+  box-shadow: 0 2px 6px rgba(12, 58, 46, 0.08);
+}
+
+.lang-button:hover:not(.is-active),
+.tool-button:hover:not(.is-active) {
+  background: rgba(12, 58, 46, 0.05);
+  color: var(--primary);
 }
 
 /* Premium Hero Section */
@@ -1871,16 +1876,16 @@ body.high-contrast .news-card {
 /* Hero Quick Booking Bar */
 .hero-booking-bar {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr auto;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
   align-items: flex-end;
   gap: 1.25rem;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(12, 58, 46, 0.35); /* Translucent dark forest green */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 1.5rem;
   border-radius: var(--radius);
-  box-shadow: 0 20px 40px rgba(12, 58, 46, 0.08);
+  box-shadow: 0 24px 60px rgba(10, 28, 24, 0.35);
   margin-top: 3.5rem;
   width: 100%;
   max-width: 900px;
@@ -1898,36 +1903,68 @@ body.high-contrast .news-card {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--primary);
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.85); /* White text for contrast on dark glass */
 }
 
 .booking-field select,
 .booking-field input {
   width: 100%;
   height: 48px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: rgba(10, 28, 24, 0.6); /* Cohesive dark background */
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
   padding: 0 1rem;
   font-size: 0.9rem;
-  color: var(--text);
+  color: #ffffff; /* White text for input values */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-field select option {
+  background: #0a251e; /* Keep option dropdown list readable */
+  color: #ffffff;
 }
 
 .booking-field select:focus,
 .booking-field input:focus {
-  border-color: var(--primary);
+  border-color: var(--accent); /* Highlight with orange accent */
   outline: none;
-  box-shadow: 0 0 0 3px rgba(12, 58, 46, 0.1);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.25);
+}
+
+.hero-booking-bar input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Invert calendar icon to be white */
+  cursor: pointer;
+}
+
+/* High Contrast mode overrides for Booking Bar elements */
+body.high-contrast .hero-booking-bar .booking-field label {
+  color: #000000;
+}
+
+body.high-contrast .hero-booking-bar .booking-field select,
+body.high-contrast .hero-booking-bar .booking-field input {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+body.high-contrast .hero-booking-bar select option {
+  background: #ffffff;
+  color: #000000;
+}
+
+body.high-contrast .hero-booking-bar input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: none;
 }
 
 #hero-booking-search-btn {
   height: 48px;
   min-height: 48px;
-  padding: 0 1.75rem;
+  width: 100%;
+  padding: 0 1.5rem;
   margin: 0;
   white-space: nowrap;
+  border-radius: var(--radius-sm);
 }
 
 /* Animations */
@@ -2124,34 +2161,35 @@ body.high-contrast .hero-booking-bar {
   color: #ffffff;
 }
 
-.site-header .accessibility-tools .tool-button {
-  color: rgba(255, 255, 255, 0.82);
-  border-color: rgba(255, 255, 255, 0.25);
+.site-header:not(.is-scrolled) .accessibility-tools,
+.site-header:not(.is-scrolled) .language-switcher {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.site-header:not(.is-scrolled) .accessibility-tools .tool-button,
+.site-header:not(.is-scrolled) .language-switcher .lang-button {
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  border: none;
+}
+
+.site-header:not(.is-scrolled) .accessibility-tools .tool-button:hover:not(.is-active),
+.site-header:not(.is-scrolled) .language-switcher .lang-button:hover:not(.is-active) {
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
 }
 
-.site-header .accessibility-tools .tool-button:hover,
-.site-header .accessibility-tools .tool-button.is-active {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.2);
-  border-color: #ffffff;
-}
-
-.site-header .language-switcher .lang-button {
-  color: rgba(255, 255, 255, 0.82);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.site-header .language-switcher .lang-button:hover {
+.site-header:not(.is-scrolled) .accessibility-tools .tool-button.is-active {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.2);
 }
 
-.site-header .language-switcher .lang-button.is-active {
+.site-header:not(.is-scrolled) .language-switcher .lang-button.is-active {
   color: #ffffff;
   background: var(--accent);
-  border-color: var(--accent);
 }
 
 .site-header .mobile-menu-toggle {
@@ -2189,34 +2227,33 @@ body.high-contrast .hero-booking-bar {
   color: var(--primary);
 }
 
-.site-header.is-scrolled .accessibility-tools .tool-button {
-  color: var(--muted);
-  border-color: var(--border);
-  background: var(--surface);
+.site-header.is-scrolled .accessibility-tools,
+.site-header.is-scrolled .language-switcher {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
-.site-header.is-scrolled .accessibility-tools .tool-button:hover,
-.site-header.is-scrolled .accessibility-tools .tool-button.is-active {
-  color: var(--primary);
-  border-color: var(--primary);
-  background: var(--surface-muted);
-}
-
+.site-header.is-scrolled .accessibility-tools .tool-button,
 .site-header.is-scrolled .language-switcher .lang-button {
   color: var(--muted);
-  background: var(--surface);
-  border-color: var(--border);
+  background: transparent;
+  border: none;
 }
 
-.site-header.is-scrolled .language-switcher .lang-button:hover {
+.site-header.is-scrolled .accessibility-tools .tool-button:hover:not(.is-active),
+.site-header.is-scrolled .language-switcher .lang-button:hover:not(.is-active) {
   color: var(--primary);
-  background: var(--surface-muted);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.site-header.is-scrolled .accessibility-tools .tool-button.is-active {
+  color: #ffffff;
+  background: var(--primary);
 }
 
 .site-header.is-scrolled .language-switcher .lang-button.is-active {
   color: #ffffff;
   background: var(--accent);
-  border-color: var(--accent);
 }
 
 .site-header.is-scrolled .mobile-menu-toggle {
@@ -2239,3 +2276,136 @@ body.high-contrast .hero-booking-bar {
     color: var(--primary) !important;
   }
 }
+
+/* ==========================================================================
+   Interactive Visual Upgrades & Micro-animations
+   ========================================================================== */
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Delay classes */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+
+/* Premium Card Hover Glows */
+.product-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.product-card[id*="camper"]:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 24px 48px rgba(12, 58, 46, 0.16), 0 0 0 1px rgba(12, 58, 46, 0.04);
+}
+
+.product-card[id*="boat"]:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 24px 48px rgba(217, 119, 6, 0.16), 0 0 0 1px rgba(217, 119, 6, 0.04);
+}
+
+/* Step Card Scaling & Hover Glow */
+.step-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(12, 58, 46, 0.08);
+}
+
+.step-index {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.4s ease, color 0.4s ease;
+}
+
+.step-card:hover .step-index {
+  transform: scale(1.1) translateY(-2px);
+  text-shadow: 0 0 10px rgba(217, 119, 6, 0.3);
+}
+
+/* Tour Card Interactive Zoom */
+.tour-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+.tour-placeholder-bg {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tour-card:hover .tour-placeholder-bg {
+  transform: scale(1.05);
+}
+
+.tour-play {
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour-play:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 36px rgba(12, 58, 46, 0.4);
+}
+
+/* News Card Glows */
+.news-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 24px 48px rgba(12, 58, 46, 0.12);
+}
+
+/* Confetti particles */
+.confetti-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform, opacity;
+  animation: confetti-fall 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-20px) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh) translateX(var(--drift, 0px)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Dark section primary button visibility upgrade */
+.dark-section .button.primary {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+.dark-section .button.primary:hover {
+  background: #b45309 !important;
+  border-color: #b45309 !important;
+  box-shadow: 0 12px 36px rgba(217, 119, 6, 0.4) !important;
+}
+

@@ -97,10 +97,10 @@
               <label for="hero-end-date" data-i18n="fieldEndDate">Data zakończenia (Do)</label>
               <input type="date" id="hero-end-date">
             </div>
-            <button type="button" class="button primary" id="hero-booking-search-btn" data-i18n="heroPrimary">Zarezerwuj teraz</button>
+            <button type="button" class="button primary" id="hero-booking-search-btn" data-i18n="heroSearchBtn">Sprawdź dostępność</button>
           </div>
           
-          <dl class="hero-stats" aria-label="Statystyki przystani">
+          <dl class="hero-stats reveal" aria-label="Statystyki przystani">
             <div>
               <dt>3</dt>
               <dd data-i18n="statTrailers">luksusowe przyczepy</dd>
@@ -120,17 +120,17 @@
       <!-- Three-step Process Section -->
       <section class="section compact-section" aria-label="Jak działa rezerwacja">
         <div class="container steps-grid">
-          <article class="step-card">
+          <article class="step-card reveal">
             <span class="step-index">01</span>
             <h2 data-i18n="stepOneTitle">1. Wybierz sprzęt</h2>
             <p data-i18n="stepOneText">Wybierz komfortową przyczepę dla rodziny lub zwrotną łódź motorową.</p>
           </article>
-          <article class="step-card">
+          <article class="step-card reveal delay-100">
             <span class="step-index">02</span>
             <h2 data-i18n="stepTwoTitle">2. Zaznacz zakres dat</h2>
             <p data-i18n="stepTwoText">Kliknij na kalendarzu dzień początkowy (od) oraz końcowy (do).</p>
           </article>
-          <article class="step-card">
+          <article class="step-card reveal delay-200">
             <span class="step-index">03</span>
             <h2 data-i18n="stepThreeTitle">3. Odbierz i wypoczywaj</h2>
             <p data-i18n="stepThreeText">Wpłać 30% zadatku przelewem, a my przygotujemy wszystko na Twój przyjazd.</p>
@@ -141,7 +141,7 @@
       <!-- Offer Grid Section -->
       <section class="section" id="offer" aria-labelledby="offer-title">
         <div class="container">
-          <div class="section-heading split-heading">
+          <div class="section-heading split-heading reveal">
             <div>
               <p class="eyebrow" data-i18n="offerEyebrow">Nasza Flota</p>
               <h2 id="offer-title" data-i18n="offerTitle">Wybierz swój idealny sprzęt na wakacje</h2>
@@ -159,7 +159,7 @@
       <!-- Virtual 360 Tours Section -->
       <section class="section dark-section" id="virtual-tours" aria-labelledby="tours-title">
         <div class="container">
-          <div class="section-heading split-heading">
+          <div class="section-heading split-heading reveal">
             <div>
               <p class="eyebrow" data-i18n="toursEyebrow">Wirtualne Zwiedzanie</p>
               <h2 id="tours-title" data-i18n="toursTitle">Wejdź do środka bez wychodzenia z domu</h2>
@@ -169,7 +169,7 @@
             </p>
           </div>
           <div class="tour-grid">
-            <article class="tour-card">
+            <article class="tour-card reveal">
               <div class="tour-preview" id="tour-classic-viewer">
                 <div class="tour-placeholder-bg tour-one">
                   <button class="tour-play button primary" type="button" onclick="loadTour('classic')" data-i18n="tourPlayBtn">Uruchom spacer 360°</button>
@@ -180,7 +180,7 @@
                 <p data-i18n="tourClassicText">Wirtualny spacer po wnętrzu przyczepy Classic 1 & 2. Zobacz układ sypialni, aneksu i łazienki.</p>
               </div>
             </article>
-            <article class="tour-card">
+            <article class="tour-card reveal delay-100">
               <div class="tour-preview" id="tour-family-viewer">
                 <div class="tour-placeholder-bg tour-two">
                   <button class="tour-play button primary" type="button" onclick="loadTour('family')" data-i18n="tourPlayBtn">Uruchom spacer 360°</button>
@@ -198,7 +198,7 @@
       <!-- Booking Section (Calendar & Form) -->
       <section class="section" id="reservation" aria-labelledby="reservation-title">
         <div class="container">
-          <div class="section-heading split-heading">
+          <div class="section-heading split-heading reveal">
             <div>
               <p class="eyebrow" data-i18n="reservationEyebrow">Kalendarz i Formularz</p>
               <h2 id="reservation-title" data-i18n="reservationTitle">Sprawdź dostępność i zarezerwuj</h2>
@@ -208,7 +208,7 @@
             </p>
           </div>
 
-          <div class="booking-shell">
+          <div class="booking-shell reveal">
             <aside class="booking-panel" aria-label="Wybór rezerwacji">
               <label>
                 <span data-i18n="fieldProduct">Wybierz przyczepę lub łódź</span>
@@ -304,7 +304,7 @@
       <!-- Pricing Info Section -->
       <section class="section muted" id="prices" aria-labelledby="prices-title">
         <div class="container">
-          <div class="section-heading split-heading">
+          <div class="section-heading split-heading reveal">
             <div>
               <p class="eyebrow" data-i18n="pricesEyebrow">Przejrzysty Cennik</p>
               <h2 id="prices-title" data-i18n="pricesTitle">Ceny za dobę w zależności od sezonu</h2>
@@ -314,17 +314,17 @@
             </p>
           </div>
           <div class="price-grid">
-            <article class="price-card">
+            <article class="price-card reveal">
               <span data-i18n="priceCamperType">Przyczepy kempingowe</span>
               <strong>od 250 zł / doba</strong>
               <p data-i18n="priceCamperText">Classic: 250 zł (niski) / 350 zł (wysoki) za dobę.<br>Family: 320 zł (niski) / 450 zł (wysoki) za dobę.<br>Minimalny wynajem: 3 doby. Kaucja zwrotna.</p>
             </article>
-            <article class="price-card featured">
+            <article class="price-card featured reveal delay-100">
               <span data-i18n="priceDepositType">Zadatek rezerwacyjny</span>
               <strong data-i18n="priceDepositValue">30% ceny pobytu</strong>
               <p data-i18n="priceDepositText">Płatny przelewem tradycyjnym lub BLIKem na telefon w ciągu 24h od ręcznego potwierdzenia terminu.</p>
             </article>
-            <article class="price-card">
+            <article class="price-card reveal delay-200">
               <span data-i18n="priceBoatType">Łodzie motorowe</span>
               <strong>od 450 zł / dzień</strong>
               <p data-i18n="priceBoatText">Classic (50 HP): 450 zł (niski) / 600 zł (wysoki) za dzień.<br>Premium (150 HP): 600 zł (niski) / 800 zł (wysoki) za dzień.<br>Wynajem całodniowy. Kaucja zwrotna.</p>
@@ -336,7 +336,7 @@
       <!-- Blog / News Section -->
       <section class="section" id="news" aria-labelledby="news-title">
         <div class="container">
-          <div class="section-heading split-heading">
+          <div class="section-heading split-heading reveal">
             <div>
               <p class="eyebrow" data-i18n="newsEyebrow">Wiadomości</p>
               <h2 id="news-title" data-i18n="newsTitle">Aktualności z przystani</h2>
@@ -351,7 +351,7 @@
 
       <!-- Accordion FAQ Section -->
       <section class="section muted" id="faq" aria-labelledby="faq-title">
-        <div class="container faq-layout">
+        <div class="container faq-layout reveal">
           <div>
             <p class="eyebrow" data-i18n="faqEyebrow">Pomoc</p>
             <h2 id="faq-title" data-i18n="faqTitle">Często zadawane pytania (FAQ)</h2>
@@ -365,7 +365,7 @@
       <!-- Legal / Documents Section -->
       <section class="section" id="rules" aria-labelledby="rules-title">
         <div class="container">
-          <div class="section-heading split-heading">
+          <div class="section-heading split-heading reveal">
             <div>
               <p class="eyebrow" data-i18n="rulesEyebrow">Dokumenty prawne</p>
               <h2 id="rules-title" data-i18n="rulesTitle">Regulaminy i bezpieczeństwo danych</h2>
@@ -373,17 +373,17 @@
             <p data-i18n="rulesLead">Poniżej znajdziesz komplet dokumentów regulujących zasady wynajmu naszego sprzętu oraz politykę bezpieczeństwa danych osobowych (RODO).</p>
           </div>
           <div class="legal-grid">
-            <article class="info-panel">
+            <article class="info-panel reveal">
               <h3 data-i18n="rulesHeading">Regulamin Wynajmu</h3>
               <p data-i18n="rulesText">Zasady rezerwacji, warunki odbioru i zwrotu, obowiązki najemcy, kwestie kaucji i ubezpieczenia sprzętu.</p>
               <a href="#" class="btn-text-link" onclick="alert('Regulamin PDF pobieranie (mock)...'); return false;">Pobierz Regulamin (PDF) &rarr;</a>
             </article>
-            <article class="info-panel">
+            <article class="info-panel reveal delay-100">
               <h3 data-i18n="privacyHeading">Polityka Prywatności</h3>
               <p data-i18n="privacyText">Informacje o administratorze danych osobowych, celach przetwarzania, plikach cookies oraz prawach użytkownika.</p>
               <a href="#" class="btn-text-link" onclick="alert('Polityka Prywatności PDF pobieranie (mock)...'); return false;">Pobierz Politykę (PDF) &rarr;</a>
             </article>
-            <article class="info-panel">
+            <article class="info-panel reveal delay-200">
               <h3 data-i18n="rodoHeading">Klauzula RODO</h3>
               <p data-i18n="rodoText">Spełnienie obowiązku informacyjnego zgodnie z RODO przy wysyłaniu formularza kontaktowego i rezerwacyjnego.</p>
               <a href="#" class="btn-text-link" onclick="alert('Klauzula RODO PDF pobieranie (mock)...'); return false;">Pobierz RODO (PDF) &rarr;</a>
@@ -394,7 +394,7 @@
 
       <!-- Contact Section -->
       <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="container contact-layout">
+        <div class="container contact-layout reveal">
           <div class="contact-details-box">
             <p class="eyebrow" data-i18n="contactEyebrow">Napisz do nas</p>
             <h2 id="contact-title" data-i18n="contactTitle">Skontaktuj się z Grażyną</h2>
@@ -449,7 +449,7 @@
       </section>
 
       <!-- Dynamic Owner Admin Dashboard Section -->
-      <section class="section admin-section" id="admin" aria-labelledby="admin-title">
+      <section class="section admin-section reveal" id="admin" aria-labelledby="admin-title">
         <div class="container">
           <div class="section-heading split-heading">
             <div>
