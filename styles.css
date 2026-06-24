@@ -2409,3 +2409,127 @@ body.high-contrast .hero-booking-bar {
   box-shadow: 0 12px 36px rgba(217, 119, 6, 0.4) !important;
 }
 
+/* =========================================
+   EU PROJECT SECTION
+   ========================================= */
+
+.eu-project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .eu-project-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.eu-project-description p {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.eu-project-facts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.eu-fact-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.25rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.eu-fact-item:hover { background: rgba(255,255,255,0.12); }
+
+.eu-fact-item dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.eu-fact-item dd {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.eu-logos-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.eu-logos-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #444;
+  text-align: center;
+  font-weight: 600;
+  margin: 0;
+}
+
+.eu-logos-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   EU FOOTER BAR
+   ========================================= */
+
+.eu-footer-bar {
+  background: #ffffff;
+  border-top: 2px solid #e9f0ee;
+  padding: 1.5rem 0;
+}
+
+.eu-footer-bar .container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.eu-footer-logo {
+  height: 60px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.eu-footer-text {
+  font-size: 0.78rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+  min-width: 200px;
+}
+
+@media (max-width: 600px) {
+  .eu-footer-bar .container { flex-direction: column; text-align: center; gap: 1rem; }
+  .eu-footer-logo { height: 48px; }
+}

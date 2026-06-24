@@ -3,18 +3,18 @@ const products = [
     id: "camper-classic-1",
     type: "camper",
     title: { pl: "Przyczepa Classic 1", en: "Classic Caravan 1" },
-    short: { pl: "Dla max 4 osób • Długość 5.2m", en: "For up to 4 guests • Length 5.2m" },
+    short: { pl: "Dla max 4 osób • Komfort i niezależność", en: "For up to 4 guests • Comfort & independence" },
     description: {
-      pl: "Bliźniacza przyczepa Classic idealna dla par lub rodzin 2+2. Posiada w pełni wyposażony aneks kuchenny, klimatyzację, ogrzewanie gazowe, osobną sypialnię oraz łazienkę z prysznicem.",
-      en: "Classic twin caravan perfect for couples or 2+2 families. Features a fully equipped kitchenette, air conditioning, gas heating, separate bedroom, and a bathroom with shower."
+      pl: "Nowoczesna i komfortowo wyposażona przyczepa kempingowa idealna dla par lub rodzin 2+2. Zapewnia swobodę podróżowania i niezależność podczas wypoczynku. Posiada w pełni wyposażony aneks kuchenny, klimatyzację, ogrzewanie gazowe, osobną sypialnię oraz łazienkę z prysznicem.",
+      en: "Modern and comfortably equipped caravan, perfect for couples or 2+2 families. Provides freedom of travel and independence during leisure time. Features a fully equipped kitchenette, air conditioning, gas heating, separate bedroom, and a bathroom with shower."
     },
     image: "assets/caravan_1.jpg",
     tourImage: "assets/panorama_classic.png",
     priceLow: 250,
     priceHigh: 350,
     specs: {
-      pl: ["4 Miejsca", "Klimatyzacja", "Ogrzewanie gazowe", "Aneks kuchenny", "Długość 5.2m", "DMC 1300 kg"],
-      en: ["Sleeps 4", "Air Conditioning", "Gas Heating", "Kitchenette", "Length 5.2m", "GVWR 1300 kg"]
+      pl: ["4 Miejsca", "Klimatyzacja", "Ogrzewanie gazowe", "Aneks kuchenny", "Osobna sypialnia", "Łazienka z prysznicem"],
+      en: ["Sleeps 4", "Air Conditioning", "Gas Heating", "Kitchenette", "Separate Bedroom", "Shower Bathroom"]
     }
   },
   {
@@ -23,97 +23,115 @@ const products = [
     title: { pl: "Przyczepa Classic 2", en: "Classic Caravan 2" },
     short: { pl: "Bliźniaczy model • Osobny kalendarz", en: "Twin caravan • Separate calendar" },
     description: {
-      pl: "Druga z naszych bliźniaczych przyczep Classic. Oferuje ten sam wysoki standard wykończenia i przytulny układ wnętrza. Posiada oddzielny kalendarz rezerwacji dla Twojej wygody.",
-      en: "The second of our twin Classic caravans. Offers the same high standard of finishing and cozy layout. Features a separate booking calendar for your convenience."
+      pl: "Druga z naszych nowoczesnych przyczep Classic. Oferuje ten sam wysoki standard wykończenia i przytulny układ wnętrza – idealna dla rodzin i par szukających komfortu blisko natury. Posiada oddzielny kalendarz rezerwacji dla Twojej wygody.",
+      en: "The second of our modern Classic caravans. Offers the same high standard of finishing and cosy interior layout – ideal for families and couples seeking comfort close to nature. Features a separate booking calendar for your convenience."
     },
     image: "assets/caravan_1.jpg",
     tourImage: "assets/panorama_classic.png",
     priceLow: 250,
     priceHigh: 350,
     specs: {
-      pl: ["4 Miejsca", "Klimatyzacja", "Ogrzewanie gazowe", "Aneks kuchenny", "Długość 5.2m", "DMC 1300 kg"],
-      en: ["Sleeps 4", "Air Conditioning", "Gas Heating", "Kitchenette", "Length 5.2m", "GVWR 1300 kg"]
+      pl: ["4 Miejsca", "Klimatyzacja", "Ogrzewanie gazowe", "Aneks kuchenny", "Osobna sypialnia", "Łazienka z prysznicem"],
+      en: ["Sleeps 4", "Air Conditioning", "Gas Heating", "Kitchenette", "Separate Bedroom", "Shower Bathroom"]
     }
   },
   {
     id: "camper-family",
     type: "camper",
     title: { pl: "Przyczepa Family", en: "Family Caravan" },
-    short: { pl: "Luksusowa • Dla max 6 osób • Ogrzewanie zimowe", en: "Luxury • For up to 6 guests • Alde heating" },
+    short: { pl: "Rodzinna • Dla max 6 osób • Dostosowana dla niepełnosprawnych", en: "Family • Up to 6 guests • Disability accessible" },
     description: {
-      pl: "Przestronna przyczepa klasy premium przeznaczona dla większych rodzin. Wyposażona w zaawansowane ogrzewanie zimowe Alde, klimatyzację, piekarnik, przestronną lodówkę, zasilanie solarne oraz dużą markizę.",
-      en: "Spacious premium-class caravan designed for larger families. Features advanced Alde winter heating, air conditioning, oven, large refrigerator, solar power, and a spacious awning."
+      pl: "Przestronna przyczepa rodzinna przeznaczona dla większych rodzin i osób ze szczególnymi potrzebami. Wyposażona w rampę najazdową, uchwyty, oznaczenia kontrastowe oraz dodatkowe udogodnienia zwiększające komfort i bezpieczeństwo. Posiada klimatyzację, kuchnię z piekarnikiem i zasilanie solarne.",
+      en: "Spacious family caravan for larger families and people with special needs. Equipped with a ramp, grab handles, contrast markings, and accessibility features. Features air conditioning, oven kitchen, and solar power."
     },
     image: "assets/caravan_2.jpg",
     tourImage: "assets/panorama_family.png",
     priceLow: 320,
     priceHigh: 450,
     specs: {
-      pl: ["6 Miejsc", "Klimatyzacja", "Ogrzewanie Alde", "Kuchnia z piekarnikiem", "Długość 6.8m", "Panele solarne"],
-      en: ["Sleeps 6", "Air Conditioning", "Alde Heating", "Oven & Kitchen", "Length 6.8m", "Solar Panels"]
+      pl: ["6 Miejsc", "Rampa najazdowa", "Klimatyzacja", "Kuchnia z piekarnikiem", "Panele solarne", "Dostępna dla niepełnosprawnych"],
+      en: ["Sleeps 6", "Wheelchair ramp", "Air Conditioning", "Oven & Kitchen", "Solar Panels", "Disability accessible"]
     }
   },
   {
-    id: "boat-1",
-    type: "boat",
-    title: { pl: "Łódź Motorowa Classic", en: "Classic Motorboat" },
-    short: { pl: "Silnik 50 HP • Bez patentu • 6-osobowa", en: "50 HP Engine • No license • Sleeps 6" },
+    id: "camper-coworking",
+    type: "camper",
+    title: { pl: "Przyczepa Coworking", en: "Coworking Caravan" },
+    short: { pl: "Praca zdalna • Widok na naturę • Szybkie WiFi", en: "Remote work • Nature view • Fast WiFi" },
     description: {
-      pl: "Wygodna łódź motorowa przeznaczona do rekreacyjnego pływania. Sterowanie jest intuicyjne i nie wymaga posiadania patentu motorowodnego. Wyposażona w echosondę i wygodne materace pokładowe.",
-      en: "Comfortable motorboat designed for recreational cruising. Control is intuitive and does not require a motorboat license. Equipped with a fishfinder and comfortable deck mattresses."
+      pl: "Mobilna przestrzeń coworkingowa stworzona dla osób, które chcą połączyć pracę z podróżowaniem i wypoczynkiem. Pracuj z widokiem na wodę, las lub łąkę. Wyposażona w ergonomiczne stanowisko pracy, szybkie WiFi, zasilanie oraz wszystkie wygody niezbędne do komfortowej pracy zdalnej.",
+      en: "Mobile coworking space designed for people who want to combine work with travel and leisure. Work with a view of water, forest, or meadow. Equipped with an ergonomic workstation, fast WiFi, power supply, and all the comforts needed for remote work."
+    },
+    image: "assets/caravan_1.jpg",
+    tourImage: "assets/panorama_classic.png",
+    priceLow: 280,
+    priceHigh: 380,
+    specs: {
+      pl: ["Stanowisko pracy", "Szybkie WiFi", "Zasilanie 230V", "Klimatyzacja", "Widok na naturę", "Rezerwacja online"],
+      en: ["Workstation", "Fast WiFi", "230V Power", "Air Conditioning", "Nature View", "Online Booking"]
+    }
+  },
+  {
+    id: "boat-electric-1",
+    type: "boat",
+    title: { pl: "Łódź Elektryczna Classic", en: "Classic Electric Boat" },
+    short: { pl: "Bezemisyjna • Cicha żegluga • Zalew Wiślany", en: "Zero emission • Silent cruising • Vistula Lagoon" },
+    description: {
+      pl: "Ekologiczna łódź elektryczna zapewniająca cichą i komfortową żeglugę po Zalewie Wiślanym. Idealna do odkrywania pięknych zakątków regionu bez hałasu i emisji spalin. Obsługa jest prosta i intuicyjna – nie wymaga patentu motorowodnego.",
+      en: "Eco-friendly electric boat providing silent and comfortable sailing on the Vistula Lagoon. Perfect for exploring the beautiful corners of the region without noise or exhaust emissions. Simple and intuitive to operate – no motorboat license required."
     },
     image: "assets/boat_classic.png",
-    priceLow: 450,
-    priceHigh: 600,
+    priceLow: 350,
+    priceHigh: 500,
     specs: {
-      pl: ["Bez patentu", "Silnik 50 HP", "Max 6 osób", "Długość 5.5m", "Echosonda GPS", "Daszek Bimini"],
-      en: ["No license required", "50 HP Engine", "Max 6 guests", "Length 5.5m", "GPS Fishfinder", "Bimini Top"]
+      pl: ["Bez emisji", "Cicha żegluga", "Bez patentu", "Max 6 osób", "Zalew Wiślany", "Zasilanie elektryczne"],
+      en: ["Zero emission", "Silent cruising", "No license", "Max 6 guests", "Vistula Lagoon", "Electric power"]
     }
   },
   {
-    id: "boat-2",
+    id: "boat-electric-2",
     type: "boat",
-    title: { pl: "Łódź Motorowa Premium", en: "Premium Motorboat" },
-    short: { pl: "Silnik 150 HP • Wymagany patent • Kabina", en: "150 HP Engine • License required • Cabin" },
+    title: { pl: "Łódź Elektryczna Premium", en: "Premium Electric Boat" },
+    short: { pl: "Większa kabina • Komfort premium • Ekologiczna", en: "Larger cabin • Premium comfort • Eco-friendly" },
     description: {
-      pl: "Szybka i luksusowa łódź motorowa dla wymagających. Wyposażona w mocny silnik 150 HP, kabinę sypialną, lodówkę turystyczną, sprzęt audio oraz platformę kąpielową. Wymagany patent motorowodny.",
-      en: "Fast and luxurious motorboat for demanding cruisers. Features a powerful 150 HP engine, sleeping cabin, travel cooler, sound system, and swim platform. Motorboat license required."
+      pl: "Większa ekologiczna łódź elektryczna z kabinką, stworzona dla tych, którzy cenią zarówno komfort, jak i odpowiedzialność za środowisko. Cicha i wydajna, pozwala cieszyć się widokami Zalewu Wiślanego w wyjątkowy sposób. Idealna dla rodzin i par szukających luksusowego rejsu.",
+      en: "Larger eco-friendly electric boat with cabin, designed for those who value both comfort and environmental responsibility. Silent and efficient, it allows you to enjoy the Vistula Lagoon views in a unique way. Ideal for families and couples seeking a luxury cruise."
     },
     image: "assets/boat_premium.png",
-    priceLow: 600,
-    priceHigh: 800,
+    priceLow: 480,
+    priceHigh: 650,
     specs: {
-      pl: ["Patent wymagany", "Silnik 150 HP", "Max 8 osób", "Długość 7.2m", "Kabina 2-osobowa", "System audio BT"],
-      en: ["License required", "150 HP Engine", "Max 8 guests", "Length 7.2m", "2-person Cabin", "BT Audio System"]
+      pl: ["Bez emisji", "Kabina pokładowa", "Max 8 osób", "Cicha żegluga", "Zalew Wiślany", "System audio"],
+      en: ["Zero emission", "Deck cabin", "Max 8 guests", "Silent cruising", "Vistula Lagoon", "Audio system"]
     }
   }
 ];
 
 const news = [
   {
-    date: { pl: "17 Czerwca 2026", en: "June 17, 2026" },
-    title: { pl: "Nowe logo i wizerunek Eco Camp", en: "New logo and identity of Eco Camp" },
+    date: { pl: "03 Lutego 2025", en: "February 3, 2025" },
+    title: { pl: "ECO CAMP realizuje projekt z dofinansowaniem UE", en: "ECO CAMP implements EU-funded project" },
     text: {
-      pl: "Z przyjemnością prezentujemy naszą nową identyfikację wizualną! Nowe logo łączy motyw leśny z bliskością wody i symbolem kempingu, odzwierciedlając ekologiczny i nowoczesny charakter naszej floty przyczep i łodzi.",
-      en: "We are thrilled to present our new brand identity! The new logo blends forest motifs, proximity to water, and camping symbols, reflecting the eco-friendly and premium nature of our caravans and boats."
+      pl: "Firma ECO CAMP Julian Świderski realizuje projekt 'Rozwój firmy ECO CAMP', współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Warmii i Mazur 2021–2027. Wartość projektu: 799 330,72 zł, dofinansowanie: 647 377,95 zł.",
+      en: "ECO CAMP Julian Świderski is implementing the 'Development of ECO CAMP' project, co-financed by the European Union under the Funds for Warmia and Mazury 2021–2027 programme. Project value: PLN 799,330.72, co-financing: PLN 647,377.95."
     },
-    image: "assets/logo.png"
+    image: "assets/eu_logotypy.png"
   },
   {
     date: { pl: "12 Czerwca 2026", en: "June 12, 2026" },
-    title: { pl: "Interaktywne spacery 360° już online!", en: "Interactive 360° virtual tours now online!" },
+    title: { pl: "Wirtualne spacery 360° już online!", en: "360° Virtual tours now online!" },
     text: {
-      pl: "Już teraz możesz wejść do wnętrza naszych przyczep Classic oraz Family bez wychodzenia z domu! Uruchom spacer 360° bezpośrednio w zakładce Spacery Wirtualne i zobacz każdy detal luksusowego wykończenia.",
-      en: "You can now step inside our Classic and Family caravans without leaving your home! Launch the 360° virtual tour directly under Virtual Tours section and see every detail of our luxury finish."
+      pl: "Już teraz możesz wejść do wnętrza naszych przyczep Classic oraz Coworking bez wychodzenia z domu! Uruchom spacer 360° bezpośrednio w zakładce Spacery Wirtualne i obejrzyj każdy detal.",
+      en: "You can now step inside our Classic and Coworking caravans without leaving your home! Launch the 360° virtual tour directly in the Virtual Tours section and see every detail."
     },
     image: "assets/news_tours.png"
   },
   {
     date: { pl: "01 Czerwca 2026", en: "June 1, 2026" },
-    title: { pl: "Rozpoczęcie sezonu letniego 2026", en: "Summer Season 2026 officially open" },
+    title: { pl: "Sezon letni 2026 otwarty!", en: "Summer Season 2026 is open!" },
     text: {
-      pl: "Wszystkie przyczepy i łodzie są w pełni przygotowane, wyczyszczone i gotowe do odbioru. Kalendarze rezerwacji na czerwiec, lipiec i sierpień są już aktywne. Zapraszamy do rezerwacji wolnych terminów!",
-      en: "All caravans and boats are fully prepared, detailed, and ready for pickup. Booking calendars for June, July, and August are now active. Book your vacation dates today!"
+      pl: "Wszystkie przyczepy i łodzie elektryczne są w pełni przygotowane i gotowe do odbioru. Zapraszamy na Zalew Wiślany – odkrywaj Warmię i Mazury w swoim rytmie!",
+      en: "All caravans and electric boats are fully prepared and ready for pickup. Welcome to the Vistula Lagoon – discover Warmia and Masuria at your own pace!"
     },
     image: "assets/news_season.png"
   }
@@ -123,36 +141,43 @@ const faq = [
   {
     question: { pl: "Jak przebiega proces rezerwacji?", en: "How does the booking process work?" },
     answer: {
-      pl: "Wybierasz sprzęt w kalendarzu, zaznaczasz zakres dat (od-do) i wypełniasz prosty formularz kontaktowy. Zapytanie trafia na nasz e-mail. Potwierdzamy dostępność ręcznie, a następnie przesyłamy dane do wpłaty zadatku (30%). Po zaksięgowaniu wpłaty, termin zostaje zablokowany jako zajęty.",
-      en: "Select your equipment in the calendar, choose the date range (check-in/check-out) and fill in the request form. We confirm availability manually and send you bank details for a 30% deposit payment. Once paid, the dates are locked as booked."
+      pl: "Wybierasz sprzęt z listy, zaznaczasz zakres dat (od-do) na kalendarzu i wypełniasz prosty formularz kontaktowy. Zapytanie trafia na nasz e-mail. Potwierdzamy dostępność ręcznie, a następnie przesyłamy dane do wpłaty zadatku (30%). Po zaksięgowaniu wpłaty, termin zostaje zablokowany jako zajęty.",
+      en: "Select equipment from the list, choose the date range (from-to) on the calendar, and fill in the simple contact form. The inquiry goes to our email. We confirm availability manually, then send you deposit payment details (30%). Once paid, the dates are locked as booked."
     }
   },
   {
     question: { pl: "Ile wynosi zadatek i jak go opłacić?", en: "How much is the deposit and how do I pay it?" },
     answer: {
       pl: "Zadatek wynosi 30% całkowitej kwoty wynajmu (nasz kalkulator wylicza go automatycznie podczas zaznaczania dat). Wpłaty należy dokonać przelewem tradycyjnym lub BLIKiem na telefon w ciągu 24 godzin od otrzymania maila z potwierdzeniem rezerwacji.",
-      en: "The deposit is 30% of the total rental cost (automatically calculated in the booking widget). Payment should be made via bank transfer or BLIK phone transfer within 24 hours of receiving the booking confirmation email."
+      en: "The deposit is 30% of the total rental cost (automatically calculated when selecting dates). Payment should be made via bank transfer or BLIK within 24 hours of receiving the booking confirmation email."
     }
   },
   {
-    question: { pl: "Czy do prowadzenia łodzi wymagane są uprawnienia?", en: "Do I need a license to drive the boats?" },
+    question: { pl: "Czy do prowadzenia łodzi elektrycznych wymagane są uprawnienia?", en: "Do I need a license to operate the electric boats?" },
     answer: {
-      pl: "Łódź Motorowa Classic (silnik 50 HP) może być prowadzona bez żadnego patentu motorowodnego – przed wypłynięciem przeprowadzamy krótkie szkolenie z obsługi. Do prowadzenia Łodzi Motorowej Premium (silnik 150 HP) wymagany jest ważny patent sternika motorowodnego.",
-      en: "The Classic Motorboat (50 HP) can be operated without any license – we provide a quick operating tutorial before you set sail. To drive the Premium Motorboat (150 HP), a valid motorboat skipper license is required."
+      pl: "Nasze łodzie elektryczne mogą być prowadzone bez patentu motorowodnego – obsługa jest prosta i intuicyjna. Przed wypłynięciem przeprowadzamy krótkie szkolenie z obsługi. To idealny wybór dla osób, które nie posiadają uprawnień motorowodnych.",
+      en: "Our electric boats can be operated without a motorboat license – operation is simple and intuitive. Before departure we provide a short briefing. This is the ideal choice for people without motorboat qualifications."
     }
   },
   {
     question: { pl: "Jaki jest minimalny okres wynajmu?", en: "What is the minimum rental period?" },
     answer: {
-      pl: "Dla przyczep kempingowych minimalny okres wynajmu wynosi 3 doby. Łodzie motorowe wynajmujemy na dni (minimalny okres to 1 dzień, bez możliwości rezerwacji na godziny).",
-      en: "For camper caravans, the minimum rental period is 3 nights. Motorboats are rented on a daily basis (minimum 1 full day, hourly booking is not available)."
+      pl: "Dla przyczep kempingowych minimalny okres wynajmu wynosi 3 doby. Łodzie elektryczne wynajmujemy na pełne dni (minimalny okres to 1 dzień, bez możliwości rezerwacji na godziny). Przestrzeń coworkingową można zarezerwować od 1 doby.",
+      en: "For camping caravans the minimum rental period is 3 nights. Electric boats are rented on full days (minimum 1 day, hourly booking not available). The coworking caravan can be booked from 1 night."
+    }
+  },
+  {
+    question: { pl: "Czy ECO CAMP jest dostępny dla osób z niepełnosprawnościami?", en: "Is ECO CAMP accessible for people with disabilities?" },
+    answer: {
+      pl: "Tak! Jedna z naszych przyczep Family jest wyposażona w rozwiązania wspierające osoby z niepełnosprawnościami i seniorów: rampę najazdową, uchwyty, oznaczenia kontrastowe oraz dodatkowe udogodnienia. Nasza strona i platforma rezerwacyjna są przygotowywane zgodnie ze standardem WCAG 2.1 AA. Skontaktuj się z nami przed rezerwacją, jeśli potrzebujesz dodatkowego wsparcia.",
+      en: "Yes! One of our Family caravans is equipped with solutions supporting people with disabilities and seniors: a ramp, grab handles, contrast markings, and additional amenities. Our website and booking platform are prepared in accordance with WCAG 2.1 AA. Contact us before booking if you need additional support."
     }
   },
   {
     question: { pl: "Czy pobierana jest kaucja zwrotna?", en: "Is there a refundable security deposit?" },
     answer: {
-      pl: "Tak, przy odbiorze sprzętu pobierana jest kaucja zwrotna w gotówce na zabezpieczenie ewentualnych szkód. Wynosi ona 1000 zł dla przyczep Classic i łodzi Classic, oraz 1500 zł dla przyczepy Family i łodzi Premium. Kaucja jest zwracana w całości przy bezszkodowym zwrocie.",
-      en: "Yes, a refundable security deposit is collected in cash upon pickup. It is 1000 PLN for Classic caravans and Classic boats, and 1500 PLN for Family caravans and Premium boats. It is fully refunded if everything is returned in order."
+      pl: "Tak, przy odbiorze sprzętu pobierana jest kaucja zwrotna w gotówce na zabezpieczenie ewentualnych szkód. Kaucja jest zwracana w całości przy bezszkodowym zwrocie sprzętu. Szczegóły kaucji podawane są w potwierdzeniu rezerwacji.",
+      en: "Yes, a refundable security deposit is collected in cash upon equipment pickup. The deposit is fully refunded upon undamaged return of the equipment. Deposit details are provided in the booking confirmation."
     }
   }
 ];
@@ -165,27 +190,28 @@ const translations = {
     navNews: "Aktualności",
     navFaq: "FAQ",
     navContact: "Kontakt",
+    navEuProject: "Projekt UE",
     navAdmin: "Admin",
     fontToggle: "A+",
     contrastToggle: "Kontrast",
-    heroEyebrow: "Eco Camp • Wynajem Przyczep & Łodzi",
-    heroTitle: "Luksusowy wypoczynek nad wodą, na Twoich zasadach.",
-    heroLead: "Wybierz luksusową przyczepę kempingową lub szybką łódź motorową na Mazurach. Zaznacz zakres dat na interaktywnym kalendarzu i prześlij zapytanie. Rezerwację potwierdzamy ręcznie, bez zbędnych pośredników i prowizji.",
+    heroEyebrow: "ECO CAMP • Warmia i Mazury",
+    heroTitle: "Odkrywaj Warmię i Mazury w swoim rytmie.",
+    heroLead: "Nowoczesna wypożyczalnia przyczep kempingowych i łodzi elektrycznych. Łączymy komfort podróżowania z ekologicznymi rozwiązaniami – wypoczynek blisko natury bez rezygnacji z wygody. Zarezerwuj online.",
     heroPrimary: "Zarezerwuj teraz",
     heroSecondary: "Zobacz ofertę",
     heroSearchBtn: "Sprawdź dostępność",
-    statTrailers: "luksusowe przyczepy",
-    statBoats: "łodzie motorowe",
+    statTrailers: "przyczepy kempingowe",
+    statBoats: "łodzie elektryczne",
     statTours: "spacery 360°",
     stepOneTitle: "1. Wybierz sprzęt",
-    stepOneText: "Wybierz komfortową przyczepę dla rodziny lub zwrotną łódź motorową.",
+    stepOneText: "Wybierz przyczepę kempingową, coworkingową lub ekologiczną łódź elektryczną.",
     stepTwoTitle: "2. Zaznacz zakres dat",
     stepTwoText: "Kliknij na kalendarzu dzień początkowy (od) oraz końcowy (do).",
     stepThreeTitle: "3. Odbierz i wypoczywaj",
     stepThreeText: "Wpłać 30% zadatku przelewem, a my przygotujemy wszystko na Twój przyjazd.",
-    offerEyebrow: "Nasza Flota",
-    offerTitle: "Wybierz swój idealny sprzęt na wakacje",
-    offerLead: "Prezentujemy 3 nowoczesne przyczepy kempingowe stacjonujące nad jeziorem oraz 2 szybkie łodzie motorowe gotowe do wodowania. Kliknij przycisk, aby wybrać sprzęt do kalendarza rezerwacji.",
+    offerEyebrow: "Nasza Oferta",
+    offerTitle: "Przyczepy kempingowe i łodzie elektryczne",
+    offerLead: "Przyczepy rodzinne, przestrzeń coworkingowa oraz ekologiczne łodzie elektryczne na Zalewu Wiślanym. Kliknij przycisk, aby wybrać sprzęt do kalendarza rezerwacji.",
     productImage: "Zdjęcie",
     reserveItem: "Wybierz do rezerwacji",
     toursEyebrow: "Wirtualne Zwiedzanie",
@@ -220,16 +246,16 @@ const translations = {
     booked: "Zajęte",
     pricesEyebrow: "Przejrzysty Cennik",
     pricesTitle: "Ceny za dobę w zależności od sezonu",
-    pricesText: "Sezon wysoki (High Season) obowiązuje w miesiącach czerwiec, lipiec i sierpień. Sezon niski (Low Season) obowiązuje w pozostałych miesiącach.",
+    pricesText: "Sezon wysoki obowiązuje w miesiącach czerwiec, lipiec i sierpień. Sezon niski obowiązuje w pozostałych miesiącach. Minimalny wynajem przyczep: 3 doby.",
     priceCamperType: "Przyczepy kempingowe",
-    priceCamperText: "Classic: 250 zł (niski) / 350 zł (wysoki) za dobę.<br>Family: 320 zł (niski) / 450 zł (wysoki) za dobę.<br>Minimalny wynajem: 3 doby. Kaucja zwrotna.",
+    priceCamperText: "Classic 1 & 2: 250 zł (niski) / 350 zł (wysoki) za dobę.<br>Family: 320 zł (niski) / 450 zł (wysoki) za dobę.<br>Coworking: 280 zł (niski) / 380 zł (wysoki) za dobę.",
     priceDepositType: "Zadatek rezerwacyjny",
     priceDepositValue: "30% ceny pobytu",
     priceDepositText: "Płatny przelewem tradycyjnym lub BLIKiem na telefon w ciągu 24h od ręcznego potwierdzenia terminu.",
-    priceBoatType: "Łodzie motorowe",
-    priceBoatText: "Classic (50 HP): 450 zł (niski) / 600 zł (wysoki) za dzień.<br>Premium (150 HP): 600 zł (niski) / 800 zł (wysoki) za dzień.<br>Wynajem całodniowy. Kaucja zwrotna.",
+    priceBoatType: "Łodzie elektryczne",
+    priceBoatText: "Classic elektryczna: 350 zł (niski) / 500 zł (wysoki) za dzień.<br>Premium elektryczna: 480 zł (niski) / 650 zł (wysoki) za dzień.<br>Wynajem całodniowy. Kaucja zwrotna.",
     newsEyebrow: "Wiadomości",
-    newsTitle: "Aktualności z przystani",
+    newsTitle: "Aktualności ECO CAMP",
     faqEyebrow: "Pomoc",
     faqTitle: "Często zadawane pytania (FAQ)",
     rulesEyebrow: "Dokumenty prawne",
@@ -242,11 +268,11 @@ const translations = {
     rodoHeading: "Klauzula RODO",
     rodoText: "Spełnienie obowiązku informacyjnego zgodnie z RODO przy wysyłaniu formularza kontaktowego i rezerwacyjnego.",
     contactEyebrow: "Napisz do nas",
-    contactTitle: "Skontaktuj się z Eco Camp",
-    contactText: "Masz pytania dotyczące sprzętu? Chcesz zarezerwować nietypowy termin? Zadzwoń do nas, napisz e-mail lub skontaktuj się przez nasz profil na Facebooku.",
+    contactTitle: "Skontaktuj się z ECO CAMP",
+    contactText: "Masz pytania dotyczące sprzętu? Chcesz zarezerwować konkretny termin lub potrzebujesz indywidualnych udogodnień? Zadzwoń do nas, napisz e-mail lub skontaktuj się przez nasz profil na Facebooku.",
     contactCta: "Zadzwoń: +48 501 234 567",
     facebookLink: "Odwiedź nas na Facebooku",
-    mapPlaceholder: "Lokalizacja przystani (odbioru): Jezioro Kisajno, Giżycko, Mazury",
+    mapPlaceholder: "Lokalizacja ECO CAMP: Zalew Wiślany, Warmia i Mazury",
     adminEyebrow: "Panel Właściciela",
     adminTitle: "Zarządzanie dostępnością terminów",
     adminLead: "Zaloguj się kodem PIN, aby zablokować terminy wynajęte stacjonarnie lub odblokować odwołane rezerwacje.",
@@ -258,7 +284,7 @@ const translations = {
     resetDemo: "Zresetuj dane (Przywróć demo)",
     adminSaved: "Dostępność została zaktualizowana pomyślnie.",
     demoReset: "Dane testowe zostały przywrócone.",
-    footerText: "Eco Camp – Luksusowy wynajem przyczep kempingowych i łodzi motorowych na Mazurach.",
+    footerText: "ECO CAMP – Wypożyczalnia przyczep kempingowych i łodzi elektrycznych na Warmii i Mazurach.",
     pricePlaceholder: "Zaznacz zakres dat na kalendarzu powyżej, aby zobaczyć wycenę.",
     adminPinLabel: "Wpisz kod PIN właściciela (domyślny: 1234)",
     adminUnlockBtn: "Odblokuj Panel",
@@ -291,27 +317,28 @@ const translations = {
     navNews: "News",
     navFaq: "FAQ",
     navContact: "Contact",
+    navEuProject: "EU Project",
     navAdmin: "Admin",
     fontToggle: "A+",
     contrastToggle: "Contrast",
-    heroEyebrow: "Eco Camp • Caravan & Boat Rental",
-    heroTitle: "Luxury lakeside vacation, on your terms.",
-    heroLead: "Choose a premium caravan or a fast motorboat in Masuria, Poland. Mark your dates on the interactive calendar and send a request. Bookings are confirmed manually, with zero agency fees or commissions.",
+    heroEyebrow: "ECO CAMP • Warmia & Masuria",
+    heroTitle: "Discover Warmia and Masuria at your own pace.",
+    heroLead: "A modern rental of camping caravans and electric boats. We combine travel comfort with eco-friendly solutions – relaxation close to nature without giving up convenience. Book online.",
     heroPrimary: "Book Now",
-    heroSecondary: "View Fleet",
+    heroSecondary: "View Offer",
     heroSearchBtn: "Check Availability",
-    statTrailers: "luxury caravans",
-    statBoats: "motorboats",
+    statTrailers: "camping caravans",
+    statBoats: "electric boats",
     statTours: "360° virtual tours",
     stepOneTitle: "1. Choose Equipment",
-    stepOneText: "Pick a comfortable family caravan or a sporty motorboat.",
+    stepOneText: "Choose a camping caravan, coworking trailer or an eco-friendly electric boat.",
     stepTwoTitle: "2. Mark Dates on Calendar",
-    stepTwoText: "Click the start date (check-in) and end date (check-out) on the grid.",
+    stepTwoText: "Click the start date (from) and end date (to) on the calendar.",
     stepThreeTitle: "3. Pick up & Enjoy",
     stepThreeText: "Pay a 30% deposit via bank transfer and we will prepare everything for you.",
-    offerEyebrow: "Our Fleet",
-    offerTitle: "Find your perfect summer equipment",
-    offerLead: "Presenting 3 modern caravans parked by the lake and 2 fast motorboats ready to launch. Click a button to select an item for the reservation calendar.",
+    offerEyebrow: "Our Offer",
+    offerTitle: "Caravans & Electric Boats",
+    offerLead: "Family caravans, a coworking caravan, and eco-friendly electric boats on the Vistula Lagoon. Click a button to select an item for the reservation calendar.",
     productImage: "Photo",
     reserveItem: "Select for Booking",
     toursEyebrow: "Virtual Tours",
@@ -347,15 +374,15 @@ const translations = {
     pricesEyebrow: "Transparent Pricing",
     pricesTitle: "Daily rates based on season",
     pricesText: "High Season applies during June, July, and August. Low Season applies during all other months.",
-    priceCamperType: "Camper Caravans",
-    priceCamperText: "Classic: 250 PLN (low) / 350 PLN (high) per night.<br>Family: 320 PLN (low) / 450 PLN (high) per night.<br>Minimum stay: 3 nights. Refundable security deposit.",
+    priceCamperType: "Camping Caravans",
+    priceCamperText: "Classic 1 & 2: 250 PLN (low) / 350 PLN (high) per night.<br>Family: 320 PLN (low) / 450 PLN (high) per night.<br>Coworking: 280 PLN (low) / 380 PLN (high) per night.<br>Minimum stay: 3 nights.",
     priceDepositType: "Booking Deposit",
     priceDepositValue: "30% of total cost",
     priceDepositText: "Paid via bank transfer or BLIK within 24 hours after manual booking confirmation.",
-    priceBoatType: "Motorboats",
-    priceBoatText: "Classic (50 HP): 450 PLN (low) / 600 PLN (high) per day.<br>Premium (150 HP): 600 PLN (low) / 800 PLN (high) per day.<br>Full day rental. Refundable security deposit.",
+    priceBoatType: "Electric Boats",
+    priceBoatText: "Classic electric: 350 PLN (low) / 500 PLN (high) per day.<br>Premium electric: 480 PLN (low) / 650 PLN (high) per day.<br>Full day rental. Refundable security deposit.",
     newsEyebrow: "News",
-    newsTitle: "Latest updates from the marina",
+    newsTitle: "Latest ECO CAMP news",
     faqEyebrow: "Help",
     faqTitle: "Frequently asked questions (FAQ)",
     rulesEyebrow: "Legal Documents",
@@ -368,11 +395,11 @@ const translations = {
     rodoHeading: "GDPR Clause",
     rodoText: "Fulfillment of informational duties under GDPR required for contact forms and inquiries.",
     contactEyebrow: "Write to us",
-    contactTitle: "Get in touch with Eco Camp",
-    contactText: "Have questions about the equipment? Need to book custom dates? Call us, send an email, or message us on Facebook.",
+    contactTitle: "Get in touch with ECO CAMP",
+    contactText: "Have questions about our equipment? Need to book specific dates or require individual accessibility arrangements? Call us, email, or message us on Facebook.",
     contactCta: "Call us: +48 501 234 567",
     facebookLink: "Follow us on Facebook",
-    mapPlaceholder: "Marina Location (Pick up): Kisajno Lake, Giżycko, Masuria, Poland",
+    mapPlaceholder: "ECO CAMP location: Vistula Lagoon, Warmia & Masuria, Poland",
     adminEyebrow: "Owner Dashboard",
     adminTitle: "Availability & date blocking",
     adminLead: "Log in with your PIN to block dates booked offline or release cancelled bookings.",
@@ -384,7 +411,7 @@ const translations = {
     resetDemo: "Reset Data (Restore Demo)",
     adminSaved: "Availability has been updated successfully.",
     demoReset: "Demo data has been restored.",
-    footerText: "Eco Camp – Premium caravan & motorboat rental in Masuria, Poland.",
+    footerText: "ECO CAMP – Camping caravan & electric boat rental in Warmia and Masuria, Poland.",
     pricePlaceholder: "Mark a date range on the calendar above to view pricing.",
     adminPinLabel: "Enter Owner PIN (default: 1234)",
     adminUnlockBtn: "Unlock Dashboard",
