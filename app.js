@@ -3,72 +3,72 @@ const products = [
     id: "camper-classic-1",
     type: "camper",
     title: { pl: "Przyczepa Classic 1", en: "Classic Caravan 1" },
-    short: { pl: "Dla max 4 osób • Komfort i niezależność", en: "For up to 4 guests • Comfort & independence" },
+    short: { pl: "do uzupełnienia", en: "to be completed" },
     description: {
-      pl: "Nowoczesna i komfortowo wyposażona przyczepa kempingowa idealna dla par lub rodzin 2+2. Zapewnia swobodę podróżowania i niezależność podczas wypoczynku. Posiada w pełni wyposażony aneks kuchenny, klimatyzację, ogrzewanie gazowe, osobną sypialnię oraz łazienkę z prysznicem.",
-      en: "Modern and comfortably equipped caravan, perfect for couples or 2+2 families. Provides freedom of travel and independence during leisure time. Features a fully equipped kitchenette, air conditioning, gas heating, separate bedroom, and a bathroom with shower."
+      pl: "Nowoczesna i komfortowo wyposażona przyczepa kempingowa idealna dla par lub rodzin. Zapewnia swobodę podróżowania i niezależność podczas wypoczynku.",
+      en: "Modern and comfortably equipped caravan, perfect for couples or families. Provides freedom of travel and independence during leisure time."
     },
     image: "assets/caravan_1.jpg",
     tourImage: "assets/panorama_classic.png",
-    priceLow: 250,
-    priceHigh: 350,
+    priceLow: null,
+    priceHigh: null,
     specs: {
-      pl: ["4 Miejsca", "Klimatyzacja", "Ogrzewanie gazowe", "Aneks kuchenny", "Osobna sypialnia", "Łazienka z prysznicem"],
-      en: ["Sleeps 4", "Air Conditioning", "Gas Heating", "Kitchenette", "Separate Bedroom", "Shower Bathroom"]
+      pl: ["do uzupełnienia"],
+      en: ["to be completed"]
     }
   },
   {
     id: "camper-classic-2",
     type: "camper",
     title: { pl: "Przyczepa Classic 2", en: "Classic Caravan 2" },
-    short: { pl: "Bliźniaczy model • Osobny kalendarz", en: "Twin caravan • Separate calendar" },
+    short: { pl: "Osobny kalendarz rezerwacji", en: "Separate booking calendar" },
     description: {
       pl: "Druga z naszych nowoczesnych przyczep Classic. Oferuje ten sam wysoki standard wykończenia i przytulny układ wnętrza – idealna dla rodzin i par szukających komfortu blisko natury. Posiada oddzielny kalendarz rezerwacji dla Twojej wygody.",
       en: "The second of our modern Classic caravans. Offers the same high standard of finishing and cosy interior layout – ideal for families and couples seeking comfort close to nature. Features a separate booking calendar for your convenience."
     },
     image: "assets/caravan_1.jpg",
     tourImage: "assets/panorama_classic.png",
-    priceLow: 250,
-    priceHigh: 350,
+    priceLow: null,
+    priceHigh: null,
     specs: {
-      pl: ["4 Miejsca", "Klimatyzacja", "Ogrzewanie gazowe", "Aneks kuchenny", "Osobna sypialnia", "Łazienka z prysznicem"],
-      en: ["Sleeps 4", "Air Conditioning", "Gas Heating", "Kitchenette", "Separate Bedroom", "Shower Bathroom"]
+      pl: ["do uzupełnienia"],
+      en: ["to be completed"]
     }
   },
   {
     id: "camper-family",
     type: "camper",
     title: { pl: "Przyczepa Family", en: "Family Caravan" },
-    short: { pl: "Rodzinna • Dla max 6 osób • Dostosowana dla niepełnosprawnych", en: "Family • Up to 6 guests • Disability accessible" },
+    short: { pl: "Rodzinna • Dostosowana dla osób z niepełnosprawnościami", en: "Family • Disability accessible" },
     description: {
-      pl: "Przestronna przyczepa rodzinna przeznaczona dla większych rodzin i osób ze szczególnymi potrzebami. Wyposażona w rampę najazdową, uchwyty, oznaczenia kontrastowe oraz dodatkowe udogodnienia zwiększające komfort i bezpieczeństwo. Posiada klimatyzację, kuchnię z piekarnikiem i zasilanie solarne.",
-      en: "Spacious family caravan for larger families and people with special needs. Equipped with a ramp, grab handles, contrast markings, and accessibility features. Features air conditioning, oven kitchen, and solar power."
+      pl: "Przestronna przyczepa rodzinna przeznaczona dla większych rodzin i osób ze szczególnymi potrzebami. Wyposażona w rampę najazdową, uchwyty, oznaczenia kontrastowe oraz dodatkowe udogodnienia zwiększające komfort i bezpieczeństwo użytkowania.",
+      en: "Spacious family caravan for larger families and people with special needs. Equipped with a ramp, grab handles, contrast markings, and accessibility features that increase comfort and safety."
     },
     image: "assets/caravan_2.jpg",
     tourImage: "assets/panorama_family.png",
-    priceLow: 320,
-    priceHigh: 450,
+    priceLow: null,
+    priceHigh: null,
     specs: {
-      pl: ["6 Miejsc", "Rampa najazdowa", "Klimatyzacja", "Kuchnia z piekarnikiem", "Panele solarne", "Dostępna dla niepełnosprawnych"],
-      en: ["Sleeps 6", "Wheelchair ramp", "Air Conditioning", "Oven & Kitchen", "Solar Panels", "Disability accessible"]
+      pl: ["Rampa najazdowa", "Uchwyty", "Oznaczenia kontrastowe", "do uzupełnienia"],
+      en: ["Wheelchair ramp", "Grab handles", "Contrast markings", "to be completed"]
     }
   },
   {
     id: "camper-coworking",
     type: "camper",
     title: { pl: "Przyczepa Coworking", en: "Coworking Caravan" },
-    short: { pl: "Praca zdalna • Widok na naturę • Szybkie WiFi", en: "Remote work • Nature view • Fast WiFi" },
+    short: { pl: "Praca zdalna • Widok na naturę", en: "Remote work • Nature view" },
     description: {
-      pl: "Mobilna przestrzeń coworkingowa stworzona dla osób, które chcą połączyć pracę z podróżowaniem i wypoczynkiem. Pracuj z widokiem na wodę, las lub łąkę. Wyposażona w ergonomiczne stanowisko pracy, szybkie WiFi, zasilanie oraz wszystkie wygody niezbędne do komfortowej pracy zdalnej.",
-      en: "Mobile coworking space designed for people who want to combine work with travel and leisure. Work with a view of water, forest, or meadow. Equipped with an ergonomic workstation, fast WiFi, power supply, and all the comforts needed for remote work."
+      pl: "Mobilna przestrzeń coworkingowa stworzona dla osób, które chcą połączyć pracę z podróżowaniem i wypoczynkiem. Pracuj z widokiem na wodę, las lub łąkę.",
+      en: "Mobile coworking space designed for people who want to combine work with travel and leisure. Work with a view of water, forest, or meadow."
     },
     image: "assets/caravan_1.jpg",
     tourImage: "assets/panorama_classic.png",
-    priceLow: 280,
-    priceHigh: 380,
+    priceLow: null,
+    priceHigh: null,
     specs: {
-      pl: ["Stanowisko pracy", "Szybkie WiFi", "Zasilanie 230V", "Klimatyzacja", "Widok na naturę", "Rezerwacja online"],
-      en: ["Workstation", "Fast WiFi", "230V Power", "Air Conditioning", "Nature View", "Online Booking"]
+      pl: ["do uzupełnienia"],
+      en: ["to be completed"]
     }
   },
   {
@@ -77,32 +77,32 @@ const products = [
     title: { pl: "Łódź Elektryczna Classic", en: "Classic Electric Boat" },
     short: { pl: "Bezemisyjna • Cicha żegluga • Zalew Wiślany", en: "Zero emission • Silent cruising • Vistula Lagoon" },
     description: {
-      pl: "Ekologiczna łódź elektryczna zapewniająca cichą i komfortową żeglugę po Zalewie Wiślanym. Idealna do odkrywania pięknych zakątków regionu bez hałasu i emisji spalin. Obsługa jest prosta i intuicyjna – nie wymaga patentu motorowodnego.",
-      en: "Eco-friendly electric boat providing silent and comfortable sailing on the Vistula Lagoon. Perfect for exploring the beautiful corners of the region without noise or exhaust emissions. Simple and intuitive to operate – no motorboat license required."
+      pl: "Ekologiczna łódź elektryczna zapewniająca cichą i komfortową żeglugę po Zalewie Wiślanym. Idealna do odkrywania pięknych zakątków regionu bez hałasu i emisji spalin.",
+      en: "Eco-friendly electric boat providing silent and comfortable sailing on the Vistula Lagoon. Perfect for exploring the beautiful corners of the region without noise or exhaust emissions."
     },
     image: "assets/boat_classic.png",
-    priceLow: 350,
-    priceHigh: 500,
+    priceLow: null,
+    priceHigh: null,
     specs: {
-      pl: ["Bez emisji", "Cicha żegluga", "Bez patentu", "Max 6 osób", "Zalew Wiślany", "Zasilanie elektryczne"],
-      en: ["Zero emission", "Silent cruising", "No license", "Max 6 guests", "Vistula Lagoon", "Electric power"]
+      pl: ["Bez emisji spalin", "Cicha żegluga", "Zalew Wiślany", "do uzupełnienia"],
+      en: ["Zero emissions", "Silent cruising", "Vistula Lagoon", "to be completed"]
     }
   },
   {
     id: "boat-electric-2",
     type: "boat",
     title: { pl: "Łódź Elektryczna Premium", en: "Premium Electric Boat" },
-    short: { pl: "Większa kabina • Komfort premium • Ekologiczna", en: "Larger cabin • Premium comfort • Eco-friendly" },
+    short: { pl: "Ekologiczna • Komfort premium", en: "Eco-friendly • Premium comfort" },
     description: {
-      pl: "Większa ekologiczna łódź elektryczna z kabinką, stworzona dla tych, którzy cenią zarówno komfort, jak i odpowiedzialność za środowisko. Cicha i wydajna, pozwala cieszyć się widokami Zalewu Wiślanego w wyjątkowy sposób. Idealna dla rodzin i par szukających luksusowego rejsu.",
-      en: "Larger eco-friendly electric boat with cabin, designed for those who value both comfort and environmental responsibility. Silent and efficient, it allows you to enjoy the Vistula Lagoon views in a unique way. Ideal for families and couples seeking a luxury cruise."
+      pl: "Ekologiczna łódź elektryczna stworzona dla tych, którzy cenią zarówno komfort, jak i odpowiedzialność za środowisko. Cicha i wydajna, pozwala cieszyć się widokami Zalewu Wiślanego w wyjątkowy sposób.",
+      en: "Eco-friendly electric boat designed for those who value both comfort and environmental responsibility. Silent and efficient, it allows you to enjoy the Vistula Lagoon views in a unique way."
     },
     image: "assets/boat_premium.png",
-    priceLow: 480,
-    priceHigh: 650,
+    priceLow: null,
+    priceHigh: null,
     specs: {
-      pl: ["Bez emisji", "Kabina pokładowa", "Max 8 osób", "Cicha żegluga", "Zalew Wiślany", "System audio"],
-      en: ["Zero emission", "Deck cabin", "Max 8 guests", "Silent cruising", "Vistula Lagoon", "Audio system"]
+      pl: ["Bez emisji spalin", "Cicha żegluga", "Zalew Wiślany", "do uzupełnienia"],
+      en: ["Zero emissions", "Silent cruising", "Vistula Lagoon", "to be completed"]
     }
   }
 ];
@@ -112,28 +112,10 @@ const news = [
     date: { pl: "03 Lutego 2025", en: "February 3, 2025" },
     title: { pl: "ECO CAMP realizuje projekt z dofinansowaniem UE", en: "ECO CAMP implements EU-funded project" },
     text: {
-      pl: "Firma ECO CAMP Julian Świderski realizuje projekt 'Rozwój firmy ECO CAMP', współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Warmii i Mazur 2021–2027. Wartość projektu: 799 330,72 zł, dofinansowanie: 647 377,95 zł.",
-      en: "ECO CAMP Julian Świderski is implementing the 'Development of ECO CAMP' project, co-financed by the European Union under the Funds for Warmia and Mazury 2021–2027 programme. Project value: PLN 799,330.72, co-financing: PLN 647,377.95."
+      pl: "Firma ECO CAMP Julian Świderski realizuje projekt ‘Rozwój firmy ECO CAMP’, współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Warmii i Mazur 2021–2027. Wartość projektu: 799 330,72 zł, dofinansowanie: 647 377,95 zł.",
+      en: "ECO CAMP Julian Świderski is implementing the ‘Development of ECO CAMP’ project, co-financed by the European Union under the Funds for Warmia and Mazury 2021–2027 programme. Project value: PLN 799,330.72, co-financing: PLN 647,377.95."
     },
     image: "assets/eu_logotypy.png"
-  },
-  {
-    date: { pl: "12 Czerwca 2026", en: "June 12, 2026" },
-    title: { pl: "Wirtualne spacery 360° już online!", en: "360° Virtual tours now online!" },
-    text: {
-      pl: "Już teraz możesz wejść do wnętrza naszych przyczep Classic oraz Coworking bez wychodzenia z domu! Uruchom spacer 360° bezpośrednio w zakładce Spacery Wirtualne i obejrzyj każdy detal.",
-      en: "You can now step inside our Classic and Coworking caravans without leaving your home! Launch the 360° virtual tour directly in the Virtual Tours section and see every detail."
-    },
-    image: "assets/news_tours.png"
-  },
-  {
-    date: { pl: "01 Czerwca 2026", en: "June 1, 2026" },
-    title: { pl: "Sezon letni 2026 otwarty!", en: "Summer Season 2026 is open!" },
-    text: {
-      pl: "Wszystkie przyczepy i łodzie elektryczne są w pełni przygotowane i gotowe do odbioru. Zapraszamy na Zalew Wiślany – odkrywaj Warmię i Mazury w swoim rytmie!",
-      en: "All caravans and electric boats are fully prepared and ready for pickup. Welcome to the Vistula Lagoon – discover Warmia and Masuria at your own pace!"
-    },
-    image: "assets/news_season.png"
   }
 ];
 
@@ -220,7 +202,7 @@ const translations = {
     tourClassic: "Przyczepy Classic (360°)",
     tourClassicText: "Wirtualny spacer po wnętrzu przyczepy Classic 1 & 2. Zobacz układ sypialni, aneksu i łazienki.",
     tourFamily: "Przyczepa Family (360°)",
-    tourFamilyText: "Rozejrzyj się po naszej największej i najbardziej luksusowej przyczepie dla 6 osób.",
+    tourFamilyText: "Rozejrzyj się po naszej przyczepie Family z udogodnieniami dla osób ze szczególnymi potrzebami.",
     tourPlayBtn: "Uruchom spacer 360°",
     reservationEyebrow: "Kalendarz i Formularz",
     reservationTitle: "Sprawdź dostępność i zarezerwuj",
@@ -248,12 +230,12 @@ const translations = {
     pricesTitle: "Ceny za dobę w zależności od sezonu",
     pricesText: "Sezon wysoki obowiązuje w miesiącach czerwiec, lipiec i sierpień. Sezon niski obowiązuje w pozostałych miesiącach. Minimalny wynajem przyczep: 3 doby.",
     priceCamperType: "Przyczepy kempingowe",
-    priceCamperText: "Classic 1 & 2: 250 zł (niski) / 350 zł (wysoki) za dobę.<br>Family: 320 zł (niski) / 450 zł (wysoki) za dobę.<br>Coworking: 280 zł (niski) / 380 zł (wysoki) za dobę.",
+    priceCamperText: "do uzupełnienia",
     priceDepositType: "Zadatek rezerwacyjny",
     priceDepositValue: "30% ceny pobytu",
     priceDepositText: "Płatny przelewem tradycyjnym lub BLIKiem na telefon w ciągu 24h od ręcznego potwierdzenia terminu.",
     priceBoatType: "Łodzie elektryczne",
-    priceBoatText: "Classic elektryczna: 350 zł (niski) / 500 zł (wysoki) za dzień.<br>Premium elektryczna: 480 zł (niski) / 650 zł (wysoki) za dzień.<br>Wynajem całodniowy. Kaucja zwrotna.",
+    priceBoatText: "do uzupełnienia",
     newsEyebrow: "Wiadomości",
     newsTitle: "Aktualności ECO CAMP",
     faqEyebrow: "Pomoc",
@@ -375,12 +357,12 @@ const translations = {
     pricesTitle: "Daily rates based on season",
     pricesText: "High Season applies during June, July, and August. Low Season applies during all other months.",
     priceCamperType: "Camping Caravans",
-    priceCamperText: "Classic 1 & 2: 250 PLN (low) / 350 PLN (high) per night.<br>Family: 320 PLN (low) / 450 PLN (high) per night.<br>Coworking: 280 PLN (low) / 380 PLN (high) per night.<br>Minimum stay: 3 nights.",
+    priceCamperText: "to be completed",
     priceDepositType: "Booking Deposit",
     priceDepositValue: "30% of total cost",
     priceDepositText: "Paid via bank transfer or BLIK within 24 hours after manual booking confirmation.",
     priceBoatType: "Electric Boats",
-    priceBoatText: "Classic electric: 350 PLN (low) / 500 PLN (high) per day.<br>Premium electric: 480 PLN (low) / 650 PLN (high) per day.<br>Full day rental. Refundable security deposit.",
+    priceBoatText: "to be completed",
     newsEyebrow: "News",
     newsTitle: "Latest ECO CAMP news",
     faqEyebrow: "Help",
@@ -508,12 +490,13 @@ function isHighSeason(date) {
 
 function calculateRangePrice(productId, startStr, endStr) {
   const product = products.find(p => p.id === productId);
-  if (!product || !startStr || !endStr) return { total: 0, count: 0, deposit: 0 };
+  if (!product || !startStr || !endStr) return { total: null, count: 0, deposit: null };
+  if (product.priceLow === null || product.priceHigh === null) return { total: null, count: 0, deposit: null };
   
   const start = parseDate(startStr);
   const end = parseDate(endStr);
   
-  if (isNaN(start) || isNaN(end) || start > end) return { total: 0, count: 0, deposit: 0 };
+  if (isNaN(start) || isNaN(end) || start > end) return { total: null, count: 0, deposit: null };
   
   let total = 0;
   let count = 0;
@@ -665,11 +648,11 @@ function renderProducts() {
             <div class="product-price-info">
               <div class="price-box">
                 <span class="price-lbl">${currentLang === 'pl' ? 'Sezon niski' : 'Low Season'}</span>
-                <span class="price-val">${product.priceLow} zł / ${isCamper ? (currentLang === 'pl' ? 'doba' : 'night') : (currentLang === 'pl' ? 'dzień' : 'day')}</span>
+                <span class="price-val">${product.priceLow !== null ? product.priceLow + ' zł / ' + (isCamper ? (currentLang === 'pl' ? 'doba' : 'night') : (currentLang === 'pl' ? 'dzień' : 'day')) : (currentLang === 'pl' ? 'do uzupełnienia' : 'TBD')}</span>
               </div>
               <div class="price-box">
                 <span class="price-lbl">${currentLang === 'pl' ? 'Sezon wysoki' : 'High Season'}</span>
-                <span class="price-val text-accent">${product.priceHigh} zł / ${isCamper ? (currentLang === 'pl' ? 'doba' : 'night') : (currentLang === 'pl' ? 'dzień' : 'day')}</span>
+                <span class="price-val text-accent">${product.priceHigh !== null ? product.priceHigh + ' zł / ' + (isCamper ? (currentLang === 'pl' ? 'doba' : 'night') : (currentLang === 'pl' ? 'dzień' : 'day')) : (currentLang === 'pl' ? 'do uzupełnienia' : 'TBD')}</span>
               </div>
             </div>
             
@@ -780,8 +763,8 @@ function renderSelectedProduct() {
       <h3>${product.title[currentLang]}</h3>
       <p class="short-spec">${product.short[currentLang]}</p>
       <div class="seasonal-rates">
-        <span>${currentLang === 'pl' ? 'Niski: ' : 'Low: '}<strong>${product.priceLow} zł</strong></span> | 
-        <span>${currentLang === 'pl' ? 'Wysoki: ' : 'High: '}<strong class="text-accent">${product.priceHigh} zł</strong></span>
+        <span>${currentLang === 'pl' ? 'Niski: ' : 'Low: '}<strong>${product.priceLow !== null ? product.priceLow + ' zł' : (currentLang === 'pl' ? 'do uzupełnienia' : 'TBD')}</strong></span> | 
+        <span>${currentLang === 'pl' ? 'Wysoki: ' : 'High: '}<strong class="text-accent">${product.priceHigh !== null ? product.priceHigh + ' zł' : (currentLang === 'pl' ? 'do uzupełnienia' : 'TBD')}</strong></span>
       </div>
     </div>
   `;
@@ -801,12 +784,47 @@ function updatePriceDisplay() {
   }
 
   const isCamper = product.type === "camper";
+  
+  // If product has no price yet, show placeholder
+  if (product.priceLow === null || product.priceHigh === null) {
+    const { count } = (() => {
+      const start = parseDate(startDate);
+      const end = parseDate(endDate);
+      if (isNaN(start) || isNaN(end)) return { count: 0 };
+      let c = 0;
+      const cur = new Date(start);
+      if (isCamper) { while (cur < end) { c++; cur.setDate(cur.getDate() + 1); } }
+      else { while (cur <= end) { c++; cur.setDate(cur.getDate() + 1); } }
+      return { count: c };
+    })();
+    const durationLabel = isCamper ? translations[currentLang].durationLabelNights : translations[currentLang].durationLabelDays;
+    container.innerHTML = `
+      <div class="price-summary-card">
+        <h4 class="summary-title">${currentLang === 'pl' ? 'Podsumowanie' : 'Summary'}</h4>
+        <div class="summary-details">
+          <div class="summary-row">
+            <span>${durationLabel}</span>
+            <strong>${count}</strong>
+          </div>
+          <div class="summary-row">
+            <span>${translations[currentLang].totalCostLabel}</span>
+            <strong class="total-price-text" style="color:var(--accent)">${currentLang === 'pl' ? 'do uzupełnienia' : 'TBD'}</strong>
+          </div>
+          <div class="summary-row deposit-row">
+            <span>${translations[currentLang].depositValLabel}</span>
+            <strong class="deposit-price-text text-accent">${currentLang === 'pl' ? 'do uzupełnienia' : 'TBD'}</strong>
+          </div>
+        </div>
+        <div class="deposit-explanation">
+          <p>${currentLang === 'pl' ? 'Cennik dla tego produktu jest w trakcie uzupełniania. Skontaktuj się z nami, aby uzyskać wycenę.' : 'Pricing for this product is being finalized. Please contact us for a quote.'}</p>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
   const { total, count, deposit } = calculateRangePrice(product.id, startDate, endDate);
   
-  const label = isCamper 
-    ? (currentLang === 'pl' ? 'nocy' : 'nights')
-    : (currentLang === 'pl' ? 'dni' : 'days');
-
   const durationLabel = isCamper
     ? translations[currentLang].durationLabelNights
     : translations[currentLang].durationLabelDays;
