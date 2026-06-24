@@ -1116,190 +1116,9 @@ function renderAdminBlocksList() {
   }
 }
 
-function renderAdminPanel() {
-  const adminPanel = document.querySelector("#admin-section-wrapper");
-  if (!adminPanel) return;
+// Admin panel moved to admin.html — no longer rendered on main page
+function renderAdminPanel() { /* noop — panel at /admin.html */ }
 
-  if (!isAdminUnlocked) {
-    adminPanel.innerHTML = `
-      <div class="admin-lock-screen">
-        <div class="lock-icon">🔒</div>
-        <h3>${translations[currentLang].adminLockedTitle}</h3>
-        <p>${translations[currentLang].adminLockedLead}</p>
-        <form id="admin-login-form">
-          <label>
-            <span>${translations[currentLang].adminPinLabel}</span>
-            <input type="password" id="admin-pin-input" maxLength="4" placeholder="••••" required autocomplete="current-password">
-          </label>
-          <button class="button primary" type="submit">${translations[currentLang].adminUnlockBtn}</button>
-          <p class="status-message error" id="admin-pin-error" style="display:none;"></p>
-        </form>
-      </div>
-    `;
-    
-    document.querySelector("#admin-login-form")?.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const pin = document.querySelector("#admin-pin-input").value;
-      const errorEl = document.querySelector("#admin-pin-error");
-      
-      if (pin === "1234") {
-        isAdminUnlocked = true;
-        sessionStorage.setItem("ecocampAdminUnlocked", "true");
-        renderAdminPanel();
-      } else {
-        errorEl.textContent = translations[currentLang].adminIncorrectPin;
-        errorEl.style.display = "block";
-      }
-    });
-  } else {
-    adminPanel.innerHTML = `
-      <div class="admin-dashboard">
-        <div class="admin-dash-header">
-          <h3>${translations[currentLang].adminTitle}</h3>
-          <button class="button secondary btn-small" type="button" id="admin-logout-btn">${translations[currentLang].adminLogOutBtn}</button>
-        </div>
-        <p>${translations[currentLang].adminLead}</p>
-        
-        <form class="admin-form" id="admin-form">
-          <div class="form-grid">
-            <label>
-              <span>${translations[currentLang].fieldProduct}</span>
-              <select name="productId" id="admin-product" required></select>
-            </label>
-            <label>
-              <span>${translations[currentLang].adminDateStart}</span>
-              <input type="date" name="startDate" required>
-            </label>
-            <label>
-              <span>${translations[currentLang].adminDateEnd}</span>
-              <input type="date" name="endDate" required>
-            </label>
-            <label>
-              <span>${translations[currentLang].adminStatus}</span>
-              <select name="status" required>
-                <option value="booked">${translations[currentLang].adminBooked}</option>
-                <option value="available">${translations[currentLang].adminAvailable}</option>
-              </select>
-            </label>
-          </div>
-          <div class="admin-actions">
-            <button class="button primary" type="submit">${translations[currentLang].saveAvailability}</button>
-            <button class="button secondary" type="button" id="reset-demo">${translations[currentLang].resetDemo}</button>
-          </div>
-          <p class="status-message" id="admin-status" role="status"></p>
-        </form>
-
-        <div class="admin-blocks-section">
-          <h4>${translations[currentLang].adminCurrentBlocks}</h4>
-          <div class="admin-blocks-table-wrapper">
-            <table class="admin-blocks-table">
-              <thead>
-                <tr>
-                  <th>${translations[currentLang].adminTableProduct}</th>
-                  <th>${translations[currentLang].adminTableDates}</th>
-                  <th>${translations[currentLang].adminTableActions}</th>
-                </tr>
-              </thead>
-              <tbody id="admin-blocks-list">
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    `;
-
-    // Populate selects inside admin dashboard
-    const adminProductSelect = document.querySelector("#admin-product");
-    if (adminProductSelect) {
-      adminProductSelect.innerHTML = products.map((product) => `<option value="${product.id}">${product.title[currentLang]}</option>`).join("");
-    }
-
-    // Render blocked list immediately
-    renderAdminBlocksList();
-
-    // Attach Admin Form submit handler
-    document.querySelector("#admin-form")?.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const formData = new FormData(event.currentTarget);
-      const productId = formData.get("productId");
-      const startStr = formData.get("startDate");
-      const endStr = formData.get("endDate");
-      const status = formData.get("status");
-
-      const start = parseDate(startStr);
-      const end = parseDate(endStr);
-
-      if (isNaN(start) || isNaN(end) || start > end) {
-        alert("Invalid dates.");
-        return;
-      }
-
-      availability[productId] ||= {};
-      const current = new Date(start);
-      while (current <= end) {
-        const dateKey = formatDate(current);
-        if (status === "available") {
-          delete availability[productId][dateKey];
-        } else {
-          availability[productId][dateKey] = "booked";
-        }
-        current.setDate(current.getDate() + 1);
-      }
-
-      saveAvailability();
-      
-      // Reset current selected range to prevent visual desync
-      startDate = null;
-      endDate = null;
-      document.querySelector("#start-date").value = "";
-      document.querySelector("#end-date").value = "";
-
-      const statusMsg = document.querySelector("#admin-status");
-      statusMsg.textContent = translations[currentLang].adminSaved;
-      statusMsg.className = "status-message success";
-
-      setTimeout(() => {
-        statusMsg.textContent = "";
-        statusMsg.className = "status-message";
-      }, 3000);
-
-      renderCalendar();
-      updatePriceDisplay();
-      renderAdminBlocksList();
-    });
-
-    // Attach Reset Demo handler
-    document.querySelector("#reset-demo")?.addEventListener("click", () => {
-      availability = getDemoAvailability();
-      saveAvailability();
-      
-      startDate = null;
-      endDate = null;
-      document.querySelector("#start-date").value = "";
-      document.querySelector("#end-date").value = "";
-
-      const statusMsg = document.querySelector("#admin-status");
-      statusMsg.textContent = translations[currentLang].demoReset;
-      statusMsg.className = "status-message success";
-
-      setTimeout(() => {
-        statusMsg.textContent = "";
-        statusMsg.className = "status-message";
-      }, 3000);
-
-      renderCalendar();
-      updatePriceDisplay();
-      renderAdminBlocksList();
-    });
-
-    // Logout handler
-    document.querySelector("#admin-logout-btn")?.addEventListener("click", () => {
-      isAdminUnlocked = false;
-      sessionStorage.removeItem("ecocampAdminUnlocked");
-      renderAdminPanel();
-    });
-  }
-}
 
 // Global hook for the HTML click triggers
 window.loadTour = loadTour;
@@ -1382,25 +1201,48 @@ document.querySelector("#next-month").addEventListener("click", () => {
   renderCalendar();
 });
 
-document.querySelector("#reservation-form").addEventListener("submit", (event) => {
+document.querySelector("#reservation-form").addEventListener("submit", async (event) => {
   event.preventDefault();
   const statusEl = document.querySelector("#form-status");
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+  const product = getSelectedProduct();
+
+  // Save to Supabase if connected
+  if (
+    typeof supabase !== 'undefined' &&
+    typeof SUPABASE_URL !== 'undefined' &&
+    SUPABASE_URL !== 'YOUR_SUPABASE_URL_HERE'
+  ) {
+    try {
+      const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      await db.from('reservations').insert({
+        product_id: product?.id || null,
+        product_name: product?.title?.[currentLang] || null,
+        name: formData.get('name') || null,
+        email: formData.get('email') || null,
+        phone: formData.get('phone') || null,
+        guests: parseInt(formData.get('guests')) || null,
+        start_date: startDate || null,
+        end_date: endDate || null,
+        message: formData.get('message') || null,
+        status: 'new',
+      });
+    } catch (err) {
+      console.warn('Supabase save failed (form still submitted):', err);
+    }
+  }
+
   statusEl.textContent = translations[currentLang].formSent;
   statusEl.className = "status-message success";
-  
-  // Celebrate booking success!
   triggerConfetti();
-  
-  event.currentTarget.reset();
-  
+  form.reset();
   startDate = null;
   endDate = null;
-  
   setTimeout(() => {
     statusEl.textContent = "";
     statusEl.className = "status-message";
   }, 5000);
-  
   renderSelectedProduct();
   updatePriceDisplay();
   renderCalendar();

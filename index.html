@@ -42,7 +42,7 @@
 
         <nav class="main-nav" aria-label="Główna nawigacja" id="main-nav">
           <a href="#offer" data-i18n="navOffer">Oferta</a>
-          <a href="#virtual-tours" data-i18n="navTours">Spacery 360°</a>
+          <a href="#virtual-tours" data-i18n="navTours">Film</a>
           <a href="#reservation" data-i18n="navReservations">Rezerwacje</a>
           <a href="#news" data-i18n="navNews">Aktualności</a>
           <a href="#eu-project" data-i18n="navEuProject">Projekt UE</a>
@@ -157,57 +157,26 @@
         </div>
       </section>
 
-      <!-- Virtual 360 Tours + YouTube Video Section -->
+      <!-- Featured YouTube Video Section -->
       <section class="section dark-section" id="virtual-tours" aria-labelledby="tours-title">
         <div class="container">
           <div class="section-heading split-heading reveal">
             <div>
-              <p class="eyebrow" data-i18n="toursEyebrow">Wirtualne Zwiedzanie</p>
-              <h2 id="tours-title" data-i18n="toursTitle">Wejdź do środka bez wychodzenia z domu</h2>
+              <p class="eyebrow" data-i18n="toursEyebrow">Film o ofercie</p>
+              <h2 id="tours-title" data-i18n="toursTitle">ECO CAMP – Obejrzyj nasz film</h2>
             </div>
-            <p data-i18n="toursLead">
-              Uruchom interaktywny spacer 360° i rozejrzyj się po naszych przyczepach. Obejrzyj też film o naszej ofercie.
-            </p>
+            <p data-i18n="toursLead">Obejrzyj film i poznaj nasze przyczepy kempingowe oraz łodzie elektryczne na Warmii i Mazurach.</p>
           </div>
-          <div class="tour-grid">
-            <article class="tour-card reveal">
-              <div class="tour-preview" id="tour-classic-viewer">
-                <div class="tour-placeholder-bg tour-one">
-                  <button class="tour-play button primary" type="button" onclick="loadTour('classic')" data-i18n="tourPlayBtn">Uruchom spacer 360°</button>
-                </div>
-              </div>
-              <div class="tour-card-body">
-                <h3 data-i18n="tourClassic">Przyczepy Classic (360°)</h3>
-                <p data-i18n="tourClassicText">Wirtualny spacer po wnętrzu przyczepy Classic 1 &amp; 2. Zobacz układ sypialni, aneksu i łazienki.</p>
-              </div>
-            </article>
-            <article class="tour-card reveal delay-100">
-              <div class="tour-preview" id="tour-family-viewer">
-                <div class="tour-placeholder-bg tour-two">
-                  <button class="tour-play button primary" type="button" onclick="loadTour('family')" data-i18n="tourPlayBtn">Uruchom spacer 360°</button>
-                </div>
-              </div>
-              <div class="tour-card-body">
-                <h3 data-i18n="tourFamily">Przyczepa Family (360°)</h3>
-                <p data-i18n="tourFamilyText">Rozejrzyj się po naszej przyczepie Family z udogodnieniami dla osób ze szczególnymi potrzebami.</p>
-              </div>
-            </article>
-            <article class="tour-card reveal delay-200">
-              <div class="tour-preview" style="aspect-ratio:16/9; overflow:hidden; border-radius:16px; background:#000;">
-                <iframe
-                  src="https://www.youtube.com/embed/lpXPzuSyQYc?rel=0"
-                  title="ECO CAMP – film o przyczepie kempingowej"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                  style="width:100%; height:100%; min-height:220px;"
-                ></iframe>
-              </div>
-              <div class="tour-card-body">
-                <h3>ECO CAMP – Film o ofercie</h3>
-                <p>Obejrzyj film o naszych przyczepach kempingowych i łodziach elektrycznych na Warmii i Mazurach.</p>
-              </div>
-            </article>
+          <div class="video-featured reveal">
+            <div class="video-frame-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/lpXPzuSyQYc?rel=0"
+                title="ECO CAMP – film o przyczepach kempingowych i łodziach elektrycznych"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
@@ -419,129 +388,66 @@
               <p class="eu-logos-label">Projekt dofinansowany ze środków Unii Europejskiej</p>
               <img
                 src="assets/eu_logotypy.png"
-                alt="Logotypy: Fundusze Europejskie dla Warmii i Mazur, Rzeczpospolita Polska, Dofinansowane przez Unię Europejską"
-                class="eu-logos-img"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Legal / Documents Section -->
-      <section class="section" id="rules" aria-labelledby="rules-title">
-        <div class="container">
-          <div class="section-heading split-heading reveal">
-            <div>
-              <p class="eyebrow" data-i18n="rulesEyebrow">Dokumenty prawne</p>
-              <h2 id="rules-title" data-i18n="rulesTitle">Regulaminy i bezpieczeństwo danych</h2>
-            </div>
-            <p data-i18n="rulesLead">Poniżej znajdziesz komplet dokumentów regulujących zasady wynajmu naszego sprzętu oraz politykę bezpieczeństwa danych osobowych (RODO).</p>
-          </div>
-          <div class="legal-grid">
-            <article class="info-panel reveal">
-              <h3 data-i18n="rulesHeading">Regulamin Wynajmu</h3>
-              <p data-i18n="rulesText">Zasady rezerwacji, warunki odbioru i zwrotu, obowiązki najemcy, kwestie kaucji i ubezpieczenia sprzętu.</p>
-              <a href="#" class="btn-text-link" onclick="alert('Regulamin PDF pobieranie (mock)...'); return false;">Pobierz Regulamin (PDF) &rarr;</a>
-            </article>
-            <article class="info-panel reveal delay-100">
-              <h3 data-i18n="privacyHeading">Polityka Prywatności</h3>
-              <p data-i18n="privacyText">Informacje o administratorze danych osobowych, celach przetwarzania, plikach cookies oraz prawach użytkownika.</p>
-              <a href="#" class="btn-text-link" onclick="alert('Polityka Prywatności PDF pobieranie (mock)...'); return false;">Pobierz Politykę (PDF) &rarr;</a>
-            </article>
-            <article class="info-panel reveal delay-200">
-              <h3 data-i18n="rodoHeading">Klauzula RODO</h3>
-              <p data-i18n="rodoText">Spełnienie obowiązku informacyjnego zgodnie z RODO przy wysyłaniu formularza kontaktowego i rezerwacyjnego.</p>
-              <a href="#" class="btn-text-link" onclick="alert('Klauzula RODO PDF pobieranie (mock)...'); return false;">Pobierz RODO (PDF) &rarr;</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="container contact-layout reveal">
-          <div class="contact-details-box">
-            <p class="eyebrow" data-i18n="contactEyebrow">Napisz do nas</p>
-            <h2 id="contact-title" data-i18n="contactTitle">Skontaktuj się z Grażyną</h2>
-            <p data-i18n="contactText">
-              Masz pytania dotyczące sprzętu? Chcesz zarezerwować nietypowy termin? Zadzwoń do nas, napisz e-mail lub skontaktuj się przez nasz profil na Facebooku.
-            </p>
-            
-            <div class="contact-methods">
-              <div class="method-item">
-                <span class="icon">📞</span>
-                <div>
-                  <h4>Telefon</h4>
-                  <a href="tel:+48501234567" data-i18n="contactCta">+48 501 234 567</a>
-                </div>
-              </div>
-              <div class="method-item">
-                <span class="icon">✉️</span>
-                <div>
-                  <h4>E-mail</h4>
-                  <a href="mailto:kontakt.swiderska@gmail.com">kontakt.swiderska@gmail.com</a>
-                </div>
-              </div>
-              <div class="method-item">
-                <span class="icon">📍</span>
-                <div>
-                  <h4>Lokalizacja</h4>
-                  <span data-i18n="mapPlaceholder">Zalew Wiślany, Warmia i Mazury</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="contact-actions">
-              <a class="button secondary" href="https://www.facebook.com/share/1MNTe33VNt/" target="_blank" rel="noreferrer" data-i18n="facebookLink">Odwiedź nas na Facebooku</a>
-            </div>
-          </div>
-          
-          <!-- Embedded map - Vistula Lagoon, Polish side (Frombork/Krynica Morska) -->
-          <div class="map-card-wrapper">
-            <iframe 
-              src="https://maps.google.com/maps?q=Frombork,+Polska&t=&z=11&ie=UTF8&iwloc=&output=embed" 
-              width="100%" 
-              height="100%" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade" 
-              title="Mapa dojazdu ECO CAMP – Zalew Wiślany, Polska"
-              aria-label="Mapa z lokalizacją ECO CAMP na Zalewie Wiślanym">
-            </iframe>
-          </div>
-        </div>
-      </section>
-
-      <!-- Dynamic Owner Admin Dashboard Section -->
-      <section class="section admin-section reveal" id="admin" aria-labelledby="admin-title">
-        <div class="container">
-          <div class="section-heading split-heading">
-            <div>
-              <p class="eyebrow" data-i18n="adminEyebrow">Panel Właściciela</p>
-              <h2 id="admin-title-head" data-i18n="adminTitle">Zarządzanie dostępnością terminów</h2>
-            </div>
-          </div>
-          <div id="admin-section-wrapper">
-            <!-- Rendered dynamically by app.js (Lock screen vs Dashboard) -->
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Site Footer -->
+                alt="Logotypy: Fundusze Europejskie dla Warmii i Mazur, Rzeczpospolita Polska, Dofinansowane prze    <!-- Premium Footer -->
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <p>&copy; <span id="year"></span> ECO CAMP</p>
-          <p class="footer-desc" data-i18n="footerText">ECO CAMP – Wypożyczalnia przyczep kempingowych i łodzi elektrycznych na Warmii i Mazurach.</p>
-        </div>
-        <div class="footer-links">
-          <a href="#admin" class="footer-admin-link" data-i18n="navAdmin">Admin</a>
+      <div class="footer-main">
+        <div class="container footer-grid">
+          <!-- Col 1: Brand -->
+          <div class="footer-col footer-brand-col">
+            <a class="footer-brand" href="#home">
+              <img src="assets/logo.png" alt="ECO CAMP" width="40" height="40">
+              <span>ECO CAMP</span>
+            </a>
+            <p class="footer-tagline" data-i18n="footerText">Wypożyczalnia przyczep kempingowych i łodzi elektrycznych na Warmii i Mazurach. Zalew Wiślany.</p>
+            <a class="footer-social" href="https://www.facebook.com/share/1MNTe33VNt/" target="_blank" rel="noreferrer" aria-label="Facebook ECO CAMP">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+          </div>
+          <!-- Col 2: Navigation -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Nawigacja</h4>
+            <nav class="footer-nav">
+              <a href="#offer" data-i18n="navOffer">Oferta</a>
+              <a href="#reservation" data-i18n="navReservations">Rezerwacje</a>
+              <a href="#news" data-i18n="navNews">Aktualności</a>
+              <a href="#faq" data-i18n="navFaq">FAQ</a>
+              <a href="#eu-project" data-i18n="navEuProject">Projekt UE</a>
+              <a href="#contact" data-i18n="navContact">Kontakt</a>
+            </nav>
+          </div>
+          <!-- Col 3: Contact -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Kontakt</h4>
+            <ul class="footer-contact-list">
+              <li>
+                <span class="footer-icon">✉</span>
+                <a href="mailto:kontakt.swiderska@gmail.com">kontakt.swiderska@gmail.com</a>
+              </li>
+              <li>
+                <span class="footer-icon">📞</span>
+                <a href="tel:+48501234567">+48 501 234 567</a>
+              </li>
+              <li>
+                <span class="footer-icon">📍</span>
+                <span>Zalew Wiślany, Warmia i Mazury</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <!-- EU Funding Bar in footer -->
+
+      <!-- Footer bottom bar -->
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>&copy; <span id="year"></span> ECO CAMP Julian Świderski. Wszelkie prawa zastrzeżone.</p>
+          <a href="admin.html" class="footer-admin-lock" aria-label="Panel administracyjny" title="Panel administratora">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- EU Funding Bar -->
       <div class="eu-footer-bar">
         <div class="container">
           <img
@@ -550,11 +456,14 @@
             class="eu-footer-logo"
             loading="lazy"
           />
-          <p class="eu-footer-text">Projekt „Rozwój firmy ECO CAMP” współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Warmii i Mazur 2021–2027.</p>
+          <p class="eu-footer-text">Projekt „Rozwój firmy ECO CAMP" współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Warmii i Mazur 2021–2027.</p>
         </div>
       </div>
     </footer>
 
+    <script src="supabase_config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
+
