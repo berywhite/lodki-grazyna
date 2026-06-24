@@ -12,16 +12,33 @@ let dbConnected = false;
 // ---------- Supabase init ----------
 function initDB() {
   if (
-    typeof supabase !== 'undefined' &&
-    SUPABASE_URL &&
-    SUPABASE_URL !== 'YOUR_SUPABASE_URL_HERE'
+    typeof SUPABASE_URL === 'undefined' ||
+    SUPABASE_URL === 'YOUR_SUPABASE_URL_HERE'
   ) {
-    db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    dbConnected = false;
+    return false;
+  }
+
+  try {
+    // Handle both UMD export patterns
+    const createClient = (typeof supabase !== 'undefined' && supabase.createClient)
+      ? supabase.createClient
+      : (window.supabase?.createClient || null);
+
+    if (!createClient) {
+      console.warn('Supabase JS not loaded');
+      dbConnected = false;
+      return false;
+    }
+
+    db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     dbConnected = true;
     return true;
+  } catch (err) {
+    console.error('Supabase init error:', err);
+    dbConnected = false;
+    return false;
   }
-  dbConnected = false;
-  return false;
 }
 
 // ---------- Auth ----------
@@ -167,14 +184,19 @@ function switchTab(tab, el) {
 let adminProducts = [];
 
 async function loadOferta() {
-  if (dbConnected) {
-    const { data, error } = await db.from('products').select('*').order('sort_order');
-    if (!error && data && data.length > 0) {
-      adminProducts = data.map(dbRowToProduct);
+  try {
+    if (dbConnected) {
+      const { data, error } = await db.from('products').select('*').order('sort_order');
+      if (!error && data && data.length > 0) {
+        adminProducts = data.map(dbRowToProduct);
+      } else {
+        adminProducts = getDefaultProducts();
+      }
     } else {
       adminProducts = getDefaultProducts();
     }
-  } else {
+  } catch (err) {
+    console.error('loadOferta error:', err);
     adminProducts = getDefaultProducts();
   }
   renderOferta();
@@ -398,10 +420,15 @@ let adminReservations = [];
 let currentResFilter = 'all';
 
 async function loadRezerwacje() {
-  if (dbConnected) {
-    const { data, error } = await db.from('reservations').select('*').order('created_at', { ascending: false });
-    adminReservations = error ? [] : (data || []);
-  } else {
+  try {
+    if (dbConnected) {
+      const { data, error } = await db.from('reservations').select('*').order('created_at', { ascending: false });
+      adminReservations = (error || !data) ? [] : data;
+    } else {
+      adminReservations = [];
+    }
+  } catch (err) {
+    console.error('loadRezerwacje error:', err);
     adminReservations = [];
   }
   renderRezerwacje();
@@ -552,10 +579,15 @@ async function confirmAndBlock(id) {
 let adminFaq = [];
 
 async function loadFaq() {
-  if (dbConnected) {
-    const { data, error } = await db.from('faq').select('*').order('sort_order');
-    adminFaq = error ? [] : (data || []);
-  } else {
+  try {
+    if (dbConnected) {
+      const { data, error } = await db.from('faq').select('*').order('sort_order');
+      adminFaq = (error || !data) ? [] : data;
+    } else {
+      adminFaq = [];
+    }
+  } catch (err) {
+    console.error('loadFaq error:', err);
     adminFaq = [];
   }
   renderFaq();
@@ -679,10 +711,15 @@ async function moveFaq(faqId, direction) {
 let adminNews = [];
 
 async function loadAktualnosci() {
-  if (dbConnected) {
-    const { data, error } = await db.from('news').select('*').order('created_at', { ascending: false });
-    adminNews = error ? [] : (data || []);
-  } else {
+  try {
+    if (dbConnected) {
+      const { data, error } = await db.from('news').select('*').order('created_at', { ascending: false });
+      adminNews = (error || !data) ? [] : data;
+    } else {
+      adminNews = [];
+    }
+  } catch (err) {
+    console.error('loadAktualnosci error:', err);
     adminNews = [];
   }
   renderAktualnosci();
