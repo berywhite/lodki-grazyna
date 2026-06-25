@@ -129,31 +129,56 @@ function showDashboard() {
   root.innerHTML = `
     <div class="admin-layout">
       <aside class="admin-sidebar">
-        <div class="sidebar-logo">🌿 ECO CAMP</div>
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+            <span class="logo-icon">🌿</span>
+            <div class="sidebar-logo-text">
+              <span class="logo-main">ECO CAMP</span>
+              <span class="logo-sub">Panel Administratora</span>
+            </div>
+          </div>
+        </div>
         <nav class="sidebar-nav">
           <a href="#" class="active" data-tab="oferta" onclick="switchTab('oferta',this);return false;">
-            <span class="nav-icon">📦</span> Oferta
+            <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg></span>
+            <span class="nav-label">Oferta</span>
           </a>
           <a href="#" data-tab="rezerwacje" onclick="switchTab('rezerwacje',this);return false;">
-            <span class="nav-icon">📋</span> Rezerwacje
+            <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" /></svg></span>
+            <span class="nav-label">Rezerwacje</span>
             <span class="nav-badge" id="badge-new">0</span>
           </a>
           <a href="#" data-tab="faq" onclick="switchTab('faq',this);return false;">
-            <span class="nav-icon">❓</span> FAQ
+            <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" /></svg></span>
+            <span class="nav-label">FAQ</span>
           </a>
           <a href="#" data-tab="aktualnosci" onclick="switchTab('aktualnosci',this);return false;">
-            <span class="nav-icon">📰</span> Aktualności
+            <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" /></svg></span>
+            <span class="nav-label">Aktualności</span>
           </a>
         </nav>
         <div class="sidebar-footer">
-          <a href="index.html" class="sidebar-link" target="_blank">← Strona główna</a>
-          <button class="admin-btn admin-btn-ghost" onclick="logout()">Wyloguj</button>
+          <a href="index.html" class="sidebar-link" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="nav-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+            <span class="nav-label">Strona główna</span>
+          </a>
+          <button class="admin-btn admin-btn-ghost sidebar-logout-btn" onclick="logout()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="nav-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" /></svg>
+            Wyloguj
+          </button>
         </div>
       </aside>
       <main class="admin-main">
         <div class="admin-topbar">
-          <h2 id="tab-title">Oferta</h2>
-          <span class="db-status ${dbConnected ? 'connected' : 'offline'}">${dbConnected ? '🟢 Supabase' : '🔴 Offline'}</span>
+          <div class="topbar-left">
+            <h2 id="tab-title" class="topbar-title">Oferta</h2>
+          </div>
+          <div class="topbar-right">
+            <span class="db-status ${dbConnected ? 'connected' : 'offline'}">
+              <span class="status-dot"></span>
+              ${dbConnected ? 'Supabase połączone' : 'Tryb offline'}
+            </span>
+          </div>
         </div>
         <div class="admin-content-wrapper">
           <div id="admin-content" class="admin-tab-content active"></div>
@@ -237,29 +262,55 @@ function renderOferta() {
   const content = document.getElementById('admin-content');
   content.innerHTML = `
     <div class="toolbar">
-      <button class="admin-btn admin-btn-primary" onclick="openProductModal(null)">+ Dodaj produkt</button>
+      <button class="admin-btn admin-btn-primary" onclick="openProductModal(null)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+        Dodaj produkt
+      </button>
     </div>
     <div class="product-admin-grid">
       ${adminProducts.map(p => `
         <div class="product-admin-card ${p.active ? '' : 'inactive'}">
-          <div class="pac-header">
-            <span class="pac-badge ${p.type === 'camper' ? 'badge-camper' : 'badge-boat'}">${p.type === 'camper' ? '🏕️ Przyczepa' : '⛵ Łódź'}</span>
-            <label class="toggle-switch" title="${p.active ? 'Aktywny' : 'Ukryty'}">
-              <input type="checkbox" ${p.active ? 'checked' : ''} onchange="toggleProductActive('${p.id}', this.checked)">
-              <span class="toggle-slider"></span>
-            </label>
+          <div class="card-image-wrap">
+            <img src="${p.image || 'assets/caravan_1.jpg'}" alt="${p.title.pl || ''}" onerror="this.src='assets/caravan_1.jpg'">
+            <div class="card-image-overlay">
+              <span class="pac-badge ${p.type === 'camper' ? 'badge-camper' : 'badge-boat'}">
+                ${p.type === 'camper' ? '🏕️ Przyczepa' : '⛵ Łódź'}
+              </span>
+            </div>
           </div>
-          <h3 class="pac-title">${p.title.pl || '—'}</h3>
-          <div class="pac-prices">
-            <span>Niski: <strong>${p.priceLow !== null ? p.priceLow + ' zł' : '—'}</strong></span>
-            <span>Wysoki: <strong>${p.priceHigh !== null ? p.priceHigh + ' zł' : '—'}</strong></span>
-          </div>
-          <div class="pac-specs">
-            ${(p.specs.pl || []).slice(0,3).map(s => `<span class="tag-chip">${s}</span>`).join('')}
-          </div>
-          <div class="pac-actions">
-            <button class="admin-btn admin-btn-primary" onclick="openProductModal('${p.id}')">✏️ Edytuj</button>
-            <button class="admin-btn admin-btn-danger" onclick="deleteProduct('${p.id}')">🗑️ Usuń</button>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="pac-title">${p.title.pl || '—'}</h3>
+              <label class="toggle-switch" title="${p.active ? 'Aktywny na stronie' : 'Ukryty na stronie'}">
+                <input type="checkbox" ${p.active ? 'checked' : ''} onchange="toggleProductActive('${p.id}', this.checked)">
+                <span class="toggle-track"><span class="toggle-thumb"></span></span>
+              </label>
+            </div>
+            <p class="pac-short-desc">${p.short?.pl || '—'}</p>
+            <div class="pac-prices">
+              <div class="price-item">
+                <span class="price-label">Niski</span>
+                <span class="price-val">${p.priceLow !== null ? p.priceLow + ' zł' : '—'}</span>
+              </div>
+              <div class="price-item">
+                <span class="price-label">Wysoki</span>
+                <span class="price-val">${p.priceHigh !== null ? p.priceHigh + ' zł' : '—'}</span>
+              </div>
+            </div>
+            <div class="pac-specs">
+              ${(p.specs.pl || []).slice(0, 4).map(s => `<span class="tag-chip">${s}</span>`).join('')}
+              ${(p.specs.pl || []).length === 0 ? '<span class="tag-chip empty">Brak specyfikacji</span>' : ''}
+            </div>
+            <div class="pac-actions">
+              <button class="admin-btn admin-btn-ghost" onclick="openProductModal('${p.id}')">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
+                Edytuj
+              </button>
+              <button class="admin-btn admin-btn-danger" onclick="deleteProduct('${p.id}')">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" /></svg>
+                Usuń
+              </button>
+            </div>
           </div>
         </div>
       `).join('')}
@@ -348,18 +399,21 @@ function openProductModal(productId) {
           <input id="f-image" type="text" value="${p ? p.image : 'assets/caravan_1.jpg'}">
         </div>
         <div class="form-group">
-          <label class="toggle-label">
+          <label class="toggle-label-wrapper">
             <label class="toggle-switch">
               <input id="f-active" type="checkbox" ${(!p || p.active) ? 'checked' : ''}>
-              <span class="toggle-slider"></span>
+              <span class="toggle-track"><span class="toggle-thumb"></span></span>
             </label>
-            Produkt aktywny (widoczny na stronie)
+            <span class="toggle-text">Produkt aktywny (widoczny na stronie)</span>
           </label>
         </div>
       </div>
       <div class="modal-footer">
         <button class="admin-btn admin-btn-ghost" onclick="closeModal('product-modal')">Anuluj</button>
-        <button class="admin-btn admin-btn-primary" onclick="saveProduct('${productId || ''}')">💾 Zapisz</button>
+        <button class="admin-btn admin-btn-primary" onclick="saveProduct('${productId || ''}')">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+          Zapisz produkt
+        </button>
       </div>
     </div>
   `;
@@ -454,9 +508,18 @@ function renderRezerwacje() {
 
   content.innerHTML = `
     <div class="stats-row">
-      <div class="stat-card"><span class="stat-num">${adminReservations.length}</span><span class="stat-label">Wszystkich</span></div>
-      <div class="stat-card accent"><span class="stat-num">${newCount}</span><span class="stat-label">Nowych</span></div>
-      <div class="stat-card green"><span class="stat-num">${confirmedCount}</span><span class="stat-label">Potwierdzonych</span></div>
+      <div class="stat-card">
+        <span class="stat-value">${adminReservations.length}</span>
+        <span class="stat-label">Wszystkich</span>
+      </div>
+      <div class="stat-card accent">
+        <span class="stat-value">${newCount}</span>
+        <span class="stat-label">Nowych</span>
+      </div>
+      <div class="stat-card green">
+        <span class="stat-value">${confirmedCount}</span>
+        <span class="stat-label">Potwierdzonych</span>
+      </div>
     </div>
     <div class="toolbar">
       <div class="filter-tabs">
@@ -471,20 +534,35 @@ function renderRezerwacje() {
       <table class="data-table">
         <thead>
           <tr>
-            <th>Data</th><th>Klient</th><th>Produkt</th><th>Daty pobytu</th><th>Status</th><th>Akcje</th>
+            <th>Data zapytania</th><th>Klient</th><th>Produkt</th><th>Daty pobytu</th><th>Status</th><th class="text-right">Akcje</th>
           </tr>
         </thead>
         <tbody>
           ${filtered.map(r => `
             <tr class="reservation-row ${r.status}" onclick="openReservationDetail('${r.id}')">
               <td>${formatResDate(r.created_at)}</td>
-              <td><strong>${r.name || '—'}</strong><br><small>${r.email || ''}</small></td>
-              <td>${r.product_name || r.product_id || '—'}</td>
-              <td>${r.start_date || '—'} → ${r.end_date || '—'}</td>
+              <td>
+                <div class="client-info">
+                  <span class="client-name">${r.name || '—'}</span>
+                  <span class="client-email">${r.email || ''}</span>
+                </div>
+              </td>
+              <td><span class="product-tag">${r.product_name || r.product_id || '—'}</span></td>
+              <td>
+                <div class="stay-dates">
+                  <span class="date-range">${r.start_date || '—'} <span class="date-arrow">→</span> ${r.end_date || '—'}</span>
+                </div>
+              </td>
               <td><span class="status-badge status-${r.status}">${statusLabel(r.status)}</span></td>
-              <td onclick="event.stopPropagation()">
-                <button class="admin-btn admin-btn-primary" onclick="changeResStatus('${r.id}','confirmed')">✓</button>
-                <button class="admin-btn admin-btn-danger" onclick="changeResStatus('${r.id}','rejected')">✗</button>
+              <td class="text-right" onclick="event.stopPropagation()">
+                <div class="table-actions">
+                  <button class="admin-btn admin-btn-sm admin-btn-primary" onclick="changeResStatus('${r.id}','confirmed')" title="Potwierdź">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  </button>
+                  <button class="admin-btn admin-btn-sm admin-btn-danger" onclick="changeResStatus('${r.id}','rejected')" title="Odrzuć">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                  </button>
+                </div>
               </td>
             </tr>
           `).join('')}
@@ -536,8 +614,11 @@ function openReservationDetail(id) {
       </div>
       <div class="modal-footer">
         <button class="admin-btn admin-btn-ghost" onclick="changeResStatus('${r.id}','read');closeModal('res-modal')">Oznacz odczytane</button>
-        <button class="admin-btn admin-btn-danger" onclick="changeResStatus('${r.id}','rejected');closeModal('res-modal')">Odrzuć</button>
-        <button class="admin-btn admin-btn-primary" onclick="confirmAndBlock('${r.id}');closeModal('res-modal')">✓ Potwierdź i zablokuj daty</button>
+        <button class="admin-btn admin-btn-danger" onclick="changeResStatus('${r.id}','rejected');closeModal('res-modal')">Odrzuć zapytanie</button>
+        <button class="admin-btn admin-btn-primary" onclick="confirmAndBlock('${r.id}');closeModal('res-modal')">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0110 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>
+          Potwierdź i zablokuj daty
+        </button>
       </div>
     </div>
   `;
@@ -599,7 +680,10 @@ function renderFaq() {
   const content = document.getElementById('admin-content');
   content.innerHTML = `
     <div class="toolbar">
-      <button class="admin-btn admin-btn-primary" onclick="openFaqModal(null)">+ Dodaj pytanie</button>
+      <button class="admin-btn admin-btn-primary" onclick="openFaqModal(null)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+        Dodaj pytanie
+      </button>
       ${!dbConnected ? '<p class="offline-note">⚠️ Offline – zmiany FAQ wymagają Supabase</p>' : ''}
     </div>
     <div class="faq-admin-list">
@@ -607,15 +691,28 @@ function renderFaq() {
       ${adminFaq.map((f, i) => `
         <div class="faq-item-admin">
           <div class="faq-item-header">
-            <strong>${f.question_pl || '—'}</strong>
+            <span class="faq-drag-handle">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="drag-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" /></svg>
+            </span>
+            <strong class="faq-item-question">${f.question_pl || '—'}</strong>
             <div class="faq-item-actions">
-              <button class="admin-btn admin-btn-ghost icon-btn" onclick="moveFaq(${f.id}, 'up')" ${i===0?'disabled':''}>↑</button>
-              <button class="admin-btn admin-btn-ghost icon-btn" onclick="moveFaq(${f.id}, 'down')" ${i===adminFaq.length-1?'disabled':''}>↓</button>
-              <button class="admin-btn admin-btn-primary" onclick="openFaqModal(${f.id})">✏️</button>
-              <button class="admin-btn admin-btn-danger" onclick="deleteFaq(${f.id})">🗑️</button>
+              <button class="admin-btn admin-btn-ghost icon-btn" onclick="moveFaq(${f.id}, 'up')" ${i===0?'disabled':''} title="W górę">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" /></svg>
+              </button>
+              <button class="admin-btn admin-btn-ghost icon-btn" onclick="moveFaq(${f.id}, 'down')" ${i===adminFaq.length-1?'disabled':''} title="W dół">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+              </button>
+              <button class="admin-btn admin-btn-ghost" onclick="openFaqModal(${f.id})" title="Edytuj">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
+              </button>
+              <button class="admin-btn admin-btn-danger" onclick="deleteFaq(${f.id})" title="Usuń">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" /></svg>
+              </button>
             </div>
           </div>
-          <p class="faq-item-answer">${f.answer_pl || '—'}</p>
+          <div class="faq-item-body">
+            <p class="faq-item-answer">${f.answer_pl || '—'}</p>
+          </div>
         </div>
       `).join('')}
     </div>
@@ -657,7 +754,10 @@ function openFaqModal(faqId) {
       </div>
       <div class="modal-footer">
         <button class="admin-btn admin-btn-ghost" onclick="closeModal('faq-modal')">Anuluj</button>
-        <button class="admin-btn admin-btn-primary" onclick="saveFaq(${faqId || 'null'})">💾 Zapisz</button>
+        <button class="admin-btn admin-btn-primary" onclick="saveFaq(${faqId || 'null'})">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+          Zapisz pytanie
+        </button>
       </div>
     </div>
   `;
@@ -731,21 +831,37 @@ function renderAktualnosci() {
   const content = document.getElementById('admin-content');
   content.innerHTML = `
     <div class="toolbar">
-      <button class="admin-btn admin-btn-primary" onclick="openNewsModal(null)">+ Dodaj aktualność</button>
+      <button class="admin-btn admin-btn-primary" onclick="openNewsModal(null)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+        Dodaj aktualność
+      </button>
       ${!dbConnected ? '<p class="offline-note">⚠️ Offline – aktualności wymagają Supabase</p>' : ''}
     </div>
     <div class="news-admin-list">
       ${adminNews.length === 0 ? '<p class="empty-state">Brak aktualności. Dodaj pierwszą!</p>' : ''}
       ${adminNews.map(n => `
         <div class="news-item-admin">
-          <div class="news-meta">
-            <span class="news-date">${n.date_pl || formatResDate(n.created_at)}</span>
+          ${n.image ? `
+            <div class="news-thumb-wrap">
+              <img class="news-thumb" src="${n.image}" alt="${n.title_pl || ''}" onerror="this.src='assets/eu_logotypy.png'">
+            </div>
+          ` : ''}
+          <div class="news-content">
+            <div class="news-meta">
+              <span class="news-date">${n.date_pl || formatResDate(n.created_at)}</span>
+            </div>
+            <h3 class="news-title">${n.title_pl || '—'}</h3>
+            <p class="news-excerpt">${(n.text_pl || '').slice(0, 150)}…</p>
           </div>
-          <h3>${n.title_pl || '—'}</h3>
-          <p>${(n.text_pl || '').slice(0, 120)}…</p>
-          <div class="pac-actions">
-            <button class="admin-btn admin-btn-primary" onclick="openNewsModal(${n.id})">✏️ Edytuj</button>
-            <button class="admin-btn admin-btn-danger" onclick="deleteNews(${n.id})">🗑️ Usuń</button>
+          <div class="news-controls">
+            <button class="admin-btn admin-btn-ghost" onclick="openNewsModal(${n.id})" title="Edytuj">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
+              <span>Edytuj</span>
+            </button>
+            <button class="admin-btn admin-btn-danger" onclick="deleteNews(${n.id})" title="Usuń">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" /></svg>
+              <span>Usuń</span>
+            </button>
           </div>
         </div>
       `).join('')}
@@ -802,7 +918,10 @@ function openNewsModal(newsId) {
       </div>
       <div class="modal-footer">
         <button class="admin-btn admin-btn-ghost" onclick="closeModal('news-modal')">Anuluj</button>
-        <button class="admin-btn admin-btn-primary" onclick="saveNews(${newsId || 'null'})">💾 Zapisz</button>
+        <button class="admin-btn admin-btn-primary" onclick="saveNews(${newsId || 'null'})">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-icon-sm"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+          Zapisz aktualność
+        </button>
       </div>
     </div>
   `;
