@@ -155,7 +155,9 @@ function showDashboard() {
           <h2 id="tab-title">Oferta</h2>
           <span class="db-status ${dbConnected ? 'connected' : 'offline'}">${dbConnected ? '🟢 Supabase' : '🔴 Offline'}</span>
         </div>
-        <div id="admin-content" class="admin-tab-content"></div>
+        <div class="admin-content-wrapper">
+          <div id="admin-content" class="admin-tab-content active"></div>
+        </div>
       </main>
     </div>
   `;
