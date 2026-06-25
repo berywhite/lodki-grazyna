@@ -249,12 +249,102 @@ function dbRowToProduct(row) {
 function getDefaultProducts() {
   // Returns the hardcoded defaults from the main app (copy minimal set)
   return [
-    { id: 'camper-classic-1', type: 'camper', title: { pl: 'Przyczepa Classic 1', en: 'Classic Caravan 1' }, short: { pl: 'do uzupełnienia', en: 'to be completed' }, description: { pl: '', en: '' }, priceLow: null, priceHigh: null, specs: { pl: [], en: [] }, image: 'assets/caravan_1.jpg', active: true, sort_order: 0 },
-    { id: 'camper-classic-2', type: 'camper', title: { pl: 'Przyczepa Classic 2', en: 'Classic Caravan 2' }, short: { pl: 'Osobny kalendarz rezerwacji', en: 'Separate booking calendar' }, description: { pl: '', en: '' }, priceLow: null, priceHigh: null, specs: { pl: [], en: [] }, image: 'assets/caravan_1.jpg', active: true, sort_order: 1 },
-    { id: 'camper-family', type: 'camper', title: { pl: 'Przyczepa Family', en: 'Family Caravan' }, short: { pl: 'Rodzinna • Dostępna dla niepełnosprawnych', en: 'Family • Disability accessible' }, description: { pl: '', en: '' }, priceLow: null, priceHigh: null, specs: { pl: ['Rampa najazdowa', 'Uchwyty', 'Oznaczenia kontrastowe'], en: ['Wheelchair ramp', 'Grab handles', 'Contrast markings'] }, image: 'assets/caravan_2.jpg', active: true, sort_order: 2 },
-    { id: 'camper-coworking', type: 'camper', title: { pl: 'Przyczepa Coworking', en: 'Coworking Caravan' }, short: { pl: 'Praca zdalna • Widok na naturę', en: 'Remote work • Nature view' }, description: { pl: '', en: '' }, priceLow: null, priceHigh: null, specs: { pl: [], en: [] }, image: 'assets/caravan_1.jpg', active: true, sort_order: 3 },
-    { id: 'boat-electric-1', type: 'boat', title: { pl: 'Łódź Elektryczna Classic', en: 'Classic Electric Boat' }, short: { pl: 'Bezemisyjna • Zalew Wiślany', en: 'Zero emission • Vistula Lagoon' }, description: { pl: '', en: '' }, priceLow: null, priceHigh: null, specs: { pl: ['Bez emisji spalin', 'Cicha żegluga', 'Zalew Wiślany'], en: ['Zero emissions', 'Silent cruising', 'Vistula Lagoon'] }, image: 'assets/boat_classic.png', active: true, sort_order: 4 },
-    { id: 'boat-electric-2', type: 'boat', title: { pl: 'Łódź Elektryczna Premium', en: 'Premium Electric Boat' }, short: { pl: 'Ekologiczna • Komfort premium', en: 'Eco-friendly • Premium comfort' }, description: { pl: '', en: '' }, priceLow: null, priceHigh: null, specs: { pl: ['Bez emisji spalin', 'Cicha żegluga', 'Zalew Wiślany'], en: ['Zero emissions', 'Silent cruising', 'Vistula Lagoon'] }, image: 'assets/boat_premium.png', active: true, sort_order: 5 },
+    {
+      id: 'camper-classic-1',
+      type: 'camper',
+      title: { pl: 'Przyczepa Classic 1', en: 'Classic Caravan 1' },
+      short: { pl: 'do uzupełnienia', en: 'to be completed' },
+      description: {
+        pl: 'Nowoczesna i komfortowo wyposażona przyczepa kempingowa idealna dla par lub rodzin. Zapewnia swobodę podróżowania i niezależność podczas wypoczynku.',
+        en: 'Modern and comfortably equipped caravan, perfect for couples or families. Provides freedom of travel and independence during leisure time.'
+      },
+      priceLow: null,
+      priceHigh: null,
+      specs: { pl: ['do uzupełnienia'], en: ['to be completed'] },
+      image: 'assets/caravan_1.jpg',
+      active: true,
+      sort_order: 0
+    },
+    {
+      id: 'camper-classic-2',
+      type: 'camper',
+      title: { pl: 'Przyczepa Classic 2', en: 'Classic Caravan 2' },
+      short: { pl: 'Osobny kalendarz rezerwacji', en: 'Separate booking calendar' },
+      description: {
+        pl: 'Druga z naszych nowoczesnych przyczep Classic. Oferuje ten sam wysoki standard wykończenia i przytulny układ wnętrza – idealna dla rodzin i par szukających komfortu blisko natury. Posiada oddzielny kalendarz rezerwacji dla Twojej wygody.',
+        en: 'The second of our modern Classic caravans. Offers the same high standard of finishing and cosy interior layout – ideal for families and couples seeking comfort close to nature. Features a separate booking calendar for your convenience.'
+      },
+      priceLow: null,
+      priceHigh: null,
+      specs: { pl: ['do uzupełnienia'], en: ['to be completed'] },
+      image: 'assets/caravan_1.jpg',
+      active: true,
+      sort_order: 1
+    },
+    {
+      id: 'camper-family',
+      type: 'camper',
+      title: { pl: 'Przyczepa Family', en: 'Family Caravan' },
+      short: { pl: 'Rodzinna • Dostosowana dla osób z niepełnosprawnościami', en: 'Family • Disability accessible' },
+      description: {
+        pl: 'Przestronna przyczepa rodzinna przeznaczona dla większych rodzin i osób ze szczególnymi potrzebami. Wyposażona w rampę najazdową, uchwyty, oznaczenia kontrastowe oraz dodatkowe udogodnienia zwiększające komfort i bezpieczeństwo użytkowania.',
+        en: 'Spacious family caravan for larger families and people with special needs. Equipped with a ramp, grab handles, contrast markings, and accessibility features that increase comfort and safety.'
+      },
+      priceLow: null,
+      priceHigh: null,
+      specs: { pl: ['Rampa najazdowa', 'Uchwyty', 'Oznaczenia kontrastowe'], en: ['Wheelchair ramp', 'Grab handles', 'Contrast markings'] },
+      image: 'assets/caravan_2.jpg',
+      active: true,
+      sort_order: 2
+    },
+    {
+      id: 'camper-coworking',
+      type: 'camper',
+      title: { pl: 'Przyczepa Coworking', en: 'Coworking Caravan' },
+      short: { pl: 'Praca zdalna • Widok na naturę', en: 'Remote work • Nature view' },
+      description: {
+        pl: 'Mobilna przestrzeń coworkingowa stworzona dla osób, które chcą połączyć pracę z podróżowaniem i wypoczynkiem. Pracuj z widokiem na wodę, las lub łąkę.',
+        en: 'Mobile coworking space designed for people who want to combine work with travel and leisure. Work with a view of water, forest, or meadow.'
+      },
+      priceLow: null,
+      priceHigh: null,
+      specs: { pl: ['do uzupełnienia'], en: ['to be completed'] },
+      image: 'assets/caravan_1.jpg',
+      active: true,
+      sort_order: 3
+    },
+    {
+      id: 'boat-electric-1',
+      type: 'boat',
+      title: { pl: 'Łódź Elektryczna Classic', en: 'Classic Electric Boat' },
+      short: { pl: 'Bezemisyjna • Cicha żegluga • Zalew Wiślany', en: 'Zero emission • Silent cruising • Vistula Lagoon' },
+      description: {
+        pl: 'Ekologiczna łódź elektryczna zapewniająca cichą i komfortową żeglugę po Zalewie Wiślanym. Idealna do odkrywania pięknych zakątków regionu bez hałasu i emisji spalin.',
+        en: 'Eco-friendly electric boat providing silent and comfortable sailing on the Vistula Lagoon. Perfect for exploring the beautiful corners of the region without noise or exhaust emissions.'
+      },
+      priceLow: null,
+      priceHigh: null,
+      specs: { pl: ['Bez emisji spalin', 'Cicha żegluga', 'Zalew Wiślany'], en: ['Zero emissions', 'Silent cruising', 'Vistula Lagoon'] },
+      image: 'assets/boat_classic.png',
+      active: true,
+      sort_order: 4
+    },
+    {
+      id: 'boat-electric-2',
+      type: 'boat',
+      title: { pl: 'Łódź Elektryczna Premium', en: 'Premium Electric Boat' },
+      short: { pl: 'Ekologiczna • Komfort premium', en: 'Eco-friendly • Premium comfort' },
+      description: {
+        pl: 'Ekologiczna łódź elektryczna stworzona dla tych, którzy cenią zarówno komfort, jak i odpowiedzialność za środowisko. Cicha i wydajna, pozwala cieszyć się widokami Zalewu Wiślanego w wyjątkowy sposób.',
+        en: 'Eco-friendly electric boat designed for those who value both comfort and environmental responsibility. Silent and efficient, it allows you to enjoy the Vistula Lagoon views in a unique way.'
+      },
+      priceLow: null,
+      priceHigh: null,
+      specs: { pl: ['Bez emisji spalin', 'Cicha żegluga', 'Zalew Wiślany'], en: ['Zero emissions', 'Silent cruising', 'Vistula Lagoon'] },
+      image: 'assets/boat_premium.png',
+      active: true,
+      sort_order: 5
+    },
   ];
 }
 
@@ -320,83 +410,100 @@ function renderOferta() {
 
 function openProductModal(productId) {
   const p = productId ? adminProducts.find(x => x.id === productId) : null;
+  const defaultP = productId ? getDefaultProducts().find(x => x.id === productId) : null;
   const isNew = !p;
+  
+  // Bind inputs with database values falling back to hardcoded defaults
+  const valId = p ? p.id : '';
+  const valType = p ? p.type : 'camper';
+  const valTitlePl = p ? (p.title.pl || defaultP?.title.pl || '') : '';
+  const valTitleEn = p ? (p.title.en || defaultP?.title.en || '') : '';
+  const valShortPl = p ? (p.short.pl || defaultP?.short.pl || '') : '';
+  const valShortEn = p ? (p.short.en || defaultP?.short.en || '') : '';
+  const valDescPl = p ? (p.description.pl || defaultP?.description.pl || '') : '';
+  const valDescEn = p ? (p.description.en || defaultP?.description.en || '') : '';
+  const valPriceLow = p && p.priceLow !== null ? p.priceLow : '';
+  const valPriceHigh = p && p.priceHigh !== null ? p.priceHigh : '';
+  const valSpecsPl = p ? ((p.specs.pl && p.specs.pl.length > 0 && p.specs.pl[0] !== 'do uzupełnienia') ? p.specs.pl : (defaultP?.specs.pl || [])) : [];
+  const valSpecsEn = p ? ((p.specs.en && p.specs.en.length > 0 && p.specs.en[0] !== 'to be completed') ? p.specs.en : (defaultP?.specs.en || [])) : [];
+  const valImage = p ? (p.image || defaultP?.image || 'assets/caravan_1.jpg') : 'assets/caravan_1.jpg';
+  
   const modal = document.createElement('div');
   modal.className = 'modal-overlay';
   modal.id = 'product-modal';
   modal.innerHTML = `
     <div class="modal-card">
       <div class="modal-header">
-        <h3>${isNew ? 'Nowy produkt' : 'Edytuj: ' + (p.title.pl || p.id)}</h3>
+        <h3>${isNew ? 'Nowy produkt' : 'Edytuj: ' + (valTitlePl || valId)}</h3>
         <button class="modal-close" onclick="closeModal('product-modal')">✕</button>
       </div>
       <div class="modal-body">
         <div class="form-row-2">
           <div class="form-group">
             <label>ID produktu</label>
-            <input id="f-id" type="text" value="${p ? p.id : ''}" placeholder="np. camper-classic-3" ${!isNew ? 'readonly' : ''}>
+            <input id="f-id" type="text" value="${valId}" placeholder="np. camper-classic-3" ${!isNew ? 'readonly' : ''}>
           </div>
           <div class="form-group">
             <label>Typ</label>
             <select id="f-type">
-              <option value="camper" ${(!p || p.type==='camper') ? 'selected':''}>Przyczepa kempingowa</option>
-              <option value="boat" ${p && p.type==='boat' ? 'selected':''}>Łódź elektryczna</option>
+              <option value="camper" ${valType === 'camper' ? 'selected' : ''}>Przyczepa kempingowa</option>
+              <option value="boat" ${valType === 'boat' ? 'selected' : ''}>Łódź elektryczna</option>
             </select>
           </div>
         </div>
         <div class="form-row-2">
           <div class="form-group">
             <label>Tytuł (PL)</label>
-            <input id="f-title-pl" type="text" value="${p ? p.title.pl : ''}">
+            <input id="f-title-pl" type="text" value="${valTitlePl}">
           </div>
           <div class="form-group">
             <label>Tytuł (EN)</label>
-            <input id="f-title-en" type="text" value="${p ? p.title.en : ''}">
+            <input id="f-title-en" type="text" value="${valTitleEn}">
           </div>
         </div>
         <div class="form-row-2">
           <div class="form-group">
             <label>Opis skrócony (PL)</label>
-            <input id="f-short-pl" type="text" value="${p ? p.short.pl : ''}">
+            <input id="f-short-pl" type="text" value="${valShortPl}">
           </div>
           <div class="form-group">
             <label>Opis skrócony (EN)</label>
-            <input id="f-short-en" type="text" value="${p ? p.short.en : ''}">
+            <input id="f-short-en" type="text" value="${valShortEn}">
           </div>
         </div>
         <div class="form-row-2">
           <div class="form-group">
             <label>Opis pełny (PL)</label>
-            <textarea id="f-desc-pl" rows="3">${p ? p.description.pl : ''}</textarea>
+            <textarea id="f-desc-pl" rows="3">${valDescPl}</textarea>
           </div>
           <div class="form-group">
             <label>Opis pełny (EN)</label>
-            <textarea id="f-desc-en" rows="3">${p ? p.description.en : ''}</textarea>
+            <textarea id="f-desc-en" rows="3">${valDescEn}</textarea>
           </div>
         </div>
         <div class="form-row-2">
           <div class="form-group">
             <label>Cena – sezon niski (zł)</label>
-            <input id="f-price-low" type="number" value="${p && p.priceLow !== null ? p.priceLow : ''}">
+            <input id="f-price-low" type="number" value="${valPriceLow}">
           </div>
           <div class="form-group">
             <label>Cena – sezon wysoki (zł)</label>
-            <input id="f-price-high" type="number" value="${p && p.priceHigh !== null ? p.priceHigh : ''}">
+            <input id="f-price-high" type="number" value="${valPriceHigh}">
           </div>
         </div>
         <div class="form-row-2">
           <div class="form-group">
             <label>Specs (PL) – oddziel przecinkami</label>
-            <input id="f-specs-pl" type="text" value="${p ? (p.specs.pl || []).join(', ') : ''}">
+            <input id="f-specs-pl" type="text" value="${valSpecsPl.join(', ')}">
           </div>
           <div class="form-group">
             <label>Specs (EN) – oddziel przecinkami</label>
-            <input id="f-specs-en" type="text" value="${p ? (p.specs.en || []).join(', ') : ''}">
+            <input id="f-specs-en" type="text" value="${valSpecsEn.join(', ')}">
           </div>
         </div>
         <div class="form-group">
           <label>Zdjęcie (ścieżka)</label>
-          <input id="f-image" type="text" value="${p ? p.image : 'assets/caravan_1.jpg'}">
+          <input id="f-image" type="text" value="${valImage}">
         </div>
         <div class="form-group">
           <label class="toggle-label-wrapper">
