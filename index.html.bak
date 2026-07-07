@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ECO CAMP – nowoczesna wypożyczalnia przyczep kempingowych i łodzi elektrycznych na Warmii i Mazurach. Odkrywaj Zalew Wiślany w swoim rytmie. Zarezerwuj online."
+    />
+    <title>ECO CAMP – Wypożyczalnia Przyczep & Łodzi Elektrycznych</title>
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    
+    <!-- Google Fonts: Elegant Playfair Display and modern Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Pannellum 360 Panorama Viewer CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Glowing background blobs -->
+    <div class="bg-blob blob-1" aria-hidden="true"></div>
+    <div class="bg-blob blob-2" aria-hidden="true"></div>
+    <div class="bg-blob blob-3" aria-hidden="true"></div>
+
+    <!-- Accessibility Skip Link -->
+    <a class="skip-link" href="#main" data-i18n="skipLink">Przejdź do treści</a>
+
+    <!-- Sticky Glassmorphic Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="ECO CAMP">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/logo.png" alt="ECO CAMP Logo" width="44" height="44" style="border-radius: 8px; object-fit: contain;">
+          </span>
+          <span class="brand-text">ECO CAMP</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Główna nawigacja" id="main-nav">
+          <a href="#offer" data-i18n="navOffer">Oferta</a>
+          <a href="#virtual-tours" data-i18n="navTours">Film</a>
+          <a href="#reservation" data-i18n="navReservations">Rezerwacje</a>
+          <a href="#news" data-i18n="navNews">Aktualności</a>
+          <a href="#eu-project" data-i18n="navEuProject">Projekt UE</a>
+          <a href="#faq" data-i18n="navFaq">FAQ</a>
+          <a href="#contact" data-i18n="navContact">Kontakt</a>
+        </nav>
+
+        <div class="header-tools">
+          <div class="accessibility-tools" aria-label="Ustawienia dostępności">
+            <button class="tool-button" type="button" id="font-toggle" data-i18n="fontToggle" aria-label="Powiększ czcionkę">A+</button>
+            <button class="tool-button" type="button" id="contrast-toggle" data-i18n="contrastToggle" aria-label="Wysoki kontrast">Kontrast</button>
+          </div>
+          <div class="language-switcher" aria-label="Wybór języka">
+            <button class="lang-button is-active" type="button" data-lang="pl">PL</button>
+            <button class="lang-button" type="button" data-lang="en">EN</button>
+          </div>
+          <!-- Hamburger menu trigger -->
+          <button class="mobile-menu-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Premium Hero Section -->
+      <section class="hero" id="home">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <p class="eyebrow" data-i18n="heroEyebrow">Eco Camp • Wynajem Przyczep & Łodzi</p>
+          <h1 data-i18n="heroTitle">Luksusowy wypoczynek nad wodą, na Twoich zasadach.</h1>
+          <p class="lead" data-i18n="heroLead">
+            Wybierz luksusową przyczepę kempingową lub szybką łódź motorową na Mazurach. Zaznacz zakres dat na interaktywnym kalendarzu i prześlij zapytanie. Rezerwację potwierdzamy ręcznie, bez zbędnych pośredników i prowizji.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#reservation" data-i18n="heroPrimary">Zarezerwuj teraz</a>
+            <a class="button ghost" href="#offer" data-i18n="heroSecondary">Zobacz ofertę</a>
+          </div>
+
+          <!-- Floating Quick Booking Bar -->
+          <div class="hero-booking-bar animate-up">
+            <div class="booking-field">
+              <label for="hero-select-product" data-i18n="fieldProduct">Wybierz przyczepę lub łódź</label>
+              <select id="hero-select-product"></select>
+            </div>
+            <div class="booking-field">
+              <label for="hero-start-date" data-i18n="fieldStartDate">Data początkowa (Od)</label>
+              <input type="date" id="hero-start-date">
+            </div>
+            <div class="booking-field">
+              <label for="hero-end-date" data-i18n="fieldEndDate">Data zakończenia (Do)</label>
+              <input type="date" id="hero-end-date">
+            </div>
+            <button type="button" class="button primary" id="hero-booking-search-btn" data-i18n="heroSearchBtn">Sprawdź dostępność</button>
+          </div>
+          
+          <dl class="hero-stats reveal" aria-label="Statystyki ECO CAMP">
+            <div>
+              <dt>4</dt>
+              <dd data-i18n="statTrailers">przyczepy kempingowe</dd>
+            </div>
+            <div>
+              <dt>2</dt>
+              <dd data-i18n="statBoats">łodzie elektryczne</dd>
+            </div>
+            <div>
+              <dt>360°</dt>
+              <dd data-i18n="statTours">spacery 360°</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Three-step Process Section -->
+      <section class="section compact-section" aria-label="Jak działa rezerwacja">
+        <div class="container steps-grid">
+          <article class="step-card reveal">
+            <span class="step-index">01</span>
+            <h2 data-i18n="stepOneTitle">1. Wybierz sprzęt</h2>
+            <p data-i18n="stepOneText">Wybierz komfortową przyczepę dla rodziny lub zwrotną łódź motorową.</p>
+          </article>
+          <article class="step-card reveal delay-100">
+            <span class="step-index">02</span>
+            <h2 data-i18n="stepTwoTitle">2. Zaznacz zakres dat</h2>
+            <p data-i18n="stepTwoText">Kliknij na kalendarzu dzień początkowy (od) oraz końcowy (do).</p>
+          </article>
+          <article class="step-card reveal delay-200">
+            <span class="step-index">03</span>
+            <h2 data-i18n="stepThreeTitle">3. Odbierz i wypoczywaj</h2>
+            <p data-i18n="stepThreeText">Wpłać 30% zadatku przelewem, a my przygotujemy wszystko na Twój przyjazd.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Offer Grid Section -->
+      <section class="section" id="offer" aria-labelledby="offer-title">
+        <div class="container">
+          <div class="section-heading split-heading reveal">
+            <div>
+              <p class="eyebrow" data-i18n="offerEyebrow">Nasza Oferta</p>
+              <h2 id="offer-title" data-i18n="offerTitle">Przyczepy kempingowe i łodzie elektryczne</h2>
+            </div>
+            <p data-i18n="offerLead">
+              Przyczepy rodzinne, przestrzeń coworkingowa oraz ekologiczne łodzie elektryczne na Zalewie Wiślanym. Kliknij przycisk, aby wybrać sprzęt do kalendarza rezerwacji.
+            </p>
+          </div>
+          <div class="product-grid" id="product-list" aria-live="polite">
+            <!-- Dynamic products will be rendered here by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured YouTube Video Section -->
+      <section class="section dark-section" id="virtual-tours" aria-labelledby="tours-title">
+        <div class="container">
+          <div class="section-heading split-heading reveal">
+            <div>
+              <p class="eyebrow" data-i18n="toursEyebrow">Film o ofercie</p>
+              <h2 id="tours-title" data-i18n="toursTitle">ECO CAMP – Obejrzyj nasz film</h2>
+            </div>
+            <p data-i18n="toursLead">Obejrzyj film i poznaj nasze przyczepy kempingowe oraz łodzie elektryczne na Warmii i Mazurach.</p>
+          </div>
+          <div class="video-featured reveal">
+            <div class="video-frame-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/lpXPzuSyQYc?rel=0"
+                title="ECO CAMP – film o przyczepach kempingowych i łodziach elektrycznych"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Section (Calendar & Form) -->
+      <section class="section" id="reservation" aria-labelledby="reservation-title">
+        <div class="container">
+          <div class="section-heading split-heading reveal">
+            <div>
+              <p class="eyebrow" data-i18n="reservationEyebrow">Kalendarz i Formularz</p>
+              <h2 id="reservation-title" data-i18n="reservationTitle">Sprawdź dostępność i zarezerwuj</h2>
+            </div>
+            <p data-i18n="reservationLead">
+              Wybierz pozycję z listy, zaznacz zakres dat bezpośrednio na kalendarzu (dni wolne są białe, zajęte na czerwono), a formularz automatycznie wyliczy koszt wynajmu i kwotę zadatku.
+            </p>
+          </div>
+
+          <div class="booking-shell reveal">
+            <aside class="booking-panel" aria-label="Wybór rezerwacji">
+              <label>
+                <span data-i18n="fieldProduct">Wybierz przyczepę lub łódź</span>
+                <select name="productId" id="reservation-product" required></select>
+              </label>
+              <div class="selected-product" id="selected-product-card">
+                <!-- Selected product preview rendered by app.js -->
+              </div>
+              <div class="bank-details">
+                <strong data-i18n="bankHeading">Dane do wpłaty zadatku (Wariant A)</strong>
+                <p data-i18n="bankText">
+                  Eco Camp, Bank Spółdzielczy<br>
+                  Numer konta: <strong>84 1020 4902 0000 9202 1234 5678</strong><br>
+                  Tytuł przelewu: Zadatek za rezerwację [Twoje Imię i Nazwisko]<br>
+                  Kwota zadatku: 30% wartości rezerwacji.
+                </p>
+              </div>
+            </aside>
+
+            <div class="calendar-panel">
+              <div class="calendar-toolbar">
+                <button class="icon-button" type="button" id="prev-month" aria-label="Poprzedni miesiąc">‹</button>
+                <h3 id="calendar-title" aria-live="polite"></h3>
+                <button class="icon-button" type="button" id="next-month" aria-label="Następny miesiąc">›</button>
+              </div>
+              <div class="calendar-weekdays" aria-hidden="true">
+                <span>Pon</span><span>Wt</span><span>Śr</span><span>Czw</span><span>Pt</span><span>Sob</span><span>Nd</span>
+              </div>
+              <div class="calendar-grid" id="calendar-grid">
+                <!-- Calendar grid rendered by app.js -->
+              </div>
+              <div class="calendar-legend">
+                <span><i class="legend-dot available"></i><span data-i18n="legendAvailable">Wolne</span></span>
+                <span><i class="legend-dot booked"></i><span data-i18n="legendBooked">Zajęte</span></span>
+                <span><i class="legend-dot selected"></i><span data-i18n="legendSelected">Twój wybór</span></span>
+              </div>
+            </div>
+
+            <form class="reservation-form" id="reservation-form">
+              <div class="form-grid">
+                <label>
+                  <span data-i18n="fieldStartDate">Data rozpoczęcia (Od)</span>
+                  <input type="date" name="startDate" id="start-date" required />
+                </label>
+                <label>
+                  <span data-i18n="fieldEndDate">Data zakończenia (Do)</span>
+                  <input type="date" name="endDate" id="end-date" required />
+                </label>
+                <label>
+                  <span data-i18n="fieldName">Imię i nazwisko</span>
+                  <input type="text" name="name" autocomplete="name" required />
+                </label>
+                <label>
+                  <span data-i18n="fieldEmail">Adres e-mail</span>
+                  <input type="email" name="email" autocomplete="email" required />
+                </label>
+                <label>
+                  <span data-i18n="fieldPhone">Numer telefonu</span>
+                  <input type="tel" name="phone" autocomplete="tel" />
+                </label>
+                <label>
+                  <span data-i18n="fieldGuests">Liczba gości</span>
+                  <input type="number" name="guests" min="1" max="8" value="2" />
+                </label>
+              </div>
+              
+              <label class="textarea-label">
+                <span data-i18n="fieldMessage">Wiadomość / Pytania dodatkowe</span>
+                <textarea name="message" rows="4"></textarea>
+              </label>
+              
+              <!-- Live cost breakdown box -->
+              <div id="price-calc-container">
+                <!-- Cost calculation cards rendered by app.js -->
+              </div>
+              
+              <label class="consent-row">
+                <input type="checkbox" name="privacy" required />
+                <span data-i18n="privacyConsent">Akceptuję regulamin wynajmu oraz wyrażam zgodę na przetwarzanie moich danych w celu realizacji zapytania rezerwacyjnego.</span>
+              </label>
+              
+              <p class="form-note" data-i18n="formNote">
+                *To jest zapytanie rezerwacyjne. Po weryfikacji dostępności wyślemy e-mail z potwierdzeniem oraz danymi do wpłaty zadatku.
+              </p>
+              
+              <button class="button primary submit-btn" type="submit" data-i18n="sendRequest">Wyślij zapytanie rezerwacyjne</button>
+              <p class="status-message" id="form-status" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Info Section -->
+      <section class="section muted" id="prices" aria-labelledby="prices-title">
+        <div class="container">
+          <div class="section-heading split-heading reveal">
+            <div>
+              <p class="eyebrow" data-i18n="pricesEyebrow">Przejrzysty Cennik</p>
+              <h2 id="prices-title" data-i18n="pricesTitle">Ceny za dobę w zależności od sezonu</h2>
+            </div>
+            <p data-i18n="pricesText">
+              Sezon wysoki obowiązuje w miesiącach czerwiec, lipiec i sierpień. Sezon niski obowiązuje w pozostałych miesiącach. Minimalny wynajem przyczep: 3 doby.
+            </p>
+          </div>
+          <div class="price-grid">
+            <article class="price-card reveal">
+              <span data-i18n="priceCamperType">Przyczepy kempingowe</span>
+              <strong>do uzupełnienia</strong>
+              <p data-i18n="priceCamperText">do uzupełnienia</p>
+            </article>
+            <article class="price-card featured reveal delay-100">
+              <span data-i18n="priceDepositType">Zadatek rezerwacyjny</span>
+              <strong data-i18n="priceDepositValue">30% ceny pobytu</strong>
+              <p data-i18n="priceDepositText">Płatny przelewem tradycyjnym lub BLIKiem na telefon w ciągu 24h od ręcznego potwierdzenia terminu.</p>
+            </article>
+            <article class="price-card reveal delay-200">
+              <span data-i18n="priceBoatType">Łodzie elektryczne</span>
+              <strong>do uzupełnienia</strong>
+              <p data-i18n="priceBoatText">do uzupełnienia</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog / News Section -->
+      <section class="section" id="news" aria-labelledby="news-title">
+        <div class="container">
+          <div class="section-heading split-heading reveal">
+            <div>
+              <p class="eyebrow" data-i18n="newsEyebrow">Wiadomości</p>
+              <h2 id="news-title" data-i18n="newsTitle">Aktualności ECO CAMP</h2>
+            </div>
+            <p data-i18n="newsLead">Sprawdź co słychać w ECO CAMP, przeczytaj o nowych udogodnieniach oraz dowiedz się więcej o projekcie dofinansowanym z funduszy UE.</p>
+          </div>
+          <div class="news-grid" id="news-list">
+            <!-- News list rendered by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Accordion FAQ Section -->
+      <section class="section muted" id="faq" aria-labelledby="faq-title">
+        <div class="container faq-layout reveal">
+          <div>
+            <p class="eyebrow" data-i18n="faqEyebrow">Pomoc</p>
+            <h2 id="faq-title" data-i18n="faqTitle">Często zadawane pytania (FAQ)</h2>
+          </div>
+          <div class="faq-list" id="faq-list">
+            <!-- FAQ accordion rendered by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- EU Project Section -->
+      <section class="section dark-section" id="eu-project" aria-labelledby="eu-project-title">
+        <div class="container">
+          <div class="section-heading split-heading reveal">
+            <div>
+              <p class="eyebrow">Projekt Unii Europejskiej</p>
+              <h2 id="eu-project-title">Rozwój firmy ECO CAMP</h2>
+            </div>
+            <p>
+              Firma ECO CAMP Julian Świderski realizuje projekt współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Warmii i Mazur 2021–2027.
+            </p>
+          </div>
+
+          <div class="eu-project-grid reveal">
+            <div class="eu-project-description">
+              <p>
+                Celem projektu jest rozwój innowacyjnej i ekologicznej oferty turystycznej poprzez zakup nowoczesnych przyczep kempingowych, łodzi elektrycznych, wdrożenie przestrzeni coworkingowej oraz uruchomienie platformy rezerwacyjnej online.
+              </p>
+              <p>
+                Projekt wspiera rozwój turystyki przyjaznej środowisku, zwiększa dostępność usług dla osób z niepełnosprawnościami oraz wzmacnia atrakcyjność turystyczną regionu Warmii i Mazur.
+              </p>
+              <dl class="eu-project-facts">
+                <div class="eu-fact-item">
+                  <dt>Wartość projektu</dt>
+                  <dd>799 330,72 zł</dd>
+                </div>
+                <div class="eu-fact-item">
+                  <dt>Wysokość dofinansowania</dt>
+                  <dd>647 377,95 zł</dd>
+                </div>
+                <div class="eu-fact-item">
+                  <dt>Okres realizacji</dt>
+                  <dd>03.02.2025 – 30.11.2026</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="eu-logos-block">
+              <p class="eu-logos-label">Projekt dofinansowany ze środków Unii Europejskiej</p>
+              <img
+                src="assets/eu_logotypy.png"
+                alt="Logotypy: Fundusze Europejskie dla Warmii i Mazur, Rzeczpospolita Polska, Dofinansowane przez Unię Europejską"
+                class="eu-logos-img"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-layout reveal">
+          <div class="contact-details-box">
+            <p class="eyebrow" data-i18n="contactEyebrow">Napisz do nas</p>
+            <h2 id="contact-title" data-i18n="contactTitle">Skontaktuj się z Grażyną</h2>
+            <p data-i18n="contactText">Masz pytania dotyczące sprzętu? Chcesz zarezerwować nietypowy termin? Zadzwoń do nas, napisz e-mail lub skontaktuj się przez nasz profil na Facebooku.</p>
+            <div class="contact-methods">
+              <div class="method-item">
+                <span class="icon">📞</span>
+                <div>
+                  <h4>Telefon</h4>
+                  <a href="tel:+48501234567" data-i18n="contactCta">+48 501 234 567</a>
+                </div>
+              </div>
+              <div class="method-item">
+                <span class="icon">✉️</span>
+                <div>
+                  <h4>E-mail</h4>
+                  <a href="mailto:kontakt.swiderska@gmail.com">kontakt.swiderska@gmail.com</a>
+                </div>
+              </div>
+              <div class="method-item">
+                <span class="icon">📍</span>
+                <div>
+                  <h4>Lokalizacja</h4>
+                  <span data-i18n="mapPlaceholder">Zalew Wiślany, Warmia i Mazury</span>
+                </div>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <a class="button secondary" href="https://www.facebook.com/share/1MNTe33VNt/" target="_blank" rel="noreferrer" data-i18n="facebookLink">Odwiedź nas na Facebooku</a>
+            </div>
+          </div>
+          <div class="map-card-wrapper">
+            <iframe
+              src="https://maps.google.com/maps?q=Frombork,+Polska&t=&z=11&ie=UTF8&iwloc=&output=embed"
+              width="100%" height="100%" style="border:0;"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa dojazdu ECO CAMP – Zalew Wiślany, Polska"
+              aria-label="Mapa z lokalizacją ECO CAMP na Zalewie Wiślanym">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Premium Footer -->
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="container footer-grid">
+          <!-- Col 1: Brand -->
+          <div class="footer-col footer-brand-col">
+            <a class="footer-brand" href="#home">
+              <img src="assets/logo.png" alt="ECO CAMP" width="40" height="40">
+              <span>ECO CAMP</span>
+            </a>
+            <p class="footer-tagline" data-i18n="footerText">Wypożyczalnia przyczep kempingowych i łodzi elektrycznych na Warmii i Mazurach. Zalew Wiślany.</p>
+            <a class="footer-social" href="https://www.facebook.com/share/1MNTe33VNt/" target="_blank" rel="noreferrer" aria-label="Facebook ECO CAMP">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+          </div>
+          <!-- Col 2: Navigation -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Nawigacja</h4>
+            <nav class="footer-nav">
+              <a href="#offer" data-i18n="navOffer">Oferta</a>
+              <a href="#reservation" data-i18n="navReservations">Rezerwacje</a>
+              <a href="#news" data-i18n="navNews">Aktualności</a>
+              <a href="#faq" data-i18n="navFaq">FAQ</a>
+              <a href="#eu-project" data-i18n="navEuProject">Projekt UE</a>
+              <a href="#contact" data-i18n="navContact">Kontakt</a>
+            </nav>
+          </div>
+          <!-- Col 3: Contact -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Kontakt</h4>
+            <ul class="footer-contact-list">
+              <li>
+                <span class="footer-icon">✉</span>
+                <a href="mailto:kontakt.swiderska@gmail.com">kontakt.swiderska@gmail.com</a>
+              </li>
+              <li>
+                <span class="footer-icon">📞</span>
+                <a href="tel:+48501234567">+48 501 234 567</a>
+              </li>
+              <li>
+                <span class="footer-icon">📍</span>
+                <span>Zalew Wiślany, Warmia i Mazury</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer bottom bar -->
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>&copy; <span id="year"></span> ECO CAMP Julian Świderski. Wszelkie prawa zastrzeżone.</p>
+          <a href="admin.html" class="footer-admin-lock" aria-label="Panel administracyjny" title="Panel administratora">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- EU Funding Bar -->
+      <div class="eu-footer-bar">
+        <div class="container">
+          <img
+            src="assets/eu_logotypy.png"
+            alt="Projekt dofinansowany ze środków Unii Europejskiej – Fundusze Europejskie dla Warmii i Mazur, Rzeczpospolita Polska, Unia Europejska"
+            class="eu-footer-logo"
+            loading="lazy"
+          />
+          <p class="eu-footer-text">Projekt „Rozwój firmy ECO CAMP" współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Warmii i Mazur 2021–2027.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="supabase_config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
