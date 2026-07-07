@@ -71,6 +71,54 @@ let products = [
       pl: ["do 6 osób", "rampa najazdowa", "uchwyty przy wejściu i w łazience", "oznaczenia kontrastowe", "mata antypoślizgowa", "sterowanie przez smartfon", "składany stół", "lustro uchylne", "krzesło do kąpieli", "etykiety Braille'a"],
       en: ["up to 6 guests", "access ramp", "grab handles at entrance and bathroom", "contrast markings", "anti-slip mat", "smartphone control", "folding table", "tilting mirror", "shower chair", "Braille labels"]
     }
+  },
+  {
+    id: "quicksilver-525",
+    type: "boat",
+    title: { pl: "Quicksilver 525 Axess", en: "Quicksilver 525 Axess" },
+    offerTitle: { pl: "Quicksilver 525 Axess", en: "Quicksilver 525 Axess" },
+    short: { pl: "Łódź elektryczna • do 6 osób • Patent Sternika wymagany", en: "Electric boat • up to 6 guests • Skipper licence required" },
+    offerShort: { pl: "Łódź elektryczna • do 6 osób • Patent Sternika wymagany", en: "Electric boat • up to 6 guests • Skipper licence required" },
+    description: {
+      pl: "Łódź elektryczna Quicksilver 525 Axess dla 6 osób. Silnik Mercury Avator E35 XLRC, 2 baterie litowo-jonowe 48 V, sterowanie hydrauliczne. Dostępna do rezerwacji i wynajmu. Wymagany Patent Sternika Motorowodnego.",
+      en: "Electric boat Quicksilver 525 Axess for up to 6 guests. Mercury Avator E35 XLRC motor, 2 lithium-ion 48 V batteries, hydraulic steering. Available to book and rent. Skipper licence required."
+    },
+    image: "assets/ecocamp/project-equipment/electric-boat-side.jpeg",
+    gallery: [],
+    priceLow: 800,
+    priceMedium: 800,
+    priceHigh: 800,
+    minNightsDefault: 1,
+    minNightsHigh: 1,
+    seasonPlan: "hobby545",
+    specs: {
+      pl: ["do 6 osób", "silnik 3700 W", "2 baterie 2,3 kWh", "sterowanie hydrauliczne", "Patent Sternika wymagany"],
+      en: ["up to 6 guests", "3700 W motor", "2 × 2.3 kWh batteries", "hydraulic steering", "Skipper licence required"]
+    }
+  },
+  {
+    id: "solar-boat",
+    type: "boat",
+    title: { pl: "Łódź solarno-elektryczna", en: "Solar Electric Boat" },
+    offerTitle: { pl: "Łódź solarno-elektryczna", en: "Solar Electric Boat" },
+    short: { pl: "Dmuchana • napęd elektryczny • panele fotowoltaiczne", en: "Inflatable • electric drive • solar panels" },
+    offerShort: { pl: "Dmuchana • napęd elektryczny • panele fotowoltaiczne", en: "Inflatable • electric drive • solar panels" },
+    description: {
+      pl: "Innowacyjna łódź dmuchana z technologią Drop-Stitch, napędem elektrycznym i zasilaniem panelami fotowoltaicznymi. Szczegóły dostępności zostaną uzupełnione wkrótce.",
+      en: "Innovative inflatable boat with Drop-Stitch technology, electric drive and solar panel power supply. Availability details to be added soon."
+    },
+    image: "assets/boat_classic.png",
+    gallery: [],
+    priceLow: null,
+    priceMedium: null,
+    priceHigh: null,
+    minNightsDefault: 1,
+    minNightsHigh: 1,
+    seasonPlan: "hobby545",
+    specs: {
+      pl: ["technologia Drop-Stitch", "napęd elektryczny", "panele fotowoltaiczne", "min. 6 godzin pracy"],
+      en: ["Drop-Stitch technology", "electric drive", "solar panels", "min. 6 hours range"]
+    }
   }
 ];
 
