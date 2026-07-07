@@ -106,9 +106,12 @@
             <button class="tool-button" type="button" id="font-toggle" data-i18n="fontToggle" aria-label="Powiększ czcionkę">A+</button>
             <button class="tool-button" type="button" id="contrast-toggle" data-i18n="contrastToggle" aria-label="Wysoki kontrast">Kontrast</button>
           </div>
-          <div class="language-switcher" aria-label="Wybór języka">
-            <button class="lang-button is-active" type="button" data-lang="pl">PL</button>
-            <button class="lang-button" type="button" data-lang="en">EN</button>
+          <div class="language-switcher lang-dropdown" aria-label="Wybór języka">
+            <button class="lang-button lang-current is-active" type="button" data-lang="pl" aria-haspopup="true" aria-expanded="false">PL <span class="lang-arrow">▾</span></button>
+            <div class="lang-dropdown-menu" role="menu">
+              <button class="lang-option" type="button" data-lang="pl" role="menuitem">PL</button>
+              <button class="lang-option" type="button" data-lang="en" role="menuitem">EN</button>
+            </div>
           </div>
           <!-- Hamburger menu trigger -->
           <button class="mobile-menu-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
