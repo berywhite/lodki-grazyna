@@ -9,7 +9,7 @@ let products = [
       en: "Comfortable Hobby 495 WFB Excellent caravan for 4 guests, with a coworking setup for remote work on the road. Model year 2026, length 7.124 m, width 2.300 m, GVWR 1,500 kg. Delivery to the customer is possible."
     },
     image: "assets/ecocamp/hobby-495-wfb/offer.png",
-    gallery: Array.from({ length: 17 }, (_, index) => `assets/ecocamp/hobby-495-wfb/gallery/${String(index + 1).padStart(2, "0")}.jpg`),
+    gallery: [14, 10, 11, 8, 6, 3, 4, 5].map(n => `assets/ecocamp/hobby-495-wfb/gallery/${String(n).padStart(2, "0")}.jpg`),
     priceLow: 280,
     priceMedium: 320,
     priceHigh: 350,
@@ -37,7 +37,7 @@ let products = [
       en: "Family Hobby 545 KMF De Luxe caravan for up to 6 guests. This is the standard family unit with solar panels, heating, air conditioning, heated floor and full kitchen equipment."
     },
     image: "assets/ecocamp/hobby-545-kmf/offer-standard.png",
-    gallery: Array.from({ length: 20 }, (_, index) => `assets/ecocamp/hobby-545-kmf/gallery/${String(index + 1).padStart(2, "0")}.jpg`),
+    gallery: [6, 7, 8, 5, 4, 10, 17].map(n => `assets/ecocamp/hobby-545-kmf/gallery/${String(n).padStart(2, "0")}.jpg`),
     priceLow: 290,
     priceMedium: 320,
     priceHigh: 350,
@@ -60,7 +60,7 @@ let products = [
       en: "A separate Hobby 545 KMF De Luxe unit adapted for people with disabilities. Equipment includes an access ramp, grab handles at the entrance and in the bathroom, contrast markings, smartphone control of caravan functions, a folding table, tilting mirror, shower chair, belts and mounts, and Braille labels."
     },
     image: "assets/ecocamp/hobby-545-kmf/offer-accessible.png",
-    gallery: Array.from({ length: 20 }, (_, index) => `assets/ecocamp/hobby-545-kmf/gallery/${String(index + 1).padStart(2, "0")}.jpg`),
+    gallery: [6, 7, 8, 5, 4, 10, 17].map(n => `assets/ecocamp/hobby-545-kmf/gallery/${String(n).padStart(2, "0")}.jpg`),
     priceLow: 290,
     priceMedium: 320,
     priceHigh: 350,
