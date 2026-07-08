@@ -106,7 +106,7 @@ const heroImages = [
 
 let news = [
   {
-    slug: "aktualnosci/rozwoj-firmy-eco-camp/",
+    slug: "projekt-ue/",
     date: { pl: "03 Lutego 2025", en: "February 3, 2025" },
     title: { pl: "ECO CAMP realizuje projekt z dofinansowaniem UE", en: "ECO CAMP implements EU-funded project" },
     text: {
