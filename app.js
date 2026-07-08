@@ -80,8 +80,8 @@ let products = [
   {
     id: "hobby-545-kmf-2",
     type: "camper",
-    title: { pl: "Hobby 545 KMF De Luxe Dostępna", en: "Hobby 545 KMF De Luxe Accessible" },
-    offerTitle: { pl: "Hobby 545 KMF De Luxe Dostępna", en: "Hobby 545 KMF De Luxe Accessible" },
+    title: { pl: "Hobby 545 KMF De Luxe", en: "Hobby 545 KMF De Luxe" },
+    offerTitle: { pl: "Hobby 545 KMF De Luxe", en: "Hobby 545 KMF De Luxe" },
     short: { pl: "De Luxe • przystosowana • do 6 osób • 2025", en: "De Luxe • accessible unit • up to 6 guests • 2025" },
     description: {
       pl: "Osobny egzemplarz Hobby 545 KMF De Luxe z przystosowaniem dla osób z niepełnosprawnościami. Wyposażenie obejmuje rampę najazdową, uchwyty przy wejściu i w łazience, oznaczenia kontrastowe, zdalne sterowanie funkcjami przyczepy przez smartfon, składany stół, lustro uchylne, krzesło do kąpieli, pasy i mocowania oraz etykiety Braille'a.",
