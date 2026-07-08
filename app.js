@@ -22,6 +22,34 @@ let products = [
     }
   },
   {
+    id: "hobby-495-wfb-2023",
+    type: "camper",
+    title: { pl: "Hobby 495 WFB (2023)", en: "Hobby 495 WFB (2023)" },
+    offerTitle: { pl: "Hobby 495 WFB (2023)", en: "Hobby 495 WFB (2023)" },
+    short: { pl: "Hobby 495 WFB Excellent • rocznik 2023", en: "Hobby 495 WFB Excellent • year 2023" },
+    offerShort: { pl: "Hobby 495 WFB Excellent • rocznik 2023", en: "Hobby 495 WFB Excellent • year 2023" },
+    description: {
+      pl: "Komfortowa przyczepa Hobby 495 WFB Excellent dla 4 osób. Rocznik 2023, długość 7,124 m, szerokość 2,300 m, DMC 1500 kg. Możliwy transport przyczepy do klienta.",
+      en: "Comfortable Hobby 495 WFB Excellent caravan for 4 guests. Model year 2023, length 7.124 m, width 2.300 m, GVWR 1,500 kg. Delivery to the customer is possible."
+    },
+    offerDescription: {
+      pl: "Przyczepa Hobby 495 WFB z rocznika 2023. Komfortowa przestrzeń dla 4 osób.",
+      en: "Hobby 495 WFB caravan from 2023. Comfortable space for 4 guests."
+    },
+    image: "assets/ecocamp/hobby-495-wfb/offer.png",
+    gallery: [14, 10, 11, 8, 6, 3, 4, 5].map(n => `assets/ecocamp/hobby-495-wfb/gallery/${String(n).padStart(2, "0")}.jpg`),
+    priceLow: 280,
+    priceMedium: 320,
+    priceHigh: 350,
+    minNightsDefault: 5,
+    minNightsHigh: 7,
+    seasonPlan: "hobby495",
+    specs: {
+      pl: ["4 osoby", "rocznik 2023", "fotowoltaika", "ogrzewanie i klimatyzacja", "markiza dachowa", "napęd manewrujący"],
+      en: ["4 guests", "year 2023", "solar panels", "heating and air conditioning", "roof awning", "mover"]
+    }
+  },
+  {
     id: "hobby-545-kmf-1",
     type: "camper",
     title: { pl: "Hobby 545 KMF De Luxe", en: "Hobby 545 KMF De Luxe" },
@@ -284,7 +312,7 @@ const translations = {
     stepThreeText: "Po potwierdzeniu dostępności otrzymasz szczegóły rezerwacji i płatności.",
     offerEyebrow: "Nasza Oferta",
     offerTitle: "Przyczepy kempingowe",
-    offerLead: "Trzy pozycje rezerwacyjne: Hobby 495 WFB z funkcją coworkingową oraz dwa egzemplarze Hobby 545 KMF De Luxe, w tym jeden przystosowany dla osób z niepełnosprawnościami.",
+    offerLead: "Cztery pozycje rezerwacyjne: dwie przyczepy Hobby 495 WFB (w tym jedna z funkcją coworkingową) oraz dwa egzemplarze Hobby 545 KMF De Luxe, w tym jeden przystosowany dla osób z niepełnosprawnościami.",
     productImage: "Zdjęcie",
     reserveItem: "Wybierz do rezerwacji",
     waterEyebrow: "Sprzęt wodny",
@@ -496,8 +524,8 @@ const translations = {
     stepThreeTitle: "3. Send a Request",
     stepThreeText: "After availability is confirmed, you will receive booking and payment details.",
     offerEyebrow: "Our Offer",
-    offerTitle: "Camping Caravans",
-    offerLead: "Three booking items: Hobby 495 WFB with a coworking setup and two Hobby 545 KMF De Luxe units, including one adapted for people with disabilities.",
+    offerTitle: "Caravans",
+    offerLead: "Four booking items: two Hobby 495 WFB caravans (including one with a coworking setup) and two Hobby 545 KMF De Luxe units, including one adapted for people with disabilities.",
     productImage: "Photo",
     reserveItem: "Select for Booking",
     waterEyebrow: "Water equipment",
